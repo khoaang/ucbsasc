@@ -1,3 +1,64 @@
+# Southeast Asian Student Coalition (SASC) Website
+
+Welcome to the SASC website repository! This project is built using React, TypeScript, and Vite, providing a modern and efficient development environment. Our goal is to create a dynamic and engaging platform for the Southeast Asian Student Coalition at UC Berkeley.
+
+## Features
+
+- **Home Page**: Overview of the community.
+- **About Page**: History and mission of SASC.
+- **Contact Page**: Connect with us.
+- **Events Page**: Information on events and activities.
+
+## Technical Overview
+
+This project utilizes:
+
+- **React** for building user interfaces
+- **TypeScript** for type safety and better developer experience
+- **Vite** for fast and optimized builds
+- **Material-UI** for UI components
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd sasc-website
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+## Usage
+
+To start the development server, run:
+
+```bash
+npm run dev
+```
+
+## Development Guidelines
+
+- Follow the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) for coding standards.
+- Use feature branches for new features and bug fixes.
+- Write clear and concise commit messages.
+
+## Contribution Process
+
+1. Fork the repository and create your branch from `main`.
+2. Ensure your code follows the coding standards and passes all tests.
+3. Submit a pull request for review.
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -18,11 +79,11 @@ export default tseslint.config({
   languageOptions: {
     // other options...
     parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
       tsconfigRootDir: import.meta.dirname,
     },
   },
-})
+});
 ```
 
 - Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
@@ -31,11 +92,11 @@ export default tseslint.config({
 
 ```js
 // eslint.config.js
-import react from 'eslint-plugin-react'
+import react from "eslint-plugin-react";
 
 export default tseslint.config({
   // Set the react version
-  settings: { react: { version: '18.3' } },
+  settings: { react: { version: "18.3" } },
   plugins: {
     // Add the react plugin
     react,
@@ -44,7 +105,7 @@ export default tseslint.config({
     // other rules...
     // Enable its recommended rules
     ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
+    ...react.configs["jsx-runtime"].rules,
   },
-})
+});
 ```
