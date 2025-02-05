@@ -8,4 +8,12 @@ export default defineConfig({
     historyApiFallback: true,
   },
   base: '/',
+  build: {
+    outDir: 'dist',
+    rollupOptions: {
+      input: {
+        main: './index.html',
+      },
+    },
+  },
 })
