@@ -1,4 +1,5 @@
 import { Box, Button, Card, CardContent, CardMedia, Grid, Stack, Typography } from '@mui/material';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 const NightMarket = () => {
     return (
@@ -28,7 +29,7 @@ const NightMarket = () => {
                                 Taste of Sea Night Market
                             </Typography>
                             <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1 }}>
-                                April 20, 2024 • 6:00 PM - 10:00 PM
+                                March 14, 2024 • 6:00 PM - 10:00 PM
                             </Typography>
                             <Typography variant="body2" sx={{ mb: 1 }}>
                                 Join us for an evening of Southeast Asian culture, cuisine, and performances! The annual Taste of Sea Night Market brings together Southeast Asian organizations from across Berkeley to share their culinary traditions and cultural performances.
@@ -37,7 +38,7 @@ const NightMarket = () => {
                                 Experience authentic street food, watch traditional and modern performances, and connect with Berkeley's vibrant Southeast Asian community.
                             </Typography>
                             <Typography variant="body2" sx={{ fontWeight: 'bold', mb: 2 }}>
-                                Location: Lower Sproul Plaza
+                                Location: Upper Sproul Plaza
                             </Typography>
                         </Box>
                         <Stack
@@ -71,6 +72,16 @@ const NightMarket = () => {
                                 size="small"
                             >
                                 Sign Up to Perform
+                            </Button>
+                            <Button
+                                variant="outlined"
+                                color="primary"
+                                href="/night-market-2024.ics"
+                                download
+                                size="small"
+                                startIcon={<CalendarMonthIcon />}
+                            >
+                                Add to Calendar
                             </Button>
                         </Stack>
                     </CardContent>
