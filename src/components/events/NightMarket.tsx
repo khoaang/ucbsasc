@@ -49,7 +49,7 @@ const NightMarket = () => {
                             <Button
                                 variant="contained"
                                 color="primary"
-                                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Taste+of+Sea+Night+Market&dates=20240315T010000Z/20240315T050000Z&details=Join+us+for+an+evening+of+Southeast+Asian+culture,+cuisine,+and+performances!&location=Upper+Sproul+Plaza,+Berkeley,+CA"
+                                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Taste+of+SEA+Night+Market&dates=20240315T010000Z/20240315T050000Z&details=Join+us+for+an+evening+of+Southeast+Asian+culture,+cuisine,+and+performances!&location=Upper+Sproul+Plaza,+Berkeley,+CA"
                                 target="_blank"
                                 size="small"
                                 startIcon={<CalendarMonthIcon />}
