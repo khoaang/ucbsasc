@@ -49,16 +49,17 @@ const NightMarket = () => {
                             <Button
                                 variant="contained"
                                 color="primary"
-                                href="https://forms.gle/your-rsvp-form-link"
+                                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Taste+of+Sea+Night+Market&dates=20240315T010000Z/20240315T050000Z&details=Join+us+for+an+evening+of+Southeast+Asian+culture,+cuisine,+and+performances!&location=Upper+Sproul+Plaza,+Berkeley,+CA"
                                 target="_blank"
                                 size="small"
+                                startIcon={<CalendarMonthIcon />}
                             >
-                                RSVP Now
+                                Add to Calendar
                             </Button>
                             <Button
                                 variant="outlined"
                                 color="primary"
-                                href="https://forms.gle/your-vendor-form-link"
+                                href="https://bit.ly/nightmarkervendor"
                                 target="_blank"
                                 size="small"
                             >
@@ -67,21 +68,11 @@ const NightMarket = () => {
                             <Button
                                 variant="outlined"
                                 color="primary"
-                                href="https://forms.gle/your-performance-form-link"
+                                href="https://bit.ly/nightmarketperformer"
                                 target="_blank"
                                 size="small"
                             >
                                 Sign Up to Perform
-                            </Button>
-                            <Button
-                                variant="outlined"
-                                color="primary"
-                                href="/night-market-2024.ics"
-                                download
-                                size="small"
-                                startIcon={<CalendarMonthIcon />}
-                            >
-                                Add to Calendar
                             </Button>
                         </Stack>
                     </CardContent>
