@@ -8,7 +8,7 @@ const NightMarket = () => {
                     <Box sx={{ position: 'relative', height: '100%', minHeight: '200px' }}>
                         <CardMedia
                             component="img"
-                            image="/public/night-market-2023.jpg"
+                            image="/night-market-2023.jpg"
                             alt="Taste of Sea Night Market 2023"
                             sx={{
                                 position: 'absolute',
