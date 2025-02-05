@@ -133,7 +133,7 @@ git push origin your-branch-name
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone git@github.com:khoaang/ucbsasc.git
    cd ucbsasc
    ```
 
