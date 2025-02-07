@@ -59,7 +59,7 @@ const NightMarket = () => {
                             <Button
                                 variant="outlined"
                                 color="primary"
-                                href="https://bit.ly/nightmarkervendor"
+                                href=""
                                 target="_blank"
                                 size="small"
                             >
@@ -68,7 +68,7 @@ const NightMarket = () => {
                             <Button
                                 variant="outlined"
                                 color="primary"
-                                href="https://bit.ly/nightmarketperformer"
+                                href=""
                                 target="_blank"
                                 size="small"
                             >
