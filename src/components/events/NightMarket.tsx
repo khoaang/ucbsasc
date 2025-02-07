@@ -29,7 +29,7 @@ const NightMarket = () => {
                                 Taste of Sea Night Market
                             </Typography>
                             <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1 }}>
-                                March 14, 2024 • 6:00 PM - 10:00 PM
+                                March 14, 2025 • 6:00 PM - 10:00 PM
                             </Typography>
                             <Typography variant="body2" sx={{ mb: 1 }}>
                                 Join us for an evening of Southeast Asian culture, cuisine, and performances! The annual Taste of Sea Night Market brings together Southeast Asian organizations from across Berkeley to share their culinary traditions and cultural performances.
@@ -49,7 +49,7 @@ const NightMarket = () => {
                             <Button
                                 variant="contained"
                                 color="primary"
-                                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Taste+of+SEA+Night+Market&dates=20240315T010000Z/20240315T050000Z&details=Join+us+for+an+evening+of+Southeast+Asian+culture,+cuisine,+and+performances!&location=Upper+Sproul+Plaza,+Berkeley,+CA"
+                                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Taste+of+SEA+Night+Market&dates=20250315T010000Z/20240315T050000Z&details=Join+us+for+an+evening+of+Southeast+Asian+culture,+cuisine,+and+performances!&location=Upper+Sproul+Plaza,+Berkeley,+CA"
                                 target="_blank"
                                 size="small"
                                 startIcon={<CalendarMonthIcon />}
