@@ -29,7 +29,7 @@ const NightMarket = () => {
                                 Taste of Sea Night Market
                             </Typography>
                             <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1 }}>
-                                March 14, 2025 • 6:00 PM - 10:00 PM
+                                March 14, 2025 • 7:00 PM - 10:00 PM
                             </Typography>
                             <Typography variant="body2" sx={{ mb: 1 }}>
                                 Join us for an evening of Southeast Asian culture, cuisine, and performances! The annual Taste of Sea Night Market brings together Southeast Asian organizations from across Berkeley to share their culinary traditions and cultural performances.
