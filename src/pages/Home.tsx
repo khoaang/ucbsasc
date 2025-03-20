@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Instagram } from '@mui/icons-material';
 import MailingListModal from '../components/MailingListModal';
+import ResourcesAlert from '../components/ResourcesAlert';
 import Footer from '../components/Footer';
 
 const HeroSection = styled(Box)({
@@ -113,6 +114,7 @@ const Home = () => {
 
   return (
     <Box ref={containerRef}>
+      <ResourcesAlert />
       <HeroSection>
         <MasonryGrid>
           {images.map((img, index) => (

@@ -40,6 +40,7 @@ const Navbar = () => {
     { text: 'Events', path: '/events' },
     { text: 'Get Involved', path: '/get-involved' },
     { text: 'Contact', path: '/contact' },
+    { text: 'Resources', path: '/resources' },
   ];
 
   const handleDrawerToggle = () => {
