@@ -8,8 +8,10 @@ import {
   DialogContent, 
   DialogContentText, 
   DialogTitle, 
-  Box 
+  Box,
+  IconButton 
 } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
 
 const ResourcesAlert = () => {
@@ -17,25 +19,19 @@ const ResourcesAlert = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
 
   useEffect(() => {
-    // Check if the user has seen the alert
-    const hasSeenAlert = localStorage.getItem('hasSeenResourcesAlert');
-    if (!hasSeenAlert) {
-      // Show the alert after a short delay
-      const timer = setTimeout(() => {
-        setOpen(true);
-      }, 1500);
-      
-      return () => clearTimeout(timer);
-    }
+    // Show the alert after a short delay every time
+    const timer = setTimeout(() => {
+      setOpen(true);
+    }, 1500);
+    
+    return () => clearTimeout(timer);
   }, []);
 
-  const handleClose = (event: React.SyntheticEvent | Event, reason?: string) => {
+  const handleClose = (_event: React.SyntheticEvent | Event, reason?: string) => {
     if (reason === 'clickaway') {
       return;
     }
     setOpen(false);
-    // Mark as seen
-    localStorage.setItem('hasSeenResourcesAlert', 'true');
   };
 
   const handleLearnMore = () => {
@@ -45,8 +41,6 @@ const ResourcesAlert = () => {
 
   const handleDialogClose = () => {
     setDialogOpen(false);
-    // Mark as seen
-    localStorage.setItem('hasSeenResourcesAlert', 'true');
   };
 
   return (
@@ -61,9 +55,19 @@ const ResourcesAlert = () => {
           severity="info" 
           onClose={handleClose}
           action={
-            <Button color="inherit" size="small" onClick={handleLearnMore}>
-              LEARN MORE
-            </Button>
+            <>
+              <Button color="inherit" size="small" onClick={handleLearnMore}>
+                LEARN MORE
+              </Button>
+              <IconButton
+                size="small"
+                aria-label="close"
+                color="inherit"
+                onClick={handleClose}
+              >
+                <CloseIcon fontSize="small" />
+              </IconButton>
+            </>
           }
           sx={{ 
             width: '100%', 
