@@ -1,10 +1,37 @@
-import { Box, Button, Card, CardContent, CardMedia, Grid, Stack, Typography, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
+import { Box, Button, Card, CardContent, CardMedia, Grid, Stack, Typography } from '@mui/material';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const NightMarket = () => {
     return (
-        <Card sx={{ mb: 4 }}>
+        <Card sx={{ mb: 4, position: 'relative', opacity: 0.7 }}>
+            <Box
+                sx={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                    zIndex: 1,
+                    pointerEvents: 'none'
+                }}
+            />
+            <Box
+                sx={{
+                    position: 'absolute',
+                    top: 16,
+                    right: 16,
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    color: 'white',
+                    padding: '4px 12px',
+                    borderRadius: '4px',
+                    zIndex: 2
+                }}
+            >
+                <Typography variant="caption" fontWeight="bold">
+                    PAST EVENT
+                </Typography>
+            </Box>
             <Grid container>
                 <Grid item xs={12} md={5}>
                     <Box sx={{ position: 'relative', height: '100%', minHeight: '200px' }}>
@@ -55,114 +82,11 @@ const NightMarket = () => {
                                 target="_blank"
                                 size="small"
                                 startIcon={<CalendarMonthIcon />}
+                                disabled
                             >
                                 Add to Calendar
                             </Button>
-                            <Button
-                                variant="outlined"
-                                color="primary"
-                                href="https://bit.ly/nightmarketvendor"
-                                target="_blank"
-                                size="small"
-                                disabled
-                            >
-                                Sign Up as Vendor
-                            </Button>
-                            <Button
-                                variant="outlined"
-                                color="primary"
-                                href="https://bit.ly/nightmarketperformer"
-                                target="_blank"
-                                size="small"
-                                disabled
-                            >
-                                Sign Up to Perform
-                            </Button>
                         </Stack>
-
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="vendor-content"
-                                id="vendor-header"
-                            >
-                                <Typography variant="subtitle1" fontWeight="medium">Vendor Information</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography variant="body2" paragraph>
-                                    We welcome vendors to share Southeast Asian cuisine and products at our Night Market! Here's what you need to know:
-                                </Typography>
-                                <Typography component="div" variant="body2">
-                                    <ul>
-                                        <li>Vendor fee: $50 for student organizations, $100 for external vendors</li>
-                                        <li>Setup time: 5:00 PM - 6:30 PM</li>
-                                        <li>Each vendor receives:
-                                            <ul>
-                                                <li>1 table (6ft)</li>
-                                                <li>2 chairs</li>
-                                                <li>Access to power outlet (must request in advance)</li>
-                                            </ul>
-                                        </li>
-                                        <li>Vendors must provide their own:
-                                            <ul>
-                                                <li>Food warmers/coolers</li>
-                                                <li>Extension cords</li>
-                                                <li>Cash box/payment system</li>
-                                                <li>Decorations and signage</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </Typography>
-                                <Typography variant="body2" sx={{ mt: 1 }}>
-                                    All food vendors must comply with UC Berkeley and City of Berkeley food safety regulations. Detailed requirements will be sent after registration.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="performer-content"
-                                id="performer-header"
-                            >
-                                <Typography variant="subtitle1" fontWeight="medium">Performer Information</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography variant="body2" paragraph>
-                                    Share your talents and cultural performances at our Night Market! We welcome both traditional and modern performances.
-                                </Typography>
-                                <Typography component="div" variant="body2">
-                                    <ul>
-                                        <li>Performance slots:
-                                            <ul>
-                                                <li>7:30 PM - 8:00 PM</li>
-                                                <li>8:15 PM - 8:45 PM</li>
-                                                <li>9:00 PM - 9:30 PM</li>
-                                            </ul>
-                                        </li>
-                                        <li>Each performance slot is 5-15 minutes</li>
-                                        <li>We provide:
-                                            <ul>
-                                                <li>Professional sound system</li>
-                                                <li>Basic lighting</li>
-                                                <li>Microphones</li>
-                                                <li>Small stage area</li>
-                                            </ul>
-                                        </li>
-                                        <li>Performers should:
-                                            <ul>
-                                                <li>Arrive 30 minutes before their slot</li>
-                                                <li>Bring their own instruments/props</li>
-                                                <li>Submit music files 48 hours in advance</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </Typography>
-                                <Typography variant="body2" sx={{ mt: 1 }}>
-                                    Sound check and rehearsal times will be scheduled the day before the event.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
                     </CardContent>
                 </Grid>
             </Grid>
