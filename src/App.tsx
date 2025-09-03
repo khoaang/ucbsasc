@@ -8,6 +8,7 @@ import Events from './pages/Events';
 import Contact from './pages/Contact';
 import GetInvolved from './pages/GetInvolved';
 import Resources from './pages/Resources';
+import MemberManagement from './pages/MemberManagement';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route path="/get-involved" element={<GetInvolved />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/resources" element={<Resources />} />
+              <Route path="/admin/members" element={<MemberManagement />} />
             </Routes>
           </Box>
         </Box>

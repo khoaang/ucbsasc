@@ -1,11 +1,11 @@
 import { Box, Container, Typography, useTheme, Grid, Button, IconButton, Card, CardContent } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import { Instagram } from '@mui/icons-material';
+import MailingListModal from '../components/MailingListModal';
+import ResourcesAlert from '../components/ResourcesAlert';
 import Footer from '../components/Footer';
-import GeneralMeetingModal from '../components/events/GeneralMeetingModal';
-import MemberRegistration from '../components/MemberRegistration';
 
 const HeroSection = styled(Box)({
   position: 'relative',
@@ -77,8 +77,6 @@ const Section = styled(Box)(({ theme }) => ({
   }
 }));
 
-
-
 const images = [
   { src: '/cultural-dance.jpg', alt: 'Cultural Dance', span: 2 },
   { src: '/can-drive.jpg', alt: 'Can Drive', span: 1 },
@@ -112,22 +110,11 @@ const sections = [
 const Home = () => {
   const theme = useTheme();
   const containerRef = useRef(null);
-  const [gmOpen, setGmOpen] = useState(false);
-  const [memberOpen, setMemberOpen] = useState(false);
-
-  useEffect(() => {
-    try {
-      const dismissed = localStorage.getItem('gm_dismissed');
-      if (!dismissed) {
-        const t = setTimeout(() => setGmOpen(true), 1200);
-        return () => clearTimeout(t);
-      }
-    } catch {}
-  }, []);
-
+  const [mailingListOpen, setMailingListOpen] = useState(false);
 
   return (
     <Box ref={containerRef}>
+      <ResourcesAlert />
       <HeroSection>
         <MasonryGrid>
           {images.map((img, index) => (
@@ -177,7 +164,7 @@ const Home = () => {
               <Button
                 variant="contained"
                 size="large"
-                onClick={() => setMemberOpen(true)}
+                onClick={() => setMailingListOpen(true)}
                 sx={{
                   backgroundColor: 'white',
                   color: 'black',
@@ -186,7 +173,7 @@ const Home = () => {
                   },
                 }}
               >
-                Sign Up
+                Join Our Mailing List
               </Button>
               <Typography 
                 variant="h6" 
@@ -210,18 +197,6 @@ const Home = () => {
           </motion.div>
         </Container>
       </HeroSection>
-
-      {/* General Meeting Modal */}
-      <GeneralMeetingModal open={gmOpen} onClose={() => setGmOpen(false)} />
-
-      {/* Member Registration */}
-      <MemberRegistration
-        open={memberOpen}
-        onClose={() => setMemberOpen(false)}
-        onSuccess={() => setMemberOpen(false)}
-      />
-
-      
 
       {sections.map((section, index) => (
         <Section key={section.title} sx={{ bgcolor: index % 2 ? 'background.paper' : 'background.default' }}>
@@ -328,7 +303,40 @@ const Home = () => {
         </Grid>
       </Container>
 
+      <Box sx={{ 
+        bgcolor: 'background.paper', 
+        py: 12,
+        textAlign: 'center' 
+      }}>
+        <Container>
+          <Typography variant="h3" gutterBottom sx={{ mb: 4 }}>
+            Stay Connected
+          </Typography>
+          <Typography variant="body1" sx={{ mb: 6 }}>
+            Join our mailing list to stay updated with SASC events and opportunities.
+          </Typography>
+          <Button
+            variant="contained"
+            size="large"
+            onClick={() => setMailingListOpen(true)}
+            sx={{
+              backgroundColor: 'white',
+              color: 'black',
+              padding: '12px 32px',
+              '&:hover': {
+                backgroundColor: 'rgba(255, 255, 255, 0.9)',
+              },
+            }}
+          >
+            Join Our Mailing List
+          </Button>
+        </Container>
+      </Box>
       <Footer />
+      <MailingListModal 
+        open={mailingListOpen}
+        onClose={() => setMailingListOpen(false)}
+      />
     </Box>
   );
 };

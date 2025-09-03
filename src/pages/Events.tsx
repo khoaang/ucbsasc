@@ -1,7 +1,7 @@
 import { Container, Typography } from '@mui/material';
 import Footer from '../components/Footer';
+import GeneralMeeting from '../components/events/GeneralMeeting';
 import NightMarket from '../components/events/NightMarket';
-import SEAGrad from '../components/events/SEAGrad';
 
 const Events = () => {
   return (
@@ -10,7 +10,7 @@ const Events = () => {
         <Typography variant="h2" component="h1" gutterBottom>
           Events
         </Typography>
-        <SEAGrad />
+        <GeneralMeeting />
         <NightMarket />
         {/* <CultureFestival /> */}
         <Typography variant="body1" sx={{ mt: 4 }}>
@@ -22,4 +22,4 @@ const Events = () => {
   );
 };
 
-export default Events; 
+export default Events;
