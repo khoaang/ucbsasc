@@ -2,7 +2,7 @@ import { Box, Container, Typography, useTheme, Grid, Button, IconButton, Card, C
 import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
-import { Instagram, CalendarMonth, Group, Restaurant, Celebration } from '@mui/icons-material';
+import { Instagram } from '@mui/icons-material';
 import MailingListModal from '../components/MailingListModal';
 import Footer from '../components/Footer';
 import GeneralMeetingModal from '../components/events/GeneralMeetingModal';
@@ -211,7 +211,7 @@ const Home = () => {
         </Container>
       </HeroSection>
 
-{/* General Meeting Modal */
+{/* General Meeting Modal */}
       <GeneralMeetingModal open={gmOpen} onClose={() => setGmOpen(false)} />
 
       

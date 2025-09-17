@@ -1,5 +1,4 @@
-import { Container, Typography, Card, CardContent, CardMedia, Grid, Box, Stack, Button } from '@mui/material';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import { Container, Typography } from '@mui/material';
 import Footer from '../components/Footer';
 import GeneralMeeting from '../components/events/GeneralMeeting';
 import NightMarket from '../components/events/NightMarket';
