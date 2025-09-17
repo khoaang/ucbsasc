@@ -3,6 +3,18 @@
   publish = "dist"
 
 [[redirects]]
+  from = "/attendance"
+  to = "https://forms.gle/SqyzHvv6hco4XQBc6"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/attendance/"
+  to = "https://forms.gle/SqyzHvv6hco4XQBc6"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200 

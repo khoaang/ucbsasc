@@ -1,7 +1,10 @@
-import { Container, Typography } from '@mui/material';
+import { Container, Typography, Card, CardContent, CardMedia, Grid, Box, Stack, Button } from '@mui/material';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import Footer from '../components/Footer';
 import GeneralMeeting from '../components/events/GeneralMeeting';
 import NightMarket from '../components/events/NightMarket';
+import SEAGrad from '../components/events/SEAGrad';
+import ProfessionalHeadshots from '../components/events/ProfessionalHeadshots';
 
 const Events = () => {
   return (
@@ -11,8 +14,9 @@ const Events = () => {
           Events
         </Typography>
         <GeneralMeeting />
+        <ProfessionalHeadshots />
+        <SEAGrad />
         <NightMarket />
-        {/* <CultureFestival /> */}
         <Typography variant="body1" sx={{ mt: 4 }}>
           More upcoming events will be listed here.
         </Typography>

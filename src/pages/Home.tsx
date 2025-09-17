@@ -2,10 +2,10 @@ import { Box, Container, Typography, useTheme, Grid, Button, IconButton, Card, C
 import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
-import { Instagram } from '@mui/icons-material';
+import { Instagram, CalendarMonth, Group, Restaurant, Celebration } from '@mui/icons-material';
+import MailingListModal from '../components/MailingListModal';
 import Footer from '../components/Footer';
 import GeneralMeetingModal from '../components/events/GeneralMeetingModal';
-import MemberRegistration from '../components/MemberRegistration';
 
 const HeroSection = styled(Box)({
   position: 'relative',
@@ -112,8 +112,8 @@ const sections = [
 const Home = () => {
   const theme = useTheme();
   const containerRef = useRef(null);
+  const [mailingListOpen, setMailingListOpen] = useState(false);
   const [gmOpen, setGmOpen] = useState(false);
-  const [memberOpen, setMemberOpen] = useState(false);
 
   useEffect(() => {
     try {
@@ -177,7 +177,7 @@ const Home = () => {
               <Button
                 variant="contained"
                 size="large"
-                onClick={() => setMemberOpen(true)}
+                onClick={() => setMailingListOpen(true)}
                 sx={{
                   backgroundColor: 'white',
                   color: 'black',
@@ -186,7 +186,7 @@ const Home = () => {
                   },
                 }}
               >
-                Sign Up
+                Join Our Mailing List
               </Button>
               <Typography 
                 variant="h6" 
@@ -211,15 +211,8 @@ const Home = () => {
         </Container>
       </HeroSection>
 
-      {/* General Meeting Modal */}
+{/* General Meeting Modal */
       <GeneralMeetingModal open={gmOpen} onClose={() => setGmOpen(false)} />
-
-      {/* Member Registration */}
-      <MemberRegistration
-        open={memberOpen}
-        onClose={() => setMemberOpen(false)}
-        onSuccess={() => setMemberOpen(false)}
-      />
 
       
 
@@ -328,7 +321,40 @@ const Home = () => {
         </Grid>
       </Container>
 
+      <Box sx={{ 
+        bgcolor: 'background.paper', 
+        py: 12,
+        textAlign: 'center' 
+      }}>
+        <Container>
+          <Typography variant="h3" gutterBottom sx={{ mb: 4 }}>
+            Stay Connected
+          </Typography>
+          <Typography variant="body1" sx={{ mb: 6 }}>
+            Join our mailing list to stay updated with SASC events and opportunities.
+          </Typography>
+          <Button
+            variant="contained"
+            size="large"
+            onClick={() => setMailingListOpen(true)}
+            sx={{
+              backgroundColor: 'white',
+              color: 'black',
+              padding: '12px 32px',
+              '&:hover': {
+                backgroundColor: 'rgba(255, 255, 255, 0.9)',
+              },
+            }}
+          >
+            Join Our Mailing List
+          </Button>
+        </Container>
+      </Box>
       <Footer />
+      <MailingListModal 
+        open={mailingListOpen}
+        onClose={() => setMailingListOpen(false)}
+      />
     </Box>
   );
 };

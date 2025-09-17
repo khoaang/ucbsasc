@@ -102,7 +102,7 @@ const About = () => {
     target: containerRef,
     offset: ["start start", "end end"]
   });
-  
+
   const smoothProgress = useSpring(scrollYProgress, {
     damping: 15,
     stiffness: 30
@@ -247,9 +247,9 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Typography 
-              variant="h1" 
-              sx={{ 
+            <Typography
+              variant="h1"
+              sx={{
                 fontSize: { xs: '2.5rem', md: '4rem' },
                 fontWeight: 700,
                 mb: 3,
@@ -260,9 +260,9 @@ const About = () => {
             >
               Our Story
             </Typography>
-            <Typography 
-              variant="h4" 
-              sx={{ 
+            <Typography
+              variant="h4"
+              sx={{
                 maxWidth: '600px',
                 opacity: 0.8,
                 lineHeight: 1.5
@@ -278,9 +278,9 @@ const About = () => {
         {historicalContent.map((content, index) => (
           <TimelineSection key={content.year}>
             <Container sx={{ position: 'relative' }}>
-              <Box sx={{ 
-                display: 'flex', 
-                alignItems: 'center', 
+              <Box sx={{
+                display: 'flex',
+                alignItems: 'center',
                 position: 'relative',
                 flexDirection: { xs: 'column', md: 'row' }
               }}>
@@ -295,33 +295,33 @@ const About = () => {
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <Typography 
-                      variant="h6" 
+                    <Typography
+                      variant="h6"
                       className="text-gradient"
                       sx={{ mb: 2, fontFamily: 'Playfair Display' }}
                     >
                       {content.year}
                     </Typography>
-                    <Typography 
-                      variant="h3" 
+                    <Typography
+                      variant="h3"
                       gutterBottom
-                      sx={{ 
+                      sx={{
                         fontSize: { xs: '1.75rem', sm: '2.25rem', md: '3rem' }
                       }}
                     >
                       {content.title}
                     </Typography>
-                    <Typography 
-                      variant="body1" 
-                      sx={{ 
-                        fontSize: { xs: '1rem', md: '1.2rem' }, 
-                        opacity: 0.9, 
-                        mb: 4 
+                    <Typography
+                      variant="body1"
+                      sx={{
+                        fontSize: { xs: '1rem', md: '1.2rem' },
+                        opacity: 0.9,
+                        mb: 4
                       }}
                     >
                       {content.description}
                     </Typography>
-                    
+
                     {content.stats.map((stat, i) => (
                       <StatBox
                         key={stat}
@@ -414,7 +414,7 @@ const About = () => {
           As we look into the future, SASC will continue its duty to support those who are here already and those who will carry on the torch of our SEAA communities.
         </Typography>
       </Container>
-      
+
       <Footer />
     </Box>
   );

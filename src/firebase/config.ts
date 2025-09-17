@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAnalytics, isSupported as isAnalyticsSupported } from 'firebase/analytics';
 import { getFirestore } from 'firebase/firestore';
-import { getAuth, signInAnonymously, onAuthStateChanged } from 'firebase/auth';
+import { getAuth } from 'firebase/auth';
 
 // Firebase configuration
 // You'll need to replace these with your actual Firebase project config
@@ -21,18 +21,6 @@ const app = initializeApp(firebaseConfig);
 // Initialize Firebase services
 export const db = getFirestore(app);
 export const auth = getAuth(app);
-
-// Ensure we have an auth user (anonymous) for Firestore security rules
-if (typeof window !== 'undefined') {
-  onAuthStateChanged(auth, (user) => {
-    if (!user) {
-      signInAnonymously(auth).catch((err) => {
-        // eslint-disable-next-line no-console
-        console.error('Anonymous auth failed:', err);
-      });
-    }
-  });
-}
 
 export default app;
 
