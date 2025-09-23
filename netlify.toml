@@ -17,13 +17,7 @@
 [[redirects]]
   from = "/store"
   to = "https://sasc.bigcartel.com"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/store/*"
-  to = "https://sasc.bigcartel.com/:splat"
-  status = 200
+  status = 301
   force = true
 
 [[redirects]]
