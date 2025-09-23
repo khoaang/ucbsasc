@@ -1,11 +1,11 @@
 import { Box, Container, Typography, useTheme, Grid, Button, IconButton, Card, CardContent } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import { Instagram } from '@mui/icons-material';
 import MailingListModal from '../components/MailingListModal';
 import Footer from '../components/Footer';
-import GeneralMeetingModal from '../components/events/GeneralMeetingModal';
+// import GeneralMeetingModal from '../components/events/GeneralMeetingModal';
 
 const HeroSection = styled(Box)({
   position: 'relative',
@@ -104,7 +104,7 @@ const sections = [
   {
     title: "SEAMentorship",
     description: `Supporting Southeast Asian high school students on their path to higher education. Our dedicated mentors provide guidance on college applications, academic planning, and personal development. Through one-on-one mentoring sessions, workshops, and college preparation activities, we help students navigate the college admissions process while embracing their cultural identity. Our program creates a supportive environment where high school students can learn from experienced mentors who understand their unique experiences and challenges.`,
-    instagramPost: "https://www.instagram.com/p/CtIFmoaP8jf",
+    instagramPost: "https://www.instagram.com/p/DKcasiB9DBOA7",
     align: "left"
   }
 ];
@@ -113,17 +113,18 @@ const Home = () => {
   const theme = useTheme();
   const containerRef = useRef(null);
   const [mailingListOpen, setMailingListOpen] = useState(false);
-  const [gmOpen, setGmOpen] = useState(false);
+  // const [gmOpen, setGmOpen] = useState(false);
 
-  useEffect(() => {
-    try {
-      const dismissed = localStorage.getItem('gm_dismissed');
-      if (!dismissed) {
-        const t = setTimeout(() => setGmOpen(true), 1200);
-        return () => clearTimeout(t);
-      }
-    } catch {}
-  }, []);
+  // General Meeting has passed; disable modal auto-open
+  // useEffect(() => {
+  //   try {
+  //     const dismissed = localStorage.getItem('gm_dismissed');
+  //     if (!dismissed) {
+  //       const t = setTimeout(() => setGmOpen(true), 1200);
+  //       return () => clearTimeout(t);
+  //     }
+  //   } catch {}
+  // }, []);
 
 
   return (
@@ -211,8 +212,8 @@ const Home = () => {
         </Container>
       </HeroSection>
 
-{/* General Meeting Modal */}
-      <GeneralMeetingModal open={gmOpen} onClose={() => setGmOpen(false)} />
+      {/* General Meeting modal disabled since event has passed */}
+      {/* <GeneralMeetingModal open={gmOpen} onClose={() => setGmOpen(false)} /> */}
 
       
 

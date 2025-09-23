@@ -6,13 +6,13 @@ import CelebrationIcon from '@mui/icons-material/Celebration';
 
 const GeneralMeeting = () => {
     return (
-        <Card sx={{ mb: 4, position: 'relative', border: '2px solid', borderColor: 'primary.main' }}>
+        <Card sx={{ mb: 4, position: 'relative', border: '2px solid', borderColor: 'divider', opacity: 0.9 }}>
             <Box
                 sx={{
                     position: 'absolute',
                     top: 16,
                     right: 16,
-                    backgroundColor: 'primary.main',
+                    backgroundColor: 'text.disabled',
                     color: 'white',
                     padding: '4px 12px',
                     borderRadius: '4px',
@@ -20,7 +20,7 @@ const GeneralMeeting = () => {
                 }}
             >
                 <Typography variant="caption" fontWeight="bold">
-                    UPCOMING EVENT
+                    PAST EVENT
                 </Typography>
             </Box>
             <Grid container>
@@ -87,22 +87,8 @@ const GeneralMeeting = () => {
                                 come join our community and make new friends.
                             </Typography>
                         </Box>
-                        <Stack
-                            direction={{ xs: 'column', sm: 'row' }}
-                            spacing={1}
-                            justifyContent="flex-start"
-                            sx={{ mb: 2 }}
-                        >
-                            <Button
-                                variant="contained"
-                                color="primary"
-                                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=SASC+General+Meeting&dates=20240918T030000Z/20240918T040000Z&details=Join+us+for+our+first+general+meeting+of+the+semester!+Meet+the+SASC+community,+connect+with+other+orgs,+have+fun,+and+eat+delicious+food.&location=TBA"
-                                target="_blank"
-                                size="medium"
-                                startIcon={<CalendarMonthIcon />}
-                            >
-                                Add to Calendar
-                            </Button>
+                        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1} justifyContent="flex-start" sx={{ mb: 2 }}>
+                            <Button variant="outlined" disabled size="medium" startIcon={<CalendarMonthIcon />}>Event Ended</Button>
                         </Stack>
                     </CardContent>
                 </Grid>

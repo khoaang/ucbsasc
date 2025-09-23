@@ -38,6 +38,8 @@ const Navbar = () => {
     { text: 'Home', path: '/' },
     { text: 'About', path: '/about' },
     { text: 'Events', path: '/events' },
+    { text: 'SEA Spotlight', path: '/sea-spotlight' },
+    { text: 'Store', path: '/store', external: true },
     { text: 'Get Involved', path: '/get-involved' },
     { text: 'Contact', path: '/contact' },
     { text: 'Resources', path: '/resources' },
@@ -95,20 +97,36 @@ const Navbar = () => {
               ) : (
                 <Box sx={{ ml: 'auto', display: 'flex', gap: 1 }}>
                   {menuItems.map((item) => (
-                    <Button
-                      key={item.text}
-                      component={Link}
-                      to={item.path}
-                      sx={{
-                        color: location.pathname === item.path ? 'primary.main' : 'text.primary',
-                        fontWeight: location.pathname === item.path ? 600 : 400,
-                        '&:hover': {
-                          backgroundColor: 'rgba(0, 0, 0, 0.04)',
-                        },
-                      }}
-                    >
-                      {item.text}
-                    </Button>
+                    item.external ? (
+                      <Button
+                        key={item.text}
+                        href={item.path}
+                        sx={{
+                          color: 'text.primary',
+                          fontWeight: 400,
+                          '&:hover': {
+                            backgroundColor: 'rgba(0, 0, 0, 0.04)',
+                          },
+                        }}
+                      >
+                        {item.text}
+                      </Button>
+                    ) : (
+                      <Button
+                        key={item.text}
+                        component={Link}
+                        to={item.path}
+                        sx={{
+                          color: location.pathname === item.path ? 'primary.main' : 'text.primary',
+                          fontWeight: location.pathname === item.path ? 600 : 400,
+                          '&:hover': {
+                            backgroundColor: 'rgba(0, 0, 0, 0.04)',
+                          },
+                        }}
+                      >
+                        {item.text}
+                      </Button>
+                    )
                   ))}
                 </Box>
               )}
@@ -138,20 +156,36 @@ const Navbar = () => {
                 bgcolor: location.pathname === item.path ? 'action.selected' : 'transparent',
               }}
             >
-              <Button
-                component={Link}
-                to={item.path}
-                onClick={handleDrawerToggle}
-                sx={{
-                  width: '100%',
-                  justifyContent: 'flex-start',
-                  px: 3,
-                  py: 1,
-                  fontWeight: location.pathname === item.path ? 600 : 400,
-                }}
-              >
-                {item.text}
-              </Button>
+              {item.external ? (
+                <Button
+                  href={item.path}
+                  onClick={handleDrawerToggle}
+                  sx={{
+                    width: '100%',
+                    justifyContent: 'flex-start',
+                    px: 3,
+                    py: 1,
+                    fontWeight: 400,
+                  }}
+                >
+                  {item.text}
+                </Button>
+              ) : (
+                <Button
+                  component={Link}
+                  to={item.path}
+                  onClick={handleDrawerToggle}
+                  sx={{
+                    width: '100%',
+                    justifyContent: 'flex-start',
+                    px: 3,
+                    py: 1,
+                    fontWeight: location.pathname === item.path ? 600 : 400,
+                  }}
+                >
+                  {item.text}
+                </Button>
+              )}
             </ListItem>
           ))}
         </List>

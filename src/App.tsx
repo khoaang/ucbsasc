@@ -9,6 +9,9 @@ import Contact from './pages/Contact';
 import GetInvolved from './pages/GetInvolved';
 import Resources from './pages/Resources';
 import MemberManagement from './pages/MemberManagement';
+import Spotlights from './pages/Spotlights';
+import AdminGuard from './components/AdminGuard';
+import Store from './pages/Store';
 
 function App() {
   return (
@@ -25,7 +28,9 @@ function App() {
               <Route path="/get-involved" element={<GetInvolved />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/resources" element={<Resources />} />
-              <Route path="/admin/members" element={<MemberManagement />} />
+              <Route path="/sea-spotlight" element={<Spotlights />} />
+              <Route path="/store" element={<Store />} />
+              <Route path="/admin/members" element={<AdminGuard><MemberManagement /></AdminGuard>} />
             </Routes>
           </Box>
         </Box>
