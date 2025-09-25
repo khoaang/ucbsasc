@@ -4,6 +4,7 @@ import GeneralMeeting from '../components/events/GeneralMeeting';
 import NightMarket from '../components/events/NightMarket';
 import SEAGrad from '../components/events/SEAGrad';
 import ProfessionalHeadshots from '../components/events/ProfessionalHeadshots';
+import ProfessionalHeadshotsUpcoming from '../components/events/ProfessionalHeadshotsUpcoming';
 
 const Events = () => {
   return (
@@ -12,6 +13,7 @@ const Events = () => {
         <Typography variant="h2" component="h1" gutterBottom>
           Events
         </Typography>
+        <ProfessionalHeadshotsUpcoming />
         <GeneralMeeting />
         <ProfessionalHeadshots />
         <SEAGrad />
