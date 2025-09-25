@@ -73,9 +73,9 @@ const ProfessionalHeadshotsUpcoming = () => {
           UPCOMING EVENT
         </Typography>
       </Box>
-      <Grid container>
+      <Grid container alignItems="stretch">
         <Grid item xs={12} md={5}>
-          <Box sx={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
+          <Box sx={{ position: 'relative', width: '100%', height: '100%', minHeight: 300, overflow: 'hidden' }}>
             <CardMedia
               component="img"
               image="/fhs.png"

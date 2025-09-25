@@ -1,4 +1,4 @@
-import { addDoc, collection, Timestamp } from 'firebase/firestore';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { db } from './config';
 
 export interface EventRsvp {
@@ -6,7 +6,7 @@ export interface EventRsvp {
   eventKey: string;
   name: string;
   email: string;
-  createdAt: Timestamp;
+  createdAt: unknown;
 }
 
 const RSVPS_COLLECTION = 'event_rsvps';
@@ -16,7 +16,7 @@ export const addEventRsvp = async (eventKey: string, name: string, email: string
     eventKey,
     name,
     email,
-    createdAt: Timestamp.now(),
+    createdAt: serverTimestamp(),
   };
   const docRef = await addDoc(collection(db, RSVPS_COLLECTION), payload);
   return { id: docRef.id, ...payload };
