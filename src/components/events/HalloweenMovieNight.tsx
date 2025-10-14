@@ -33,9 +33,9 @@ const HalloweenMovieNight = () => {
         </Typography>
       </Box>
 
-      <Grid container>
-        <Grid item xs={12} md={5} sx={{ lineHeight: 0, display: 'flex' }}>
-          <Box sx={{ position: 'relative', width: '100%', aspectRatio: '4/3', overflow: 'hidden', display: 'block' }}>
+      <Grid container alignItems="stretch">
+        <Grid item xs={12} md={5}>
+          <Box sx={{ position: 'relative', width: '100%', height: '100%', minHeight: 300, overflow: 'hidden' }}>
             <CardMedia
               component="img"
               image="https://images.unsplash.com/photo-1571973966231-2cc0eb61f6be?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987"
@@ -45,7 +45,7 @@ const HalloweenMovieNight = () => {
           </Box>
         </Grid>
         <Grid item xs={12} md={7}>
-          <CardContent sx={{ p: 2, '&:last-child': { pb: 2 } }}>
+          <CardContent sx={{ height: '100%' }}>
             <Box>
               <Typography variant="h5" component="h2" sx={{ mb: 0.5 }}>
                 Halloween Movie Night + Costume Contest

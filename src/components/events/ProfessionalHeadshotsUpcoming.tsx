@@ -90,7 +90,7 @@ const ProfessionalHeadshotsUpcoming = () => {
           </Box>
         </Grid>
         <Grid item xs={12} md={7}>
-          <CardContent>
+          <CardContent sx={{ height: '100%' }}>
             <Box>
               <Typography variant="h5" component="h2" sx={{ mb: 0.5 }}>
                 Free Professional Headshots

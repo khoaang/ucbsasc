@@ -32,22 +32,15 @@ const CultureFestival = () => {
     };
 
     return (
-        <Card sx={{ mb: 4 }}>
-            <Grid container>
+        <Card sx={{ mb: 4, position: 'relative' }}>
+            <Grid container alignItems="stretch">
                 <Grid item xs={12} md={5}>
-                    <Box sx={{ position: 'relative', height: '100%', minHeight: '300px' }}>
+                    <Box sx={{ position: 'relative', width: '100%', height: '100%', minHeight: 300, overflow: 'hidden' }}>
                         <CardMedia
                             component="img"
                             image={images[activeStep].url}
                             alt={images[activeStep].label}
-                            sx={{
-                                position: 'absolute',
-                                top: 0,
-                                left: 0,
-                                width: '100%',
-                                height: '100%',
-                                objectFit: 'cover'
-                            }}
+                            sx={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                         />
                         <Box
                             sx={{
@@ -96,7 +89,7 @@ const CultureFestival = () => {
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={7}>
-                    <CardContent>
+                    <CardContent sx={{ height: '100%' }}>
                         <Box>
                             <Typography variant="h5" component="h2" sx={{ mb: 0.5 }}>
                                 SEA Culture Festival

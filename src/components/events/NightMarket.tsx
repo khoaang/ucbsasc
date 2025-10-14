@@ -3,25 +3,13 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 const NightMarket = () => {
     return (
-        <Card sx={{ mb: 4, position: 'relative', opacity: 0.7 }}>
-            <Box
-                sx={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    backgroundColor: 'rgba(0, 0, 0, 0.1)',
-                    zIndex: 1,
-                    pointerEvents: 'none'
-                }}
-            />
+        <Card sx={{ mb: 4, position: 'relative', border: '2px solid', borderColor: 'divider', opacity: 0.9 }}>
             <Box
                 sx={{
                     position: 'absolute',
                     top: 16,
                     right: 16,
-                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    backgroundColor: 'text.disabled',
                     color: 'white',
                     padding: '4px 12px',
                     borderRadius: '4px',
@@ -32,26 +20,19 @@ const NightMarket = () => {
                     PAST EVENT
                 </Typography>
             </Box>
-            <Grid container>
+            <Grid container alignItems="stretch">
                 <Grid item xs={12} md={5}>
-                    <Box sx={{ position: 'relative', height: '100%', minHeight: '200px' }}>
+                    <Box sx={{ position: 'relative', width: '100%', height: '100%', minHeight: 300, overflow: 'hidden' }}>
                         <CardMedia
                             component="img"
                             image="/night-market-2023.jpg"
                             alt="Taste of Sea Night Market 2023"
-                            sx={{
-                                position: 'absolute',
-                                top: 0,
-                                left: 0,
-                                width: '100%',
-                                height: '100%',
-                                objectFit: 'cover'
-                            }}
+                            sx={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                         />
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={7}>
-                    <CardContent>
+                    <CardContent sx={{ height: '100%' }}>
                         <Box>
                             <Typography variant="h5" component="h2" sx={{ mb: 0.5 }}>
                                 Taste of Sea Night Market

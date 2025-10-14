@@ -23,32 +23,25 @@ const GeneralMeeting = () => {
                     PAST EVENT
                 </Typography>
             </Box>
-            <Grid container>
+            <Grid container alignItems="stretch">
                 <Grid item xs={12} md={5}>
-                    <Box sx={{ position: 'relative', height: '100%', minHeight: '200px' }}>
+                    <Box sx={{ position: 'relative', width: '100%', height: '100%', minHeight: 300, overflow: 'hidden' }}>
                         <CardMedia
                             component="img"
                             image="/student-gathering.jpg"
                             alt="SASC General Meeting"
-                            sx={{
-                                position: 'absolute',
-                                top: 0,
-                                left: 0,
-                                width: '100%',
-                                height: '100%',
-                                objectFit: 'cover'
-                            }}
+                            sx={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                         />
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={7}>
-                    <CardContent>
+                    <CardContent sx={{ height: '100%' }}>
                         <Box>
                             <Typography variant="h4" component="h2" sx={{ mb: 1, color: 'primary.main' }}>
                                 SASC General Meeting
                             </Typography>
                             <Typography variant="h6" color="text.secondary" sx={{ mb: 2 }}>
-                                September 17, 2024 • 8:00 PM - 9:00 PM
+                                September 17, 2025 • 8:00 PM - 9:00 PM
                             </Typography>
                             <Typography variant="body1" sx={{ mb: 2, fontSize: '1.1rem' }}>
                                 Join us for our first general meeting of the semester! This is the perfect opportunity to:
