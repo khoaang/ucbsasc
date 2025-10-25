@@ -8,11 +8,13 @@ import ProfessionalHeadshots from '../components/events/ProfessionalHeadshots';
 import AnniversaryRSVP from '../components/events/AnniversaryRSVP';
 import HalloweenMovieNight from '../components/events/HalloweenMovieNight';
 import ProfessionalHeadshotsOct1Past from '../components/events/ProfessionalHeadshotsOct1Past';
+import SEAHistoryWorkshop from '../components/events/SEAHistoryWorkshop';
 
 const Events = () => {
   // Define events with dates so we can auto-sort
   const upcomingEvents: { date: Date; key: string; render: () => JSX.Element }[] = [
     { date: new Date('2025-10-24T19:00:00-07:00'), key: 'halloween-2025', render: () => <HalloweenMovieNight /> },
+    { date: new Date('2025-10-28T19:00:00-07:00'), key: 'sea-history-2025', render: () => <SEAHistoryWorkshop /> },
     { date: new Date('2025-11-12T19:00:00-08:00'), key: 'anniv-2025', render: () => <AnniversaryRSVP /> },
   ];
 
