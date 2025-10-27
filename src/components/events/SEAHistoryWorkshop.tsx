@@ -29,11 +29,11 @@ const SEAHistoryWorkshop = () => {
 
     try {
       await signInAnonymously(auth);
-      await addEventRsvp({
-        eventKey: 'sea-history-workshop-2025-10-28',
-        name: name.trim(),
-        email: email.trim()
-      });
+      await addEventRsvp(
+        'sea-history-workshop-2025-10-28',
+        name.trim(),
+        email.trim()
+      );
       setSuccess('RSVP received! See you there.');
       setName('');
       setEmail('');
