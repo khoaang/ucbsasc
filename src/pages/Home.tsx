@@ -1,10 +1,10 @@
 import { Box, Container, Typography, useTheme, Grid, Button, IconButton, Card, CardContent } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import { Instagram } from '@mui/icons-material';
 import MailingListModal from '../components/MailingListModal';
-import HalloweenModal from '../components/events/HalloweenModal';
+// import HalloweenModal from '../components/events/HalloweenModal';
 import Footer from '../components/Footer';
 // import GeneralMeetingModal from '../components/events/GeneralMeetingModal';
 
@@ -114,17 +114,17 @@ const Home = () => {
   const theme = useTheme();
   const containerRef = useRef(null);
   const [mailingListOpen, setMailingListOpen] = useState(false);
-  const [halloweenOpen, setHalloweenOpen] = useState(false);
+  // const [halloweenOpen, setHalloweenOpen] = useState(false);
 
-  useEffect(() => {
-    try {
-      const dismissed = localStorage.getItem('halloween_dismissed');
-      if (!dismissed) {
-        const t = setTimeout(() => setHalloweenOpen(true), 1200);
-        return () => clearTimeout(t);
-      }
-    } catch {}
-  }, []);
+  // useEffect(() => {
+  //   try {
+  //     const dismissed = localStorage.getItem('halloween_dismissed');
+  //     if (!dismissed) {
+  //       const t = setTimeout(() => setHalloweenOpen(true), 1200);
+  //       return () => clearTimeout(t);
+  //     }
+  //   } catch {}
+  // }, []);
 
 
   return (
@@ -356,10 +356,11 @@ const Home = () => {
         open={mailingListOpen}
         onClose={() => setMailingListOpen(false)}
       />
-      <HalloweenModal
+      {/* Halloween modal disabled since event has passed */}
+      {/* <HalloweenModal
         open={halloweenOpen}
         onClose={() => setHalloweenOpen(false)}
-      />
+      /> */}
     </Box>
   );
 };

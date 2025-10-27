@@ -121,7 +121,7 @@ const SEAHistoryWorkshop = () => {
             </Typography>
 
             <Typography variant="body2" paragraph>
-              Join SASC for our general meeting featuring an educational slideshow on Southeast Asian American history, refugee timeline, and resources to succeed in higher education. This is a great opportunity to learn about our community's rich history and connect with fellow students.
+              Join SASC for our general meeting featuring a fun, interactive deep-dive presentation by our Media team on Southeast Asian American history, refugee timeline, and resources to succeed in higher education. This is a great opportunity to learn about our community's rich history and connect with fellow students.
             </Typography>
 
             <Typography variant="body2" fontWeight="bold" sx={{ mt: 2, mb: 0.5 }}>
@@ -138,7 +138,7 @@ const SEAHistoryWorkshop = () => {
                 Resources for academic success and community engagement
               </Typography>
               <Typography component="li" variant="body2">
-                Light refreshments may be provided
+                Snacks provided
               </Typography>
             </Box>
 

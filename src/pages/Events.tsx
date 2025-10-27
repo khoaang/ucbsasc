@@ -13,12 +13,12 @@ import SEAHistoryWorkshop from '../components/events/SEAHistoryWorkshop';
 const Events = () => {
   // Define events with dates so we can auto-sort
   const upcomingEvents: { date: Date; key: string; render: () => JSX.Element }[] = [
-    { date: new Date('2025-10-24T19:00:00-07:00'), key: 'halloween-2025', render: () => <HalloweenMovieNight /> },
     { date: new Date('2025-10-28T19:00:00-07:00'), key: 'sea-history-2025', render: () => <SEAHistoryWorkshop /> },
     { date: new Date('2025-11-12T19:00:00-08:00'), key: 'anniv-2025', render: () => <AnniversaryRSVP /> },
   ];
 
   const pastEvents: { date: Date; key: string; render: () => JSX.Element }[] = [
+    { date: new Date('2025-10-24T19:00:00-07:00'), key: 'halloween-2025', render: () => <HalloweenMovieNight /> },
     { date: new Date('2025-10-01T15:00:00-07:00'), key: 'headshots-2025-10-01', render: () => <ProfessionalHeadshotsOct1Past /> },
     // Legacy cards (no explicit date in component): keep near bottom
     { date: new Date('2024-09-17T20:00:00-07:00'), key: 'gm-2024', render: () => <GeneralMeeting /> },
