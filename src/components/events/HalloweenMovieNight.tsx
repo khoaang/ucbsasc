@@ -7,7 +7,6 @@ import { signInAnonymously } from 'firebase/auth';
 
 const HalloweenMovieNight = () => {
   const isPast = true;
-  const title = 'Halloween Movie Night + Costume Party';
   const location = 'SOCS 60';
   const dateLine = 'Friday, October 24 • 7:30 PM – 10:00 PM';
   const details = 'Join us for SASC\'s Halloween movie night & optional costume party! We\'ll be watching the horror comedy "Pee Mak" (not too scary!). Super casual, free snacks, and prizes if you dress up! The event is completely free.';
