@@ -13,11 +13,6 @@ const HalloweenMovieNight = () => {
   const details = 'Join us for SASC\'s Halloween movie night & optional costume party! We\'ll be watching the horror comedy "Pee Mak" (not too scary!). Super casual, free snacks, and prizes if you dress up! The event is completely free.';
 
   // Oct 24, 2025 7:30–10 PM PT → 02:30Z–05:00Z on Oct 25
-  const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
-    title
-  )}&dates=20251025T023000Z/20251025T050000Z&details=${encodeURIComponent(details)}&location=${encodeURIComponent(
-    location
-  )}`;
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
