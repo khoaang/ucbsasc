@@ -1,10 +1,11 @@
 import { Box, Container, Typography, useTheme, Grid, Button, IconButton, Card, CardContent } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Instagram } from '@mui/icons-material';
 import MailingListModal from '../components/MailingListModal';
 // import HalloweenModal from '../components/events/HalloweenModal';
+import SeasgivingModal from '../components/events/SeasgivingModal';
 import Footer from '../components/Footer';
 // import GeneralMeetingModal from '../components/events/GeneralMeetingModal';
 
@@ -115,6 +116,7 @@ const Home = () => {
   const containerRef = useRef(null);
   const [mailingListOpen, setMailingListOpen] = useState(false);
   // const [halloweenOpen, setHalloweenOpen] = useState(false);
+  const [seasgivingOpen, setSeasgivingOpen] = useState(false);
 
   // useEffect(() => {
   //   try {
@@ -125,6 +127,16 @@ const Home = () => {
   //     }
   //   } catch {}
   // }, []);
+
+  useEffect(() => {
+    try {
+      const dismissed = localStorage.getItem('seasgiving_dismissed');
+      if (!dismissed) {
+        const t = setTimeout(() => setSeasgivingOpen(true), 1200);
+        return () => clearTimeout(t);
+      }
+    } catch {}
+  }, []);
 
 
   return (
@@ -361,6 +373,10 @@ const Home = () => {
         open={halloweenOpen}
         onClose={() => setHalloweenOpen(false)}
       /> */}
+      <SeasgivingModal
+        open={seasgivingOpen}
+        onClose={() => setSeasgivingOpen(false)}
+      />
     </Box>
   );
 };

@@ -6,6 +6,7 @@ import { auth } from '../../firebase/config';
 import { signInAnonymously } from 'firebase/auth';
 
 const HalloweenMovieNight = () => {
+  const isPast = true;
   const title = 'Halloween Movie Night + Costume Party';
   const location = 'SOCS 60';
   const dateLine = 'Friday, October 24 • 7:30 PM – 10:00 PM';
@@ -63,7 +64,7 @@ const HalloweenMovieNight = () => {
           position: 'absolute',
           top: 16,
           right: 16,
-          backgroundColor: 'primary.main',
+          backgroundColor: 'grey.700',
           color: 'white',
           padding: '4px 12px',
           borderRadius: '4px',
@@ -71,7 +72,7 @@ const HalloweenMovieNight = () => {
         }}
       >
         <Typography variant="caption" fontWeight="bold">
-          UPCOMING EVENT
+          PAST EVENT
         </Typography>
       </Box>
 
@@ -114,58 +115,62 @@ const HalloweenMovieNight = () => {
             </Box>
 
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1} sx={{ mt: 1 }}>
-              <Button variant="outlined" color="primary" href={gcalUrl} target="_blank" size="small" startIcon={<CalendarMonthIcon />}>
-                Add to Calendar
+              <Button variant="outlined" disabled size="small" startIcon={<CalendarMonthIcon />}>
+                Event Ended
               </Button>
             </Stack>
 
-            {!isFirebaseConfigured && (
-              <Alert severity="warning" sx={{ mt: 1.5 }}>
-                RSVP temporarily unavailable. Site configuration is incomplete.
-              </Alert>
-            )}
-            <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2 }}>
-              <Grid container spacing={1} alignItems="flex-end">
-                <Grid item xs={12} sm={5} md={4}>
-                  <TextField
-                    label="Name"
-                    size="small"
-                    fullWidth
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    sx={{
-                      '& .MuiInputBase-input': { py: 0.5, fontSize: '0.9rem' },
-                      '& .MuiInputLabel-root': { fontSize: '0.875rem' }
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={5} md={4}>
-                  <TextField
-                    label="Email"
-                    type="email"
-                    size="small"
-                    fullWidth
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    sx={{
-                      '& .MuiInputBase-input': { py: 0.5, fontSize: '0.9rem' },
-                      '& .MuiInputLabel-root': { fontSize: '0.875rem' }
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={2} md={2}>
-                  <Button type="submit" variant="contained" color="primary" fullWidth disabled={submitting || !isFirebaseConfigured} sx={{ py: 0.5 }}>
-                    {submitting ? 'Submitting…' : 'RSVP'}
-                  </Button>
-                </Grid>
-              </Grid>
-            </Box>
+            {!isPast && (
+              <>
+                {!isFirebaseConfigured && (
+                  <Alert severity="warning" sx={{ mt: 1.5 }}>
+                    RSVP temporarily unavailable. Site configuration is incomplete.
+                  </Alert>
+                )}
+                <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2 }}>
+                  <Grid container spacing={1} alignItems="flex-end">
+                    <Grid item xs={12} sm={5} md={4}>
+                      <TextField
+                        label="Name"
+                        size="small"
+                        fullWidth
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        sx={{
+                          '& .MuiInputBase-input': { py: 0.5, fontSize: '0.9rem' },
+                          '& .MuiInputLabel-root': { fontSize: '0.875rem' }
+                        }}
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={5} md={4}>
+                      <TextField
+                        label="Email"
+                        type="email"
+                        size="small"
+                        fullWidth
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        sx={{
+                          '& .MuiInputBase-input': { py: 0.5, fontSize: '0.9rem' },
+                          '& .MuiInputLabel-root': { fontSize: '0.875rem' }
+                        }}
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={2} md={2}>
+                      <Button type="submit" variant="contained" color="primary" fullWidth disabled={submitting || !isFirebaseConfigured} sx={{ py: 0.5 }}>
+                        {submitting ? 'Submitting…' : 'RSVP'}
+                      </Button>
+                    </Grid>
+                  </Grid>
+                </Box>
 
-            {(success || error) && (
-              <Box sx={{ mt: 1.5 }}>
-                {success && <Alert severity="success">{success}</Alert>}
-                {error && <Alert severity="error">{error}</Alert>}
-              </Box>
+                {(success || error) && (
+                  <Box sx={{ mt: 1.5 }}>
+                    {success && <Alert severity="success">{success}</Alert>}
+                    {error && <Alert severity="error">{error}</Alert>}
+                  </Box>
+                )}
+              </>
             )}
           </CardContent>
         </Grid>

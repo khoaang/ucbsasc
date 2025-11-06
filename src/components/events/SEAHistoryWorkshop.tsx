@@ -5,6 +5,7 @@ import { auth } from '../../firebase/config';
 import { addEventRsvp } from '../../firebase/rsvps';
 
 const SEAHistoryWorkshop = () => {
+  const isPast = true;
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [submitting, setSubmitting] = useState(false);
@@ -98,10 +99,10 @@ const SEAHistoryWorkshop = () => {
           <CardContent sx={{ height: '100%' }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
               <Chip
-                label="UPCOMING"
+                label={isPast ? 'PAST EVENT' : 'UPCOMING'}
                 size="small"
                 sx={{
-                  backgroundColor: 'primary.main',
+                  backgroundColor: isPast ? 'grey.700' : 'primary.main',
                   color: 'white',
                   fontWeight: 'bold',
                   fontSize: '0.7rem'
@@ -143,77 +144,88 @@ const SEAHistoryWorkshop = () => {
             </Box>
 
             <Stack direction="row" spacing={1} sx={{ mb: 2 }}>
-              <Button
-                variant="outlined"
-                size="small"
-                href={gcalUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Add to Calendar
-              </Button>
-              <Button
-                variant="outlined"
-                size="small"
-                href={mapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Open in Maps
-              </Button>
+              {isPast ? (
+                <Button variant="outlined" size="small" disabled>
+                  Event Ended
+                </Button>
+              ) : (
+                <>
+                  <Button
+                    variant="outlined"
+                    size="small"
+                    href={gcalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Add to Calendar
+                  </Button>
+                  <Button
+                    variant="outlined"
+                    size="small"
+                    href={mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Open in Maps
+                  </Button>
+                </>
+              )}
             </Stack>
 
-            <Typography variant="body2" fontWeight="bold" sx={{ mb: 1 }}>
-              RSVP:
-            </Typography>
+            {!isPast && (
+              <>
+                <Typography variant="body2" fontWeight="bold" sx={{ mb: 1 }}>
+                  RSVP:
+                </Typography>
+                {!isFirebaseConfigured && (
+                  <Alert severity="warning" sx={{ mt: 1.5 }}>
+                    RSVP temporarily unavailable. Site configuration is incomplete.
+                  </Alert>
+                )}
+                <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2 }}>
+                  <Grid container spacing={1} alignItems="flex-end">
+                    <Grid item xs={12} sm={5} md={4}>
+                      <TextField
+                        label="Name"
+                        size="small"
+                        fullWidth
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        sx={{
+                          '& .MuiInputBase-input': { py: 0.5, fontSize: '0.9rem' },
+                          '& .MuiInputLabel-root': { fontSize: '0.875rem' }
+                        }}
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={5} md={4}>
+                      <TextField
+                        label="Email"
+                        type="email"
+                        size="small"
+                        fullWidth
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        sx={{
+                          '& .MuiInputBase-input': { py: 0.5, fontSize: '0.9rem' },
+                          '& .MuiInputLabel-root': { fontSize: '0.875rem' }
+                        }}
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={2} md={2}>
+                      <Button type="submit" variant="contained" color="primary" fullWidth disabled={submitting || !isFirebaseConfigured} sx={{ py: 0.5 }}>
+                        {submitting ? 'Submitting…' : 'RSVP'}
+                      </Button>
+                    </Grid>
+                  </Grid>
+                </Box>
 
-            {!isFirebaseConfigured && (
-              <Alert severity="warning" sx={{ mt: 1.5 }}>
-                RSVP temporarily unavailable. Site configuration is incomplete.
-              </Alert>
-            )}
-            <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2 }}>
-              <Grid container spacing={1} alignItems="flex-end">
-                <Grid item xs={12} sm={5} md={4}>
-                  <TextField
-                    label="Name"
-                    size="small"
-                    fullWidth
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    sx={{
-                      '& .MuiInputBase-input': { py: 0.5, fontSize: '0.9rem' },
-                      '& .MuiInputLabel-root': { fontSize: '0.875rem' }
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={5} md={4}>
-                  <TextField
-                    label="Email"
-                    type="email"
-                    size="small"
-                    fullWidth
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    sx={{
-                      '& .MuiInputBase-input': { py: 0.5, fontSize: '0.9rem' },
-                      '& .MuiInputLabel-root': { fontSize: '0.875rem' }
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={2} md={2}>
-                  <Button type="submit" variant="contained" color="primary" fullWidth disabled={submitting || !isFirebaseConfigured} sx={{ py: 0.5 }}>
-                    {submitting ? 'Submitting…' : 'RSVP'}
-                  </Button>
-                </Grid>
-              </Grid>
-            </Box>
-
-            {(success || error) && (
-              <Box sx={{ mt: 1.5 }}>
-                {success && <Alert severity="success">{success}</Alert>}
-                {error && <Alert severity="error">{error}</Alert>}
-              </Box>
+                {(success || error) && (
+                  <Box sx={{ mt: 1.5 }}>
+                    {success && <Alert severity="success">{success}</Alert>}
+                    {error && <Alert severity="error">{error}</Alert>}
+                  </Box>
+                )}
+              </>
             )}
           </CardContent>
         </Grid>
