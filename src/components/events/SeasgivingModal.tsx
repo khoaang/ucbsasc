@@ -34,7 +34,7 @@ const SeasgivingModal = ({ open, onClose }: SeasgivingModalProps) => {
 
   const handleClose = () => {
     try {
-      localStorage.setItem('seasgiving_dismissed', 'true');
+      localStorage.setItem('seasgiving_dismissed_v2', 'true');
     } catch {}
     onClose();
   };

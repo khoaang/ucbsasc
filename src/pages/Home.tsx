@@ -130,8 +130,10 @@ const Home = () => {
 
   useEffect(() => {
     try {
-      const dismissed = localStorage.getItem('seasgiving_dismissed');
-      if (!dismissed) {
+      const params = new URLSearchParams(window.location.search);
+      const forceShow = params.get('showSeasgiving') === '1';
+      const dismissed = localStorage.getItem('seasgiving_dismissed_v2');
+      if (forceShow || !dismissed) {
         const t = setTimeout(() => setSeasgivingOpen(true), 1200);
         return () => clearTimeout(t);
       }
