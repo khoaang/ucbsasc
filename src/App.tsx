@@ -9,7 +9,7 @@ import Contact from './pages/Contact';
 import Resources from './pages/Resources';
 import MemberManagement from './pages/MemberManagement';
 import Spotlights from './pages/Spotlights';
-import Recruitment from './pages/Recruitment';
+import Lead from './pages/Lead';
 import AdminGuard from './components/AdminGuard';
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/events" element={<Events />} />
-              <Route path="/recruitment" element={<Recruitment />} />
+              <Route path="/lead" element={<Lead />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/sea-spotlight" element={<Spotlights />} />

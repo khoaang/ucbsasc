@@ -47,6 +47,11 @@ const branches = [
     focus: 'Community Care & Mentorship',
     overview:
       'Cultivate the heartbeat of SASC through wellness programming, mentorship, and member development.',
+    image: '/internal.jpg',
+    directors: [
+      { name: 'Ilene Park', email: 'parkilene AT berkeley.edu' },
+      { name: 'April Le', email: 'le.april AT berkeley.edu' },
+    ],
     highlights: [
       {
         title: 'Key Focus Areas',
@@ -62,7 +67,11 @@ const branches = [
     name: 'External Affairs',
     focus: 'Community Partnerships & Advocacy',
     overview:
-      'Bridge SASC with community organizations, campus departments, and coalitions fighting for Southeast Asian equity.',
+      'Bridge SASC with campus allies and grassroots partners to advance Southeast Asian equity together.',
+    image: '/tabling.jpg',
+    directors: [
+      { name: 'Lan Vy Nguyen', email: 'nguyen_nvl AT berkeley.edu' },
+    ],
     highlights: [
       {
         title: 'Key Focus Areas',
@@ -78,7 +87,11 @@ const branches = [
     name: 'Operations',
     focus: 'Logistics, Finance & Event Excellence',
     overview:
-      'Keep SASC running smoothly with thoughtful budgeting, logistics, and behind-the-scenes magic that makes every event shine.',
+      'Steady SASC through sharp budgeting, flexible logistics, and backstage care that lets every program shine.',
+    image: '/operations.jpg',
+    directors: [
+      { name: 'Tyler Htut', email: 'tylerhtut7 AT berkeley.edu' },
+    ],
     highlights: [
       {
         title: 'Key Focus Areas',
@@ -97,6 +110,11 @@ const branches = [
     focus: 'Storytelling & Creative Strategy',
     overview:
       'Share our narrative boldly across campus and online through visuals, copywriting, and digital engagement.',
+    image: '/pr.jpg',
+    directors: [
+      { name: 'Khoa Nguyen', email: 'khoan AT berkeley.edu' },
+      { name: 'Rinrada Maneenop', email: 'rinradamaneenop7 AT berkeley.edu' },
+    ],
     highlights: [
       {
         title: 'Key Focus Areas',
@@ -140,20 +158,37 @@ const applicationSteps = [
   },
 ];
 
-const Recruitment = () => {
+const Lead = () => {
   return (
     <Box>
       <Box
         sx={{
           position: 'relative',
-          bgcolor: 'primary.main',
           color: 'white',
-          py: { xs: 10, md: 14 },
+          py: { xs: 12, md: 16 },
           mb: 8,
-          background: 'linear-gradient(120deg, #1b3a4b 0%, #2a6f97 45%, #61a5c2 100%)',
+          overflow: 'hidden',
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: 'url(/sasc-old.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            filter: 'blur(4px)',
+            transform: 'scale(1.05)',
+            zIndex: 0,
+          },
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(120deg, rgba(219, 136, 64, 0.65), rgba(11, 34, 59, 0.85))',
+            zIndex: 1,
+          },
         }}
       >
-        <Container sx={{ position: 'relative', zIndex: 1 }}>
+        <Container sx={{ position: 'relative', zIndex: 2 }}>
           <Typography
             variant="h2"
             component="h1"
@@ -163,20 +198,48 @@ const Recruitment = () => {
               fontSize: { xs: '2.7rem', md: '3.75rem' },
             }}
           >
-            Join the SASC Officer Team
+            Lead with SASC
           </Typography>
-          <Typography variant="h5" sx={{ opacity: 0.9, maxWidth: 720, lineHeight: 1.6 }}>
-            Each branch is recruiting passionate officers ready to build community, execute programs, and
-            uplift Southeast Asian voices at Cal. The impact—and the community—you gain is invaluable.
+          <Typography
+            variant="h5"
+            sx={{
+              opacity: 0.95,
+              maxWidth: 780,
+              lineHeight: 1.6,
+              textShadow: '0 2px 12px rgba(0,0,0,0.5)',
+            }}
+          >
+            SASComm has carried SASC’s legacy since 2000—organizing roundtables, building coalition power, and
+            honoring the histories that grounded our founders 26 years ago. This is your invitation to step into
+            that lineage.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              opacity: 0.9,
+              maxWidth: 720,
+              mt: 2,
+              textShadow: '0 1px 10px rgba(0,0,0,0.45)',
+            }}
+          >
+            Each branch is recruiting passionate SASComm members ready to build community, execute programs, and
+            uplift Southeast Asian voices at Cal. The impact—and the community—you gain is invaluable. The work
+            ebbs and flows with the programming calendar, so we’re looking for people who can plug in with care,
+            communicate openly, and follow through when it’s their moment to lead.
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ mt: 4 }}>
             <Button
               variant="contained"
-              color="secondary"
+              color="inherit"
               size="large"
-              href="https://forms.gle/FakeRecruitmentForm"
+              href="https://forms.gle/mnqaVF1UhXhoFKdJ6"
               target="_blank"
               rel="noopener"
+              sx={{
+                color: 'primary.main',
+                bgcolor: 'white',
+                '&:hover': { bgcolor: 'rgba(255, 255, 255, 0.9)' },
+              }}
             >
               Apply Now
             </Button>
@@ -184,21 +247,14 @@ const Recruitment = () => {
               variant="outlined"
               color="inherit"
               size="large"
-              href="mailto:ucb.sasc@gmail.com?subject=SASC%20Officer%20Recruitment"
+              href="https://www.instagram.com/ucbsasc"
+              target="_blank"
+              rel="noopener"
             >
-              Talk with a Director
+              DM @ucbsasc
             </Button>
           </Stack>
         </Container>
-        <Box
-          sx={{
-            position: 'absolute',
-            inset: 0,
-            backgroundImage: 'url(/grid.svg)',
-            backgroundSize: 'cover',
-            opacity: 0.1,
-          }}
-        />
       </Box>
 
       <Container sx={{ mb: 10 }}>
@@ -229,7 +285,7 @@ const Recruitment = () => {
               <Typography variant="body1" color="text.secondary">
                 Bring your stories, skills, and curiosity—we will build on them together and lean on an extensive
                 alumni network that spans organizers, educators, policy advocates, and creative professionals who
-                continue to mentor and uplift our officers long after graduation.
+                continue to mentor and uplift SASComm long after graduation.
               </Typography>
             </Stack>
           </Grid>
@@ -239,6 +295,11 @@ const Recruitment = () => {
       <Container sx={{ mb: 10 }}>
         <Typography variant="h4" gutterBottom>
           Why Lead with SASC
+        </Typography>
+        <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 760, mb: 3 }}>
+          SASComm isn’t about racking up weekly hours—it’s about showing up with heart when the community needs
+          you. Expect seasons of prep before big programs, quieter stretches for reflection, and plenty of room
+          to plug your talents into collaborative projects alongside people who care just as much as you do.
         </Typography>
         <Grid container spacing={3}>
           {benefits.map((benefit) => (
@@ -282,8 +343,11 @@ const Recruitment = () => {
           Branches Recruiting This Cycle
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ mb: 4, maxWidth: 760 }}>
-          Officer roles require approximately 6–8 hours per week, including weekly branch meetings and a
-          general body commitment. We encourage applicants of all majors, class years, and lived experiences.
+          Officer roles require approximately 6–8 hours per week, including weekly branch meetings and a general
+          body commitment. Work ramps up around program launches and eases once events conclude, so we’re looking
+          for teammates who communicate, follow through, and lean in with heart. We welcome all majors, class
+          years, and lived experiences, especially those rooted in Southeast Asian storytelling and
+          intergenerational care.
         </Typography>
         <Grid container spacing={4}>
           {branches.map((branch) => (
@@ -305,6 +369,33 @@ const Recruitment = () => {
                     <Typography variant="body1" color="text.secondary">
                       {branch.overview}
                     </Typography>
+                    <Box
+                      component="img"
+                      src={branch.image}
+                      alt={`${branch.name} moments`}
+                      sx={{
+                        width: '100%',
+                        borderRadius: 2,
+                        objectFit: 'cover',
+                        height: { xs: 180, sm: 210 },
+                        boxShadow: (theme) => theme.shadows[3],
+                        objectPosition: 'center 40%',
+                      }}
+                    />
+                    {branch.directors && branch.directors.length > 0 && (
+                      <Box>
+                        <Typography variant="subtitle2" color="primary.main" sx={{ fontWeight: 600, mb: 0.5 }}>
+                          Directors
+                        </Typography>
+                        <Stack spacing={0.5}>
+                          {branch.directors.map((director) => (
+                            <Typography key={director.email} variant="body2" color="text.secondary">
+                              {director.name} • {director.email}
+                            </Typography>
+                          ))}
+                        </Stack>
+                      </Box>
+                    )}
                     {branch.highlights.map((section) => (
                       <Box key={section.title}>
                         <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
@@ -375,14 +466,14 @@ const Recruitment = () => {
             </Typography>
             <Typography variant="body1" color="text.secondary">
               We value curiosity, humility, and a commitment to Southeast Asian empowerment more than existing
-              titles. Let’s explore where your energy fits best—email us, drop by our general meetings, or
-              send in the interest form so a director can reach out with next steps.
+              titles. Our pace shifts with the season, so let’s explore where your energy fits best—DM us, drop
+              by our general meetings, or send in the interest form so a director can reach out with next steps.
             </Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ pt: 1 }}>
               <Button
                 variant="contained"
                 color="primary"
-                href="https://forms.gle/FakeRecruitmentForm"
+                href="https://forms.gle/mnqaVF1UhXhoFKdJ6"
                 target="_blank"
                 rel="noopener"
               >
@@ -391,9 +482,11 @@ const Recruitment = () => {
               <Button
                 variant="outlined"
                 color="primary"
-                href="mailto:ucb.sasc@gmail.com?subject=SASC%20Officer%20Recruitment"
+                href="https://www.instagram.com/ucbsasc"
+                target="_blank"
+                rel="noopener"
               >
-                Connect with a Director
+                DM @ucbsasc
               </Button>
             </Stack>
           </Stack>
@@ -405,4 +498,4 @@ const Recruitment = () => {
   );
 };
 
-export default Recruitment;
+export default Lead;

@@ -168,7 +168,7 @@ const About = () => {
         </Typography>
         <Grid container spacing={2} justifyContent="center">
           <Grid item>
-            <Button variant="contained" href="/recruitment">Officer Recruitment</Button>
+            <Button variant="contained" href="/lead">Officer Recruitment</Button>
           </Grid>
           <Grid item>
             <Button variant="outlined" href="mailto:UCB.SASC@gmail.com?subject=Hello%20SASC">Email Us</Button>
