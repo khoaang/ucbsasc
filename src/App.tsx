@@ -6,10 +6,10 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Events from './pages/Events';
 import Contact from './pages/Contact';
-import GetInvolved from './pages/GetInvolved';
 import Resources from './pages/Resources';
 import MemberManagement from './pages/MemberManagement';
 import Spotlights from './pages/Spotlights';
+import Recruitment from './pages/Recruitment';
 import AdminGuard from './components/AdminGuard';
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/events" element={<Events />} />
-              <Route path="/get-involved" element={<GetInvolved />} />
+              <Route path="/recruitment" element={<Recruitment />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/sea-spotlight" element={<Spotlights />} />

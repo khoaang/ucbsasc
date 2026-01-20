@@ -40,7 +40,7 @@ const Navbar = () => {
     { text: 'Events', path: '/events' },
     { text: 'SEA Spotlight', path: '/sea-spotlight' },
     { text: 'Store', path: 'https://sasc.bigcartel.com', external: true },
-    { text: 'Get Involved', path: '/get-involved' },
+    { text: 'Recruitment', path: '/recruitment' },
     { text: 'Contact', path: '/contact' },
     { text: 'Resources', path: '/resources' },
   ];

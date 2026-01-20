@@ -1,22 +1,26 @@
-import { Container, Typography, Accordion, AccordionSummary, AccordionDetails, Box, Alert } from '@mui/material';
+import { Container, Typography, Accordion, AccordionSummary, AccordionDetails, Box } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Footer from '../components/Footer';
 import GeneralMeeting from '../components/events/GeneralMeeting';
 import NightMarket from '../components/events/NightMarket';
 import SEAGrad from '../components/events/SEAGrad';
 import ProfessionalHeadshots from '../components/events/ProfessionalHeadshots';
-import AnniversaryRSVP from '../components/events/AnniversaryRSVP';
 import HalloweenMovieNight from '../components/events/HalloweenMovieNight';
 import ProfessionalHeadshotsOct1Past from '../components/events/ProfessionalHeadshotsOct1Past';
 import SEAHistoryWorkshop from '../components/events/SEAHistoryWorkshop';
+import AnniversaryRecap from '../components/events/AnniversaryRecap';
+import UpcomingGeneralMeeting from '../components/events/UpcomingGeneralMeeting';
+import BondingEventPreview from '../components/events/BondingEventPreview';
 
 const Events = () => {
   // Define events with dates so we can auto-sort
   const upcomingEvents: { date: Date; key: string; render: () => JSX.Element }[] = [
-    { date: new Date('2025-11-12T19:00:00-08:00'), key: 'anniv-2025', render: () => <AnniversaryRSVP /> },
+    { date: new Date('2026-02-10T19:00:00-08:00'), key: 'gm-2026-spring', render: () => <UpcomingGeneralMeeting /> },
+    { date: new Date('2026-02-21T18:30:00-08:00'), key: 'bonding-2026', render: () => <BondingEventPreview /> },
   ];
 
   const pastEvents: { date: Date; key: string; render: () => JSX.Element }[] = [
+    { date: new Date('2025-11-12T19:00:00-08:00'), key: 'anniv-2025', render: () => <AnniversaryRecap /> },
     { date: new Date('2025-10-28T19:00:00-07:00'), key: 'sea-history-2025', render: () => <SEAHistoryWorkshop /> },
     { date: new Date('2025-10-24T19:00:00-07:00'), key: 'halloween-2025', render: () => <HalloweenMovieNight /> },
     { date: new Date('2025-10-01T15:00:00-07:00'), key: 'headshots-2025-10-01', render: () => <ProfessionalHeadshotsOct1Past /> },
@@ -36,13 +40,6 @@ const Events = () => {
         <Typography variant="h2" component="h1" gutterBottom>
           Events
         </Typography>
-        <Box sx={{ mb: 2 }}>
-          <Alert severity="info" variant="outlined">
-            <Typography variant="body2">
-              SEASgiving Can Drive: <strong>1 can = 1 raffle ticket</strong>. All canned donations benefit the <strong>SEA Community Center (San Francisco)</strong>. Dinner provided at the 25th Anniversary & SEASgiving celebration.
-            </Typography>
-          </Alert>
-        </Box>
         {/* Upcoming events (auto-sorted) */}
         <Box sx={{ display: 'contents' }}>
           {upcomingEvents.map((ev) => (
