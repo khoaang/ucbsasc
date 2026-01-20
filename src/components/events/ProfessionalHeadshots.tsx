@@ -1,71 +1,45 @@
-import { Box, Button, Card, CardContent, CardMedia, Grid, Stack, Typography } from '@mui/material';
+import { Button, Stack, Typography } from '@mui/material';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import EventCard from './EventCard';
 
 const ProfessionalHeadshots = () => {
     return (
-        <Card sx={{ mb: 4, position: 'relative', border: '2px solid', borderColor: 'divider', opacity: 0.9 }}>
-            <Box
-                sx={{
-                    position: 'absolute',
-                    top: 16,
-                    right: 16,
-                    backgroundColor: 'text.disabled',
-                    color: 'white',
-                    padding: '4px 12px',
-                    borderRadius: '4px',
-                    zIndex: 2
-                }}
+        <EventCard
+            statusLabel="PAST EVENT"
+            statusBgColor="text.disabled"
+            borderColor="divider"
+            cardSx={{ opacity: 0.9 }}
+            image={{ src: '/headshots.jpg', alt: 'Professional Headshots' }}
+        >
+            <Typography variant="h5" component="h2" sx={{ mb: 0.5 }}>
+                Professional Headshots
+            </Typography>
+            <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1 }}>
+                May 7, 2025
+            </Typography>
+            <Typography variant="body2" sx={{ mb: 1 }}>
+                Free professional headshots for students to refresh their LinkedIn, resumes, and portfolios. Our media squad will guide
+                you through poses and lighting so you walk away with polished shots.
+            </Typography>
+            <Stack
+                direction={{ xs: 'column', sm: 'row' }}
+                spacing={1}
+                justifyContent="flex-start"
+                sx={{ mb: 2 }}
             >
-                <Typography variant="caption" fontWeight="bold">
-                    PAST EVENT
-                </Typography>
-            </Box>
-            <Grid container alignItems="stretch">
-                <Grid item xs={12} md={5}>
-                    <Box sx={{ position: 'relative', width: '100%', height: '100%', minHeight: 300, overflow: 'hidden' }}>
-                        <CardMedia
-                            component="img"
-                            image="/headshots.jpg"
-                            alt="Professional Headshots"
-                            sx={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                        />
-                    </Box>
-                </Grid>
-                <Grid item xs={12} md={7}>
-                    <CardContent sx={{ height: '100%' }}>
-                        <Box>
-                            <Typography variant="h5" component="h2" sx={{ mb: 0.5 }}>
-                                Professional Headshots
-                            </Typography>
-                            <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1 }}>
-                                May 7, 2025
-                            </Typography>
-                            <Typography variant="body2" sx={{ mb: 1 }}>
-                                Free professional headshots for students to update their LinkedIn, resumes, and portfolios. Thanks to everyone who came out!
-                            </Typography>
-                        </Box>
-                        <Stack
-                            direction={{ xs: 'column', sm: 'row' }}
-                            spacing={1}
-                            justifyContent="flex-start"
-                            sx={{ mb: 2 }}
-                        >
-                            <Button
-                                variant="outlined"
-                                color="primary"
-                                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Professional+Headshots&dates=20250507T000000Z/20250507T010000Z&details=Free+professional+headshots+for+students+to+update+their+LinkedIn,+resumes,+and+portfolios.&location=UC+Berkeley"
-                                target="_blank"
-                                size="small"
-                                startIcon={<CalendarMonthIcon />}
-                                disabled
-                            >
-                                Add to Calendar
-                            </Button>
-                        </Stack>
-                    </CardContent>
-                </Grid>
-            </Grid>
-        </Card>
+                <Button
+                    variant="outlined"
+                    color="primary"
+                    href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Professional+Headshots&dates=20250507T000000Z/20250507T010000Z&details=Free+professional+headshots+for+students+to+update+their+LinkedIn,+resumes,+and+portfolios.&location=UC+Berkeley"
+                    target="_blank"
+                    size="small"
+                    startIcon={<CalendarMonthIcon />}
+                    disabled
+                >
+                    Add to Calendar
+                </Button>
+            </Stack>
+        </EventCard>
     );
 };
 

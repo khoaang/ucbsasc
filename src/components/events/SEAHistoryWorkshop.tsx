@@ -1,8 +1,9 @@
-import { Card, CardContent, Typography, Button, Box, Chip, Grid, Stack, TextField, Alert } from '@mui/material';
+import { Typography, Button, Box, Stack, TextField, Alert } from '@mui/material';
 import { useState } from 'react';
 import { signInAnonymously } from 'firebase/auth';
 import { auth } from '../../firebase/config';
 import { addEventRsvp } from '../../firebase/rsvps';
+import EventCard from './EventCard';
 
 const SEAHistoryWorkshop = () => {
   const isPast = true;
@@ -60,177 +61,127 @@ const SEAHistoryWorkshop = () => {
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent('VLSB 2060 UC Berkeley')}`;
 
   return (
-    <Card
-      sx={{
-        border: '2px solid',
-        borderColor: 'primary.main',
-        borderRadius: 2,
-        boxShadow: 3,
-        overflow: 'hidden',
-        opacity: 1
-      }}
+    <EventCard
+      statusLabel={isPast ? 'PAST EVENT' : 'UPCOMING'}
+      statusBgColor={isPast ? 'grey.700' : 'primary.main'}
+      borderColor="primary.main"
+      cardSx={{ borderRadius: 2, boxShadow: 3 }}
+      mediaContainerSx={{ aspectRatio: '4 / 3' }}
+      image={{ src: '/historical3.webp', alt: 'SEA History Workshop' }}
+      contentSx={{ pt: { xs: 3, md: 4 } }}
     >
-      <Grid container alignItems="stretch">
-        <Grid item xs={12} md={5} sx={{ lineHeight: 0, display: 'flex' }}>
-          <Box
-            sx={{
-              width: '100%',
-              height: '100%',
-              minHeight: 300,
-              overflow: 'hidden',
-              aspectRatio: '4/3'
-            }}
-          >
-            <Box
-              component="img"
-              src="/historical6.jpg"
-              alt="SEA History Workshop"
-              sx={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                display: 'block'
-              }}
-            />
-          </Box>
-        </Grid>
+      <Typography variant="h5" fontWeight="bold" gutterBottom>
+        SEA History Workshop General Meeting
+      </Typography>
 
-        <Grid item xs={12} md={7}>
-          <CardContent sx={{ height: '100%' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
-              <Chip
-                label={isPast ? 'PAST EVENT' : 'UPCOMING'}
+      <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+        {dateLine}
+      </Typography>
+      <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+        📍 {locationLine}
+      </Typography>
+
+      <Typography variant="body2" paragraph>
+        Join SASC for our general meeting featuring a fun, interactive deep-dive presentation by our Media team on Southeast Asian
+        American history, refugee timelines, and resources to succeed in higher education. Connect with fellow students while learning
+        about the stories that shape our community.
+      </Typography>
+
+      <Typography variant="body2" fontWeight="bold" sx={{ mt: 2, mb: 0.5 }}>
+        What to know:
+      </Typography>
+      <Box component="ul" sx={{ mt: 0, pl: 2.5, mb: 2 }}>
+        <Typography component="li" variant="body2" sx={{ mb: 0.5 }}>
+          Free and open to all students
+        </Typography>
+        <Typography component="li" variant="body2" sx={{ mb: 0.5 }}>
+          Learn about SEA American history and refugee experiences
+        </Typography>
+        <Typography component="li" variant="body2" sx={{ mb: 0.5 }}>
+          Resources for academic success and community engagement
+        </Typography>
+        <Typography component="li" variant="body2">
+          Snacks provided
+        </Typography>
+      </Box>
+
+      <Stack direction="row" spacing={1} sx={{ mb: 2 }}>
+        {isPast ? (
+          <Button variant="outlined" size="small" disabled>
+            Event Ended
+          </Button>
+        ) : (
+          <>
+            <Button
+              variant="outlined"
+              size="small"
+              href={gcalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Add to Calendar
+            </Button>
+            <Button
+              variant="outlined"
+              size="small"
+              href={mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open in Maps
+            </Button>
+          </>
+        )}
+      </Stack>
+
+      {!isPast && (
+        <>
+          <Typography variant="body2" fontWeight="bold" sx={{ mb: 1 }}>
+            RSVP:
+          </Typography>
+          {!isFirebaseConfigured && (
+            <Alert severity="warning" sx={{ mt: 1.5 }}>
+              RSVP temporarily unavailable. Site configuration is incomplete.
+            </Alert>
+          )}
+          <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2 }}>
+            <Box sx={{ display: 'grid', gap: 1, gridTemplateColumns: { xs: '1fr', sm: 'repeat(3, minmax(0, 1fr))' } }}>
+              <TextField
+                label="Name"
                 size="small"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 sx={{
-                  backgroundColor: isPast ? 'grey.700' : 'primary.main',
-                  color: 'white',
-                  fontWeight: 'bold',
-                  fontSize: '0.7rem'
+                  '& .MuiInputBase-input': { py: 0.5, fontSize: '0.9rem' },
+                  '& .MuiInputLabel-root': { fontSize: '0.875rem' }
                 }}
               />
+              <TextField
+                label="Email"
+                type="email"
+                size="small"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                sx={{
+                  '& .MuiInputBase-input': { py: 0.5, fontSize: '0.9rem' },
+                  '& .MuiInputLabel-root': { fontSize: '0.875rem' }
+                }}
+              />
+              <Button type="submit" variant="contained" color="primary" disabled={submitting || !isFirebaseConfigured}>
+                {submitting ? 'Submitting…' : 'RSVP'}
+              </Button>
             </Box>
+          </Box>
 
-            <Typography variant="h5" fontWeight="bold" gutterBottom>
-              SEA History Workshop General Meeting
-            </Typography>
-
-            <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-              {dateLine}
-            </Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-              📍 {locationLine}
-            </Typography>
-
-            <Typography variant="body2" paragraph>
-              Join SASC for our general meeting featuring a fun, interactive deep-dive presentation by our Media team on Southeast Asian American history, refugee timeline, and resources to succeed in higher education. This is a great opportunity to learn about our community's rich history and connect with fellow students.
-            </Typography>
-
-            <Typography variant="body2" fontWeight="bold" sx={{ mt: 2, mb: 0.5 }}>
-              What to know:
-            </Typography>
-            <Box component="ul" sx={{ mt: 0, pl: 2.5, mb: 2 }}>
-              <Typography component="li" variant="body2" sx={{ mb: 0.5 }}>
-                Free and open to all students
-              </Typography>
-              <Typography component="li" variant="body2" sx={{ mb: 0.5 }}>
-                Learn about SEA American history and refugee experiences
-              </Typography>
-              <Typography component="li" variant="body2" sx={{ mb: 0.5 }}>
-                Resources for academic success and community engagement
-              </Typography>
-              <Typography component="li" variant="body2">
-                Snacks provided
-              </Typography>
+          {(success || error) && (
+            <Box sx={{ mt: 1.5 }}>
+              {success && <Alert severity="success">{success}</Alert>}
+              {error && <Alert severity="error">{error}</Alert>}
             </Box>
-
-            <Stack direction="row" spacing={1} sx={{ mb: 2 }}>
-              {isPast ? (
-                <Button variant="outlined" size="small" disabled>
-                  Event Ended
-                </Button>
-              ) : (
-                <>
-                  <Button
-                    variant="outlined"
-                    size="small"
-                    href={gcalUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Add to Calendar
-                  </Button>
-                  <Button
-                    variant="outlined"
-                    size="small"
-                    href={mapsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Open in Maps
-                  </Button>
-                </>
-              )}
-            </Stack>
-
-            {!isPast && (
-              <>
-                <Typography variant="body2" fontWeight="bold" sx={{ mb: 1 }}>
-                  RSVP:
-                </Typography>
-                {!isFirebaseConfigured && (
-                  <Alert severity="warning" sx={{ mt: 1.5 }}>
-                    RSVP temporarily unavailable. Site configuration is incomplete.
-                  </Alert>
-                )}
-                <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2 }}>
-                  <Grid container spacing={1} alignItems="flex-end">
-                    <Grid item xs={12} sm={5} md={4}>
-                      <TextField
-                        label="Name"
-                        size="small"
-                        fullWidth
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        sx={{
-                          '& .MuiInputBase-input': { py: 0.5, fontSize: '0.9rem' },
-                          '& .MuiInputLabel-root': { fontSize: '0.875rem' }
-                        }}
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={5} md={4}>
-                      <TextField
-                        label="Email"
-                        type="email"
-                        size="small"
-                        fullWidth
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        sx={{
-                          '& .MuiInputBase-input': { py: 0.5, fontSize: '0.9rem' },
-                          '& .MuiInputLabel-root': { fontSize: '0.875rem' }
-                        }}
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={2} md={2}>
-                      <Button type="submit" variant="contained" color="primary" fullWidth disabled={submitting || !isFirebaseConfigured} sx={{ py: 0.5 }}>
-                        {submitting ? 'Submitting…' : 'RSVP'}
-                      </Button>
-                    </Grid>
-                  </Grid>
-                </Box>
-
-                {(success || error) && (
-                  <Box sx={{ mt: 1.5 }}>
-                    {success && <Alert severity="success">{success}</Alert>}
-                    {error && <Alert severity="error">{error}</Alert>}
-                  </Box>
-                )}
-              </>
-            )}
-          </CardContent>
-        </Grid>
-      </Grid>
-    </Card>
+          )}
+        </>
+      )}
+    </EventCard>
   );
 };
 

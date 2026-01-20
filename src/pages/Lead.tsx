@@ -209,9 +209,9 @@ const Lead = () => {
               textShadow: '0 2px 12px rgba(0,0,0,0.5)',
             }}
           >
-            Since 2000 we’ve organized study-ins, direct actions, and healing spaces with the same urgency that
-            launched SASC. SASComm keeps that fire going, calls out gaps on campus, and builds power rooted in
-            Southeast Asian history and solidarity.
+            Since 2000 student organizers have pulled late nights drafting teach-in slides, hauling sound gear to
+            Upper Sproul, and checking in on each other when campus systems fell short. SASComm is the crew still
+            doing that work, keeping SASC rooted in Southeast Asian history, mutual aid, and collective power.
           </Typography>
           <Typography
             variant="body1"
@@ -222,9 +222,9 @@ const Lead = () => {
               textShadow: '0 1px 10px rgba(0,0,0,0.45)',
             }}
           >
-            We’re calling in folks ready to do the work—organize events, document our stories, support members,
-            and push for resources. The pace shifts, but when it’s action time we move together and follow
-            through.
+            We need folks who will help run programs, tell our stories, check in on members, and push for campus
+            resources. Some weeks are chill; other weeks are back-to-back meetings and last-minute supply runs.
+            When it’s time to move, we do it together and we follow through.
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ mt: 4 }}>
             <Button
@@ -277,14 +277,19 @@ const Lead = () => {
                 SASCommunity in Action
               </Typography>
               <Typography variant="body1" color="text.secondary">
-                SASC feels like home because people show up—hosting wellness nights, running teach-ins, and
-                pulling each other aside for real talk about justice and joy. SASComm keeps that culture sharp
-                so our community stays resourced and loved.
+                SASC feels like home because people actually show up. We host wellness nights when folks are burnt
+                out, pull together teach-ins when issues pop off, and check in on each other beyond the meeting
+                agenda. SASComm keeps that culture sharp so our community stays resourced and loved.
               </Typography>
               <Typography variant="body1" color="text.secondary">
-                Bring your stories, skills, and curiosity. Our alumni crew spans organizers, educators, policy
-                advocates, and creatives who still mentor us years later, and we pay that love forward to every
-                new member.
+                Bring your stories, skills, and curiosity. Our alumni crew includes organizers, educators, policy
+                advocates, and creatives who still mentor us years later—and we pay that love forward to every new
+                member.
+              </Typography>
+              <Typography variant="body1" color="text.secondary">
+                As a coalition, we host SEAsgiving celebrations with alumni, organize history workshops,
+                convene general meetings for cross-org strategy, and throw cultural events like Night Market and
+                SEACF. Want the full picture? Browse our <Button variant="text" color="primary" href="/events" sx={{ p: 0, minWidth: 0, textTransform: 'none' }}>events page</Button> to see what we’re building right now.
               </Typography>
             </Stack>
           </Grid>
@@ -296,9 +301,11 @@ const Lead = () => {
           Why Lead with SASC
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 760, mb: 3 }}>
-          SASComm isn’t about checking boxes; it’s about doing the work when the community calls. Some weeks
-          mean late-night agenda builds or rally prep, others shift into debriefs and healing space. Either way,
-          you’re alongside people who hold each other accountable and refuse to leave anyone behind.
+          SASComm isn’t about checking boxes—it’s about showing up when the group needs you. One week might look
+          like scrambling to print flyers and confirm volunteers, the next might be debriefing a protest or
+          cooking for SEAsgiving. We stay rooted in the struggles Southeast Asian refugees faced in the early 2000s
+          while also responding to today’s crises, from deportation threats to housing insecurity. Through all of it
+          we hold one another accountable and make sure nobody is left carrying the work alone.
         </Typography>
         <Grid container spacing={3}>
           {benefits.map((benefit) => (
@@ -342,10 +349,11 @@ const Lead = () => {
           Branches Recruiting This Cycle
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ mb: 4, maxWidth: 760 }}>
-          Officer roles average 6–8 hours per week with branch meetings and SASComm roundtables. When a big
-          program or campaign is coming up we stretch together; when the calendar slows we recalibrate and plan
-          the next push. All majors, class years, and lived experiences are welcome—especially folks grounded in
-          Southeast Asian storytelling, mutual aid, and intergenerational care.
+          Officer roles average about 5 hours a week between branch meetings, SASComm roundtables, and prep. When
+          a big program or campaign is on deck we stretch together; when the calendar slows we reset and plan the
+          next move. Curious about the lift? Reach out—we swap tasks, adjust timelines, and keep things sustainable.
+          All majors, class years, and lived experiences are welcome, especially folks grounded in Southeast Asian
+          storytelling, mutual aid, and intergenerational care.
         </Typography>
         <Grid container spacing={4}>
           {branches.map((branch) => (

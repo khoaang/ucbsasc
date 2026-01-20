@@ -67,23 +67,20 @@ const About = () => {
   ];
 
   const directors = [
-    { name: 'Ilene Park', role: 'Internal Director', committee: 'Internal', email: 'ilene.park@ucbsasc.org', image: '/Ilene.jpg' },
-    { name: 'April Marie Le', role: 'Internal Director', committee: 'Internal', email: 'le.april@berkeley.edu', image: '/April.jpg' },
-    { name: 'Alida Phuthama', role: 'External Director', committee: 'External', email: 'alidaphuthama@berkeley.edu', image: '/Alida.jpg' },
-    { name: 'Lan Vy Nguyen', role: 'External Director, SEAM Director', committee: 'External', email: 'nguyen_nvl@berkeley.edu', image: '/LanVy.jpg' },
-    { name: 'Jordan Vu', role: 'Operations Director', committee: 'Operations', email: 'jordanvu@berkeley.edu', image: '/Jordan.jpg' },
-    { name: 'Tyler Htut', role: 'Operations Director', committee: 'Operations', email: 'tylerhtut7@berkeley.edu', image: '/Tyler.jpg' },
+    { name: 'Ilene Park', role: 'Internal Director', committee: 'Internal', email: 'ilene.park@ucbsasc.org', image: '/officers/ilene.jpeg' },
+    { name: 'April Marie Le', role: 'Internal Director', committee: 'Internal', email: 'le.april@berkeley.edu', image: '/officers/april.jpg' },
+    { name: 'Lan Vy Nguyen', role: 'External Director, SEAM Director', committee: 'External', email: 'nguyen_nvl@berkeley.edu', image: '/officers/lanvy.jpeg' },
+    { name: 'Tyler Htut', role: 'Operations Director', committee: 'Operations', email: 'tylerhtut7@berkeley.edu', image: '/officers/tyler.jpeg' },
+    { name: 'Earn Maneenop', role: 'PR Director', committee: 'PR', email: 'rinradamaneenop7@berkeley.edu', image: '/officers/rinrada.jpeg' },
     { name: 'Khoa Nguyen', role: 'PR Director', committee: 'PR', email: 'khoan@berkeley.edu', image: '/Khoa.jpg' },
   ];
 
   const officers = [
-    { name: 'Earn Maneenop', role: 'PR Officer', committee: 'PR', email: 'rinradamaneenop7@berkeley.edu', image: '/headshots.jpg' },
-    { name: 'Sydney Dinh', role: 'PR Officer', committee: 'PR', email: 'sydneydinh@berkeley.edu', image: '/headshots.jpg' },
+    { name: 'Alida Phuthama', role: 'External Officer', committee: 'External', email: 'alidaphuthama@berkeley.edu', image: '/Alida.jpg' },
     { name: 'Timothy Kwan', role: 'Operations Officer', committee: 'Operations', email: 'timothy.kwan.teemo@berkeley.edu', image: '/headshots.jpg' },
-    { name: 'Maycy Phan', role: 'Operations Officer', committee: 'Operations', email: 'mayaycy@berkeley.edu', image: '/headshots.jpg' },
+    { name: 'Jordan Vu', role: 'Operations Officer', committee: 'Operations', email: 'jordanvu@berkeley.edu', image: '/headshots.jpg' },
     { name: 'Krishna Sam', role: 'Internal Officer', committee: 'Internal', email: 'krishnaksam@berkeley.edu', image: '/headshots.jpg' },
     { name: 'Noah Brand', role: 'Internal Officer', committee: 'Internal', email: 'noahtbrand@berkeley.edu', image: '/headshots.jpg' },
-    { name: 'Evangeline Lim', role: 'External Officer', committee: 'External', email: 'evangelinelim@berkeley.edu', image: '/headshots.jpg' },
   ];
 
   // removed scroll-based animations for stability
@@ -193,7 +190,7 @@ const About = () => {
           Our Impact
         </Typography>
         <Grid container spacing={3}>
-          {[ 
+          {[
             { stat: '25+ years', desc: 'of sustained community impact' },
             { stat: '1,000+ students', desc: 'supported across our programs' },
             { stat: '50+ events/year', desc: 'centered on culture and community' },

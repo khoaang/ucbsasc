@@ -38,7 +38,6 @@ const Navbar = () => {
     { text: 'Home', path: '/' },
     { text: 'About', path: '/about' },
     { text: 'Events', path: '/events' },
-    { text: 'SEA Spotlight', path: '/sea-spotlight' },
     { text: 'Store', path: 'https://sasc.bigcartel.com', external: true },
     { text: 'Lead', path: '/lead' },
     { text: 'Contact', path: '/contact' },
@@ -52,10 +51,10 @@ const Navbar = () => {
   return (
     <>
       <ElevationScroll>
-        <AppBar 
-          position="sticky" 
-          color="default" 
-          sx={{ 
+        <AppBar
+          position="sticky"
+          color="default"
+          sx={{
             backgroundColor: 'rgba(255, 255, 255, 0.8)',
             backdropFilter: 'blur(20px)',
           }}
@@ -63,19 +62,19 @@ const Navbar = () => {
           <Container maxWidth="xl">
             <Toolbar disableGutters>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                <img 
-                  src="/logo.png" 
-                  alt="SASC Logo" 
-                  style={{ 
+                <img
+                  src="/logo.png"
+                  alt="SASC Logo"
+                  style={{
                     height: '35px',
                     width: 'auto'
-                  }} 
+                  }}
                 />
-                <Typography 
-                  variant="h6" 
-                  component={Link} 
-                  to="/" 
-                  sx={{ 
+                <Typography
+                  variant="h6"
+                  component={Link}
+                  to="/"
+                  sx={{
                     fontWeight: 700,
                     color: 'primary.main',
                     '&:hover': {

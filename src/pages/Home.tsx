@@ -106,7 +106,7 @@ const sections = [
   {
     title: "SEAMentorship",
     description: `Supporting Southeast Asian high school students on their path to higher education. Our dedicated mentors provide guidance on college applications, academic planning, and personal development. Through one-on-one mentoring sessions, workshops, and college preparation activities, we help students navigate the college admissions process while embracing their cultural identity. Our program creates a supportive environment where high school students can learn from experienced mentors who understand their unique experiences and challenges.`,
-    instagramPost: "https://www.instagram.com/p/DKcasiB9DBOA7",
+    instagramPost: "https://www.instagram.com/p/DKpgpl5pGhL",
     align: "left"
   }
 ];
@@ -137,7 +137,7 @@ const Home = () => {
         const t = setTimeout(() => setSeasgivingOpen(true), 1200);
         return () => clearTimeout(t);
       }
-    } catch {}
+    } catch { }
   }, []);
 
 
@@ -165,16 +165,16 @@ const Home = () => {
           ))}
         </MasonryGrid>
 
-        <Container sx={{ 
-          position: 'relative', 
-          zIndex: 2, 
-          height: '100vh', 
-          display: 'flex', 
+        <Container sx={{
+          position: 'relative',
+          zIndex: 2,
+          height: '100vh',
+          display: 'flex',
           alignItems: 'center',
-          px: { xs: 2, sm: 3, md: 4 } 
+          px: { xs: 2, sm: 3, md: 4 }
         }}>
           <motion.div className="hero-content">
-            <Typography variant="h1" sx={{ 
+            <Typography variant="h1" sx={{
               color: 'white',
               fontWeight: 700,
               fontSize: { xs: '2rem', sm: '2.5rem', md: '4rem' },
@@ -183,11 +183,11 @@ const Home = () => {
             }}>
               Empowering Southeast Asian Voices at Berkeley
             </Typography>
-            <Box sx={{ 
-              mt: 4, 
-              display: 'flex', 
-              alignItems: 'center', 
-              gap: 3 
+            <Box sx={{
+              mt: 4,
+              display: 'flex',
+              alignItems: 'center',
+              gap: 3
             }} className="action-buttons">
               <Button
                 variant="contained"
@@ -203,18 +203,18 @@ const Home = () => {
               >
                 Join Our Mailing List
               </Button>
-              <Typography 
-                variant="h6" 
-                sx={{ 
+              <Typography
+                variant="h6"
+                sx={{
                   color: 'white',
                   display: 'flex',
                   alignItems: 'center',
                   gap: 1
                 }}
               >
-                or follow us on 
-                <IconButton 
-                  href="https://www.instagram.com/ucbsasc" 
+                or follow us on
+                <IconButton
+                  href="https://www.instagram.com/ucbsasc"
                   target="_blank"
                   sx={{ color: 'white' }}
                 >
@@ -229,7 +229,7 @@ const Home = () => {
       {/* General Meeting modal disabled since event has passed */}
       {/* <GeneralMeetingModal open={gmOpen} onClose={() => setGmOpen(false)} /> */}
 
-      
+
 
       {sections.map((section, index) => (
         <Section key={section.title} sx={{ bgcolor: index % 2 ? 'background.paper' : 'background.default' }}>
@@ -336,10 +336,10 @@ const Home = () => {
         </Grid>
       </Container>
 
-      <Box sx={{ 
-        bgcolor: 'background.paper', 
+      <Box sx={{
+        bgcolor: 'background.paper',
         py: 12,
-        textAlign: 'center' 
+        textAlign: 'center'
       }}>
         <Container>
           <Typography variant="h3" gutterBottom sx={{ mb: 4 }}>
@@ -366,7 +366,7 @@ const Home = () => {
         </Container>
       </Box>
       <Footer />
-      <MailingListModal 
+      <MailingListModal
         open={mailingListOpen}
         onClose={() => setMailingListOpen(false)}
       />
