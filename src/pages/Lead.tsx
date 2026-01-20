@@ -46,7 +46,7 @@ const branches = [
     name: 'Internal Affairs',
     focus: 'Community Care & Mentorship',
     overview:
-      'Cultivate the heartbeat of SASC through wellness programming, mentorship, and member development.',
+      'Hold down wellness spaces, mentorship, and the rituals that keep our coalition accountable and grounded.',
     image: '/internal.jpg',
     directors: [
       { name: 'Ilene Park', email: 'parkilene AT berkeley.edu' },
@@ -87,7 +87,7 @@ const branches = [
     name: 'Operations',
     focus: 'Logistics, Finance & Event Excellence',
     overview:
-      'Steady SASC through sharp budgeting, flexible logistics, and backstage care that lets every program shine.',
+      'Keep SASC steady through sharp budgeting, flexible logistics, and backstage care so every program lands.',
     image: '/operations.jpg',
     directors: [
       { name: 'Tyler Htut', email: 'tylerhtut7 AT berkeley.edu' },
@@ -109,7 +109,7 @@ const branches = [
     name: 'Public Relations',
     focus: 'Storytelling & Creative Strategy',
     overview:
-      'Share our narrative boldly across campus and online through visuals, copywriting, and digital engagement.',
+      'Tell our stories loudly and creatively so campus feels Southeast Asian joy, grief, and resistance.',
     image: '/pr.jpg',
     directors: [
       { name: 'Khoa Nguyen', email: 'khoan AT berkeley.edu' },
@@ -209,9 +209,9 @@ const Lead = () => {
               textShadow: '0 2px 12px rgba(0,0,0,0.5)',
             }}
           >
-            SASComm has carried SASC’s legacy since 2000—organizing roundtables, building coalition power, and
-            honoring the histories that grounded our founders 26 years ago. This is your invitation to step into
-            that lineage.
+            Since 2000 we’ve organized study-ins, direct actions, and healing spaces with the same urgency that
+            launched SASC. SASComm keeps that fire going, calls out gaps on campus, and builds power rooted in
+            Southeast Asian history and solidarity.
           </Typography>
           <Typography
             variant="body1"
@@ -222,10 +222,9 @@ const Lead = () => {
               textShadow: '0 1px 10px rgba(0,0,0,0.45)',
             }}
           >
-            Each branch is recruiting passionate SASComm members ready to build community, execute programs, and
-            uplift Southeast Asian voices at Cal. The impact—and the community—you gain is invaluable. The work
-            ebbs and flows with the programming calendar, so we’re looking for people who can plug in with care,
-            communicate openly, and follow through when it’s their moment to lead.
+            We’re calling in folks ready to do the work—organize events, document our stories, support members,
+            and push for resources. The pace shifts, but when it’s action time we move together and follow
+            through.
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ mt: 4 }}>
             <Button
@@ -278,14 +277,14 @@ const Lead = () => {
                 SASCommunity in Action
               </Typography>
               <Typography variant="body1" color="text.secondary">
-                Every branch of SASC thrives because of the people who show up for one another. Whether we are
-                planning programs, welcoming new members, or celebrating community wins, our officers keep the
-                energy grounded in care.
+                SASC feels like home because people show up—hosting wellness nights, running teach-ins, and
+                pulling each other aside for real talk about justice and joy. SASComm keeps that culture sharp
+                so our community stays resourced and loved.
               </Typography>
               <Typography variant="body1" color="text.secondary">
-                Bring your stories, skills, and curiosity—we will build on them together and lean on an extensive
-                alumni network that spans organizers, educators, policy advocates, and creative professionals who
-                continue to mentor and uplift SASComm long after graduation.
+                Bring your stories, skills, and curiosity. Our alumni crew spans organizers, educators, policy
+                advocates, and creatives who still mentor us years later, and we pay that love forward to every
+                new member.
               </Typography>
             </Stack>
           </Grid>
@@ -297,9 +296,9 @@ const Lead = () => {
           Why Lead with SASC
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 760, mb: 3 }}>
-          SASComm isn’t about racking up weekly hours—it’s about showing up with heart when the community needs
-          you. Expect seasons of prep before big programs, quieter stretches for reflection, and plenty of room
-          to plug your talents into collaborative projects alongside people who care just as much as you do.
+          SASComm isn’t about checking boxes; it’s about doing the work when the community calls. Some weeks
+          mean late-night agenda builds or rally prep, others shift into debriefs and healing space. Either way,
+          you’re alongside people who hold each other accountable and refuse to leave anyone behind.
         </Typography>
         <Grid container spacing={3}>
           {benefits.map((benefit) => (
@@ -343,11 +342,10 @@ const Lead = () => {
           Branches Recruiting This Cycle
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ mb: 4, maxWidth: 760 }}>
-          Officer roles require approximately 6–8 hours per week, including weekly branch meetings and a general
-          body commitment. Work ramps up around program launches and eases once events conclude, so we’re looking
-          for teammates who communicate, follow through, and lean in with heart. We welcome all majors, class
-          years, and lived experiences, especially those rooted in Southeast Asian storytelling and
-          intergenerational care.
+          Officer roles average 6–8 hours per week with branch meetings and SASComm roundtables. When a big
+          program or campaign is coming up we stretch together; when the calendar slows we recalibrate and plan
+          the next push. All majors, class years, and lived experiences are welcome—especially folks grounded in
+          Southeast Asian storytelling, mutual aid, and intergenerational care.
         </Typography>
         <Grid container spacing={4}>
           {branches.map((branch) => (
