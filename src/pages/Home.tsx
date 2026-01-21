@@ -1,11 +1,24 @@
-import { Box, Container, Typography, useTheme, Grid, Button, IconButton, Card, CardContent } from '@mui/material';
+import {
+  Box,
+  Container,
+  Typography,
+  useTheme,
+  Grid,
+  Button,
+  IconButton,
+  Card,
+  CardContent,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+} from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { Instagram } from '@mui/icons-material';
 import MailingListModal from '../components/MailingListModal';
 // import HalloweenModal from '../components/events/HalloweenModal';
-import SeasgivingModal from '../components/events/SeasgivingModal';
 import Footer from '../components/Footer';
 // import GeneralMeetingModal from '../components/events/GeneralMeetingModal';
 
@@ -116,7 +129,14 @@ const Home = () => {
   const containerRef = useRef(null);
   const [mailingListOpen, setMailingListOpen] = useState(false);
   // const [halloweenOpen, setHalloweenOpen] = useState(false);
-  const [seasgivingOpen, setSeasgivingOpen] = useState(false);
+  const [leadModalOpen, setLeadModalOpen] = useState(false);
+  const handleLeadModalClose = () => {
+    try {
+      localStorage.setItem('lead_modal_dismissed_v1', 'true');
+    } catch {}
+    setLeadModalOpen(false);
+  };
+
 
   // useEffect(() => {
   //   try {
@@ -131,10 +151,10 @@ const Home = () => {
   useEffect(() => {
     try {
       const params = new URLSearchParams(window.location.search);
-      const forceShow = params.get('showSeasgiving') === '1';
-      const dismissed = localStorage.getItem('seasgiving_dismissed_v2');
+      const forceShow = params.get('showLead') === '1';
+      const dismissed = localStorage.getItem('lead_modal_dismissed_v1');
       if (forceShow || !dismissed) {
-        const t = setTimeout(() => setSeasgivingOpen(true), 1200);
+        const t = setTimeout(() => setLeadModalOpen(true), 1200);
         return () => clearTimeout(t);
       }
     } catch { }
@@ -375,10 +395,51 @@ const Home = () => {
         open={halloweenOpen}
         onClose={() => setHalloweenOpen(false)}
       /> */}
-      <SeasgivingModal
-        open={seasgivingOpen}
-        onClose={() => setSeasgivingOpen(false)}
-      />
+      <Dialog
+        open={leadModalOpen}
+        onClose={handleLeadModalClose}
+        maxWidth="sm"
+        fullWidth
+      >
+        <DialogTitle>Lead with SASC</DialogTitle>
+        <DialogContent dividers>
+          <Typography variant="body1" sx={{ mb: 2 }}>
+            SASComm is recruiting new officers for Spring 2026. If you care about Southeast Asian community building, storytelling, and
+            advocacy, we want to hear from you. Roles are flexible, collaborative, and grounded in shared responsibility.
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Curious about the work? Check out the leadership page to see branch focus areas, expectations, and next steps. You can always
+            DM us on Instagram if you have questions before applying.
+          </Typography>
+        </DialogContent>
+        <DialogActions sx={{ flexWrap: 'wrap', gap: 1.5, justifyContent: 'flex-end', px: 3, py: 2 }}>
+          <Button onClick={handleLeadModalClose} color="inherit">
+            Not Now
+          </Button>
+          <Button
+            component="a"
+            href="https://forms.gle/mnqaVF1UhXhoFKdJ6"
+            target="_blank"
+            rel="noopener"
+            variant="contained"
+            color="primary"
+            onClick={handleLeadModalClose}
+          >
+            Apply Now
+          </Button>
+          <Button
+            component="a"
+            href="https://www.instagram.com/ucbsasc"
+            target="_blank"
+            rel="noopener"
+            variant="outlined"
+            color="primary"
+            onClick={handleLeadModalClose}
+          >
+            DM @ucbsasc
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 };

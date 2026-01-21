@@ -22,21 +22,21 @@ import Footer from '../components/Footer';
 
 const benefits = [
   {
-    title: 'Lead with Purpose',
+    title: 'Do real work, learn by doing',
     description:
-      'Shape the future of SASC programming, grow your leadership portfolio, and guide newer members with intention.',
+      'Take on real organizing tasks, make decisions with the team, and help guide newer members as you build leadership experience.',
     icon: <WorkspacePremium fontSize="large" color="inherit" />,
   },
   {
-    title: 'Build Community',
+    title: 'Find your people',
     description:
-      'Create affirming spaces for Southeast Asian students, collaborate with peers, and build friendships that last beyond campus.',
+      'Work alongside Southeast Asian peers, form friendships that last, and support each other beyond SASC events.',
     icon: <Groups fontSize="large" color="inherit" />,
   },
   {
-    title: 'Grow Your Impact',
+    title: 'Make things happen',
     description:
-      'Organize campaigns, develop workshops, and connect with community partners who value your voice and creativity.',
+      'Plan events, launch campaigns, and work with community partners who care about Southeast Asian student voices.',
     icon: <Campaign fontSize="large" color="inherit" />,
   },
 ];
@@ -46,7 +46,7 @@ const branches = [
     name: 'Internal Affairs',
     focus: 'Community Care & Mentorship',
     overview:
-      'Hold down wellness spaces, mentorship, and the rituals that keep our coalition accountable and grounded.',
+      'In Internal Affairs, we hold spaces for care, coordinate bonding events, and make sure our community stays supported and connected.',
     image: '/internal.jpg',
     directors: [
       { name: 'Ilene Park', email: 'parkilene AT berkeley.edu' },
@@ -67,7 +67,7 @@ const branches = [
     name: 'External Affairs',
     focus: 'Community Partnerships & Advocacy',
     overview:
-      'Bridge SASC with campus allies and grassroots partners to advance Southeast Asian equity together.',
+      'In External Affairs, we build and maintain relationships with campus allies and grassroots groups to advance equity together.',
     image: '/tabling.jpg',
     directors: [
       { name: 'Lan Vy Nguyen', email: 'nguyen_nvl AT berkeley.edu' },
@@ -87,7 +87,7 @@ const branches = [
     name: 'Operations',
     focus: 'Logistics, Finance & Event Excellence',
     overview:
-      'Keep SASC steady through sharp budgeting, flexible logistics, and backstage care so every program lands.',
+      'The Operations team handles budgeting, scheduling, vendor coordination, reimbursements, and event logistics so programs run smoothly.',
     image: '/operations.jpg',
     directors: [
       { name: 'Tyler Htut', email: 'tylerhtut7 AT berkeley.edu' },
@@ -109,7 +109,7 @@ const branches = [
     name: 'Public Relations',
     focus: 'Storytelling & Creative Strategy',
     overview:
-      'Tell our stories loudly and creatively so campus feels Southeast Asian joy, grief, and resistance.',
+      'Public Relations shapes how our work is seen and understood, from graphics and video to newsletters and social media campaigns that reflect our members’ voices.',
     image: '/pr.jpg',
     directors: [
       { name: 'Khoa Nguyen', email: 'khoan AT berkeley.edu' },
@@ -133,27 +133,27 @@ const branches = [
 
 const applicationSteps = [
   {
-    title: 'Submit Interest Form',
+    title: 'Fill out the interest form',
     detail:
-      'Tell us which branches excite you, the skills you bring, and how SASC can support your growth. We welcome all experiences.',
+      'Tell us what excites you, what you’re good at, and what you want to learn. We’re genuinely interested in what you bring, not just checkboxes.',
     icon: <Lightbulb color="primary" />,
   },
   {
-    title: 'Meet the Directors',
+    title: 'Meet the directors',
     detail:
-      'Participate in a conversational interview focused on alignment, support, and collaboration—not corporate vibes.',
+      'We’ll have a conversation to get to know you, talk about expectations, and see where you’ll fit best.',
     icon: <Diversity3 color="primary" />,
   },
   {
-    title: 'Join Officer Onboarding',
+    title: 'Start onboarding',
     detail:
-      'Kick off with leadership orientation, team bonding, and a semester roadmap so you feel confident and resourced from day one.',
+      'We’ll orient you with your branch, introduce the team, and share a roadmap for your first weeks.',
     icon: <EventAvailable color="primary" />,
   },
   {
-    title: 'Stay Connective & Impactful',
+    title: 'Grow with us',
     detail:
-      'Officer roles come with mentorship, professional development, and a community that shows up for each other.',
+      'Expect mentorship, chances to develop professionally, and a team that supports you when things get busy and when they slow down.',
     icon: <VolunteerActivism color="primary" />,
   },
 ];
@@ -209,9 +209,9 @@ const Lead = () => {
               textShadow: '0 2px 12px rgba(0,0,0,0.5)',
             }}
           >
-            Since 2000 student organizers have pulled late nights drafting teach-in slides, hauling sound gear to
-            Upper Sproul, and checking in on each other when campus systems fell short. SASComm is the crew still
-            doing that work, keeping SASC rooted in Southeast Asian history, mutual aid, and collective power.
+            Since 2000, SASC has been shaped by students who stayed up late building slides, setting up sound gear at Sproul, and
+            checking in on one another when campus systems fell short. SASComm is the group still doing that work, carrying forward
+            Southeast Asian history, care, and collective effort.
           </Typography>
           <Typography
             variant="body1"
@@ -222,9 +222,8 @@ const Lead = () => {
               textShadow: '0 1px 10px rgba(0,0,0,0.45)',
             }}
           >
-            We need folks who will help run programs, tell our stories, check in on members, and push for campus
-            resources. Some weeks are chill; other weeks are back-to-back meetings and last-minute supply runs.
-            When it’s time to move, we do it together and we follow through.
+            We’re looking for folks ready to run programs, help tell our stories, support members, and push for resources. Some weeks
+            are relaxed; other weeks are full of meetings and last-minute tasks. We do it together, and we stick with it.
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ mt: 4 }}>
             <Button
@@ -277,19 +276,25 @@ const Lead = () => {
                 SASCommunity in Action
               </Typography>
               <Typography variant="body1" color="text.secondary">
-                SASC feels like home because people actually show up. We host wellness nights when folks are burnt
-                out, pull together teach-ins when issues pop off, and check in on each other beyond the meeting
-                agenda. SASComm keeps that culture sharp so our community stays resourced and loved.
+                SASC feels like home because people show up, especially when it’s messy. We have wellness nights when people are burnt
+                out, pull together teach-ins when something happens, and check in off the agenda to make sure folks are doing okay.
               </Typography>
               <Typography variant="body1" color="text.secondary">
-                Bring your stories, skills, and curiosity. Our alumni crew includes organizers, educators, policy
-                advocates, and creatives who still mentor us years later—and we pay that love forward to every new
-                member.
+                Bring your skills, your ideas, and your curiosity. Our alumni include educators, organizers, policy advocates, and
+                creatives who still stay involved and mentor us, and we try to give that same care to new members.
               </Typography>
               <Typography variant="body1" color="text.secondary">
-                As a coalition, we host SEAsgiving celebrations with alumni, organize history workshops,
-                convene general meetings for cross-org strategy, and throw cultural events like Night Market and
-                SEACF. Want the full picture? Browse our <Button variant="text" color="primary" href="/events" sx={{ p: 0, minWidth: 0, textTransform: 'none' }}>events page</Button> to see what we’re building right now.
+                As a coalition, we host SEAsgiving celebrations with alumni, run history workshops, meet with other orgs for shared
+                planning, and throw cultural events like Night Market and SEACF. Want a clear picture of what we’re building?{' '}
+                <Button
+                  variant="text"
+                  color="primary"
+                  href="/events"
+                  sx={{ p: 0, minWidth: 0, textTransform: 'none', fontWeight: 600 }}
+                >
+                  Check out our events
+                </Button>{' '}
+                to see what’s happening now.
               </Typography>
             </Stack>
           </Grid>
@@ -301,11 +306,10 @@ const Lead = () => {
           Why Lead with SASC
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 760, mb: 3 }}>
-          SASComm isn’t about checking boxes—it’s about showing up when the group needs you. One week might look
-          like scrambling to print flyers and confirm volunteers, the next might be debriefing a protest or
-          cooking for SEAsgiving. We stay rooted in the struggles Southeast Asian refugees faced in the early 2000s
-          while also responding to today’s crises, from deportation threats to housing insecurity. Through all of it
-          we hold one another accountable and make sure nobody is left carrying the work alone.
+          SASComm isn’t about checking boxes. Some weeks you might be printing flyers and lining up volunteers. Other weeks you’re
+          processing what happened at a demonstration or cooking for SEAsgiving. We stay connected to the history of Southeast Asian
+          organizing at Berkeley and respond to the issues people are facing today, and we do it in a way that keeps each other accountable
+          and cared for.
         </Typography>
         <Grid container spacing={3}>
           {benefits.map((benefit) => (
@@ -346,14 +350,14 @@ const Lead = () => {
 
       <Container sx={{ mb: 10 }}>
         <Typography variant="h4" gutterBottom>
-          Branches Recruiting This Cycle
+          Branches Recruiting This Semester
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ mb: 4, maxWidth: 760 }}>
-          Officer roles average about 5 hours a week between branch meetings, SASComm roundtables, and prep. When
-          a big program or campaign is on deck we stretch together; when the calendar slows we reset and plan the
-          next move. Curious about the lift? Reach out—we swap tasks, adjust timelines, and keep things sustainable.
-          All majors, class years, and lived experiences are welcome, especially folks grounded in Southeast Asian
-          storytelling, mutual aid, and intergenerational care.
+          Officer roles typically take about 5 hours a week between branch meetings, SASComm planning, and preparation. When big events
+          or campaigns are coming up, we share the load; when things quiet down, we reset and plan ahead. If you’re curious about what
+          the work actually looks like, reach out, we swap tasks and support each other to keep things sustainable. All majors, class
+          years, and lived experiences are welcome, especially folks grounded in Southeast Asian storytelling, mutual aid, and
+          intergenerational care.
         </Typography>
         <Grid container spacing={4}>
           {branches.map((branch) => (
@@ -441,7 +445,7 @@ const Lead = () => {
 
       <Container sx={{ mb: 12 }}>
         <Typography variant="h4" gutterBottom>
-          Recruitment Journey
+          How Recruitment Works
         </Typography>
         <Grid container spacing={3}>
           {applicationSteps.map((step) => (
@@ -468,12 +472,12 @@ const Lead = () => {
         <Card sx={{ p: { xs: 3, md: 5 }, backgroundColor: 'rgba(33, 150, 243, 0.08)' }}>
           <Stack spacing={2}>
             <Typography variant="h5" sx={{ fontWeight: 600 }}>
-              Ready to bring your gifts to SASC?
+              Ready to bring your energy to SASC?
             </Typography>
             <Typography variant="body1" color="text.secondary">
-              We value curiosity, humility, and a commitment to Southeast Asian empowerment more than existing
-              titles. Our pace shifts with the season, so let’s explore where your energy fits best—DM us, drop
-              by our general meetings, or send in the interest form so a director can reach out with next steps.
+              We care more about curiosity, humility, and a real commitment to community than job titles or resumes. Our pace shifts
+              with the season, so let’s figure out where your time and energy fit best, whether that’s through an interest form, a DM,
+              or coming to a general meeting.
             </Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ pt: 1 }}>
               <Button
