@@ -15,80 +15,70 @@ Welcome to the SASC website repository! This project serves as the official webs
 
 ## 🌟 For New Developers
 
-### First Time Setup Checklist
-1. [ ] Install required software (see [Prerequisites](#prerequisites))
-2. [ ] Clone the repository
-3. [ ] Install dependencies
-4. [ ] Run the development server
-5. [ ] Make your first test change
-6. [ ] Create your first branch
+### First-Time Setup Checklist
+- [ ] Install the tools in [Prerequisites](#prerequisites)
+- [ ] Clone the repository
+- [ ] Run `npm install`
+- [ ] Start the dev server with `npm run dev`
+- [ ] Make a small change and see it live
+- [ ] Create a branch for your work
 
-### Key Concepts to Understand
-1. **React Basics**
-   - Components are like building blocks
-   - Props pass data between components
-   - State manages component data
-   - Example:
-     ```tsx
-     // Basic React component
-     const WelcomeMessage = ({ name }: { name: string }) => {
-       return <h1>Welcome to SASC, {name}!</h1>;
-     };
-     ```
+### Quick Primer on the Stack
+#### React basics
+- Components return UI.
+- Props pass data from parent to child.
+- State tracks local component data with `useState`.
 
-2. **TypeScript Fundamentals**
-   - Types help catch errors early
-   - Interfaces define object shapes
-   - Example:
-     ```tsx
-     // TypeScript interface example
-     interface Event {
-       title: string;
-       date: Date;
-       location: string;
-       description?: string; // ? means optional
-     }
-     ```
+```tsx
+const WelcomeMessage = ({ name }: { name: string }) => {
+  return <h1>Welcome to SASC, {name}!</h1>;
+};
+```
 
-3. **Material-UI (MUI) Basics**
-   - Pre-built components
-   - Consistent styling
-   - Example:
-     ```tsx
-     import { Button, Typography } from '@mui/material';
-     
-     const MyComponent = () => {
-       return (
-         <>
-           <Typography variant="h1">Hello!</Typography>
-           <Button variant="contained">Click Me</Button>
-         </>
-       );
-     };
-     ```
+#### TypeScript basics
+- Types catch mistakes early.
+- Interfaces describe shapes of objects.
 
-### Common Commands You'll Use
+```tsx
+interface Event {
+  title: string;
+  date: Date;
+  location: string;
+  description?: string; // optional with ?
+}
+```
+
+#### Material UI (MUI)
+- We use MUI for standard components and styling.
+
+```tsx
+import { Button, Typography } from '@mui/material';
+
+const MyComponent = () => (
+  <>
+    <Typography variant="h1">Hello!</Typography>
+    <Button variant="contained">Click Me</Button>
+  </>
+);
+```
+
+### Commands you will use often
 ```bash
-# Start development server
+# Start the dev server
 npm run dev
 
-# Install a new package
+# Install a dependency
 npm install package-name
 
 # Create a new branch
-git checkout -b feature/your-feature
-
-# Check status of your changes
-git status
+git checkout -b feature/my-feature
 
 # Stage changes
 git add .
 
-# Commit changes
-git commit -m "description of changes"
-
-# Push changes
-git push origin your-branch-name
+# Commit and push
+git commit -m "Add feature"
+git push origin feature/my-feature
 ```
 
 ## Project Overview
@@ -427,9 +417,19 @@ For any additional questions or clarifications, please reach out to the project 
 ## Features
 
 - **Home Page**: Overview of the community.
-- **About Page**: History and mission of SASC.
-- **Contact Page**: Connect with us.
-- **Events Page**: Information on events and activities.
+- **About Page**: History, mission, and leadership profiles.
+- **Events Page**: Information on upcoming and past activities.
+- **Lead Page**: Recruitment hub for Spring 2026 leadership, including branch details and application links.
+- **Resources Page**: Useful links and documents for SASC members.
+- **Contact Page**: How to connect with the organization.
+- **Secret Page `/qr`**: Quick-access QR code generator for tabling or flyer needs (hidden from the main navigation).
+
+### Where to Make Changes
+- `src/components/events/`: Event cards and modals (all use the shared `EventCard` wrapper).
+- `src/components/home/LeadInviteModal.tsx`: Leadership splash modal surfaced on the homepage.
+- `src/data/leadership.ts`: Single source of truth for directors/officers (used by `About` and `Lead` pages).
+- `src/data/lead.ts`: Lead page configuration (benefits, branches, application steps).
+- `src/pages/QRGenerator.tsx`: Secret QR generator page mounted at `/qr`.
 
 ## Technical Overview
 

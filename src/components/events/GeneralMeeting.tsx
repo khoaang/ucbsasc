@@ -14,53 +14,53 @@ const GeneralMeeting = () => {
             cardSx={{ opacity: 0.9 }}
             image={{ src: '/internal.jpg', alt: 'SASC General Meeting' }}
         >
-            <Typography variant="h4" component="h2" sx={{ mb: 1, color: 'primary.main' }}>
-                SASC General Meeting
-            </Typography>
-            <Typography variant="h6" color="text.secondary" sx={{ mb: 2 }}>
-                September 17, 2025 • 8:00 PM - 9:00 PM
-            </Typography>
-            <Typography variant="body1" sx={{ mb: 2, fontSize: '1.1rem' }}>
-                Join us for our first general meeting of the semester! This is the perfect opportunity to:
-            </Typography>
-            <Box sx={{ mb: 2 }}>
-                <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
-                    <GroupIcon color="primary" />
-                    <Typography variant="body2">
-                        <strong>Meet the SASC community</strong> - Get introduced to our club and learn about our mission
-                    </Typography>
-                </Stack>
-                <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
-                    <GroupIcon color="primary" />
-                    <Typography variant="body2">
-                        <strong>Connect with other orgs</strong> - Meet representatives from other Southeast Asian organizations
-                    </Typography>
-                </Stack>
-                <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
-                    <CelebrationIcon color="primary" />
-                    <Typography variant="body2">
-                        <strong>Have fun together</strong> - Enjoy games, activities, and community bonding
-                    </Typography>
-                </Stack>
-                <Stack direction="row" spacing={1} sx={{ mb: 2 }}>
-                    <RestaurantIcon color="primary" />
-                    <Typography variant="body2">
-                        <strong>Eat delicious food</strong> - Free food and refreshments will be provided!
-                    </Typography>
-                </Stack>
-            </Box>
-            <Typography variant="body2" sx={{ fontWeight: 'bold', mb: 2, color: 'primary.main' }}>
-                Location: TBA (Check our social media for updates)
-            </Typography>
-            <Typography variant="body2" sx={{ fontStyle: 'italic', mb: 2 }}>
+                            <Typography variant="h4" component="h2" sx={{ mb: 1, color: 'primary.main' }}>
+                                SASC General Meeting
+                            </Typography>
+                            <Typography variant="h6" color="text.secondary" sx={{ mb: 2 }}>
+                                September 17, 2025 • 8:00 PM - 9:00 PM
+                            </Typography>
+                            <Typography variant="body1" sx={{ mb: 2, fontSize: '1.1rem' }}>
+                                Join us for our first general meeting of the semester! This is the perfect opportunity to:
+                            </Typography>
+                            <Box sx={{ mb: 2 }}>
+                                <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
+                                    <GroupIcon color="primary" />
+                                    <Typography variant="body2">
+                                        <strong>Meet the SASC community</strong> - Get introduced to our club and learn about our mission
+                                    </Typography>
+                                </Stack>
+                                <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
+                                    <GroupIcon color="primary" />
+                                    <Typography variant="body2">
+                                        <strong>Connect with other orgs</strong> - Meet representatives from other Southeast Asian organizations
+                                    </Typography>
+                                </Stack>
+                                <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
+                                    <CelebrationIcon color="primary" />
+                                    <Typography variant="body2">
+                                        <strong>Have fun together</strong> - Enjoy games, activities, and community bonding
+                                    </Typography>
+                                </Stack>
+                                <Stack direction="row" spacing={1} sx={{ mb: 2 }}>
+                                    <RestaurantIcon color="primary" />
+                                    <Typography variant="body2">
+                                        <strong>Eat delicious food</strong> - Free food and refreshments will be provided!
+                                    </Typography>
+                                </Stack>
+                            </Box>
+                            <Typography variant="body2" sx={{ fontWeight: 'bold', mb: 2, color: 'primary.main' }}>
+                                Location: TBA (Check our social media for updates)
+                            </Typography>
+                            <Typography variant="body2" sx={{ fontStyle: 'italic', mb: 2 }}>
                 All students are welcome! Whether you&apos;re new to Berkeley or have been here for years,
-                come join our community and make new friends.
-            </Typography>
-            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1} justifyContent="flex-start" sx={{ mb: 2 }}>
+                                come join our community and make new friends.
+                            </Typography>
+                        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1} justifyContent="flex-start" sx={{ mb: 2 }}>
                 <Button variant="outlined" disabled size="medium" startIcon={<CalendarMonthIcon />}>
                     Event Ended
                 </Button>
-            </Stack>
+                        </Stack>
         </EventCard>
     );
 };

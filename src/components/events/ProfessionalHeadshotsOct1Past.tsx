@@ -14,22 +14,22 @@ const ProfessionalHeadshotsOct1Past = () => {
       cardSx={{ opacity: 0.9 }}
       image={{ src: '/fhs.png', alt: 'Free Professional Headshots' }}
     >
-      <Typography variant="h5" component="h2" sx={{ mb: 0.5 }}>
-        Free Professional Headshots
-      </Typography>
-      <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1 }}>
-        {dateLine}
-      </Typography>
-      <Typography variant="body2" sx={{ mb: 1 }}>Location: {location}</Typography>
-      <Typography variant="body2" sx={{ mb: 2 }}>
+            <Typography variant="h5" component="h2" sx={{ mb: 0.5 }}>
+              Free Professional Headshots
+            </Typography>
+            <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1 }}>
+              {dateLine}
+            </Typography>
+            <Typography variant="body2" sx={{ mb: 1 }}>Location: {location}</Typography>
+            <Typography variant="body2" sx={{ mb: 2 }}>
         Swing by for free professional headshots hosted by SASC PR & Media. We’ll have a simple queue, on-site posing tips, and edited
         photos delivered to your inbox after the shoot.
-      </Typography>
-      <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1}>
-        <Button variant="outlined" size="small" startIcon={<CalendarMonthIcon />} disabled>
-          Add to Calendar
-        </Button>
-      </Stack>
+            </Typography>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1}>
+              <Button variant="outlined" size="small" startIcon={<CalendarMonthIcon />} disabled>
+                Add to Calendar
+              </Button>
+            </Stack>
     </EventCard>
   );
 };

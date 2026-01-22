@@ -63,79 +63,79 @@ const ProfessionalHeadshotsUpcoming = () => {
       borderColor="primary.main"
       image={{ src: '/fhs.png', alt: 'Free Professional Headshots' }}
     >
-      <Box>
-        <Typography variant="h5" component="h2" sx={{ mb: 0.5 }}>
-          Free Professional Headshots
-        </Typography>
-        <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1 }}>
-          Wednesday, October 1st • 3:00 PM – 5:00 PM
-        </Typography>
-        <Typography variant="body2" sx={{ mb: 1 }}>
-          Location: {location}
-        </Typography>
-        <Typography variant="body2" sx={{ mb: 1 }}>
-          {details}
-        </Typography>
-        <Box sx={{ mb: 1.5 }}>
-          <Typography variant="body2" sx={{ fontWeight: 600, mb: 0.5 }}>What to know</Typography>
-          <Box component="ul" sx={{ pl: 2, m: 0 }}>
-            <li><Typography variant="body2">Free and open to all students, no experience needed</Typography></li>
-            <li><Typography variant="body2">First-come, first-served; quick on-site queue</Typography></li>
-            <li><Typography variant="body2">Edited photos returned within 3–5 days</Typography></li>
-          </Box>
-        </Box>
-      </Box>
-      <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1} sx={{ mt: 1 }}>
-        <Button variant="outlined" color="primary" href={gcalUrl} target="_blank" size="small" startIcon={<CalendarMonthIcon />}>
-          Add to Calendar
-        </Button>
-        <Button variant="text" color="primary" href="https://maps.app.goo.gl/aR1N6Gc7q9yXoQ4b6" target="_blank" size="small">
-          Open in Maps
-        </Button>
-      </Stack>
+            <Box>
+              <Typography variant="h5" component="h2" sx={{ mb: 0.5 }}>
+                Free Professional Headshots
+              </Typography>
+              <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1 }}>
+                Wednesday, October 1st • 3:00 PM – 5:00 PM
+              </Typography>
+              <Typography variant="body2" sx={{ mb: 1 }}>
+                Location: {location}
+              </Typography>
+              <Typography variant="body2" sx={{ mb: 1 }}>
+                {details}
+              </Typography>
+              <Box sx={{ mb: 1.5 }}>
+                <Typography variant="body2" sx={{ fontWeight: 600, mb: 0.5 }}>What to know</Typography>
+                <Box component="ul" sx={{ pl: 2, m: 0 }}>
+                  <li><Typography variant="body2">Free and open to all students, no experience needed</Typography></li>
+                  <li><Typography variant="body2">First-come, first-served; quick on-site queue</Typography></li>
+                  <li><Typography variant="body2">Edited photos returned within 3–5 days</Typography></li>
+                </Box>
+              </Box>
+            </Box>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1} sx={{ mt: 1 }}>
+              <Button variant="outlined" color="primary" href={gcalUrl} target="_blank" size="small" startIcon={<CalendarMonthIcon />}>
+                Add to Calendar
+              </Button>
+              <Button variant="text" color="primary" href="https://maps.app.goo.gl/aR1N6Gc7q9yXoQ4b6" target="_blank" size="small">
+                Open in Maps
+              </Button>
+            </Stack>
 
-      {!isFirebaseConfigured && (
+            {!isFirebaseConfigured && (
         <Alert severity="warning" sx={{ mb: 1.5, mt: 1.5 }}>
-          RSVP temporarily unavailable. Site configuration is incomplete.
-        </Alert>
-      )}
+                RSVP temporarily unavailable. Site configuration is incomplete.
+              </Alert>
+            )}
       <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1.5 }}>
         <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(3, minmax(0, 1fr))' }, gap: 1 }}>
-          <TextField
-            label="Name"
-            size="small"
-            margin="dense"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            sx={{
-              '& .MuiInputBase-input': { py: 0.5, fontSize: '0.9rem' },
-              '& .MuiInputLabel-root': { fontSize: '0.875rem' }
-            }}
-          />
-          <TextField
-            label="Email"
-            type="email"
-            size="small"
-            margin="dense"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            sx={{
-              '& .MuiInputBase-input': { py: 0.5, fontSize: '0.9rem' },
-              '& .MuiInputLabel-root': { fontSize: '0.875rem' }
-            }}
-          />
+                  <TextField
+                    label="Name"
+                    size="small"
+                    margin="dense"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    sx={{
+                      '& .MuiInputBase-input': { py: 0.5, fontSize: '0.9rem' },
+                      '& .MuiInputLabel-root': { fontSize: '0.875rem' }
+                    }}
+                  />
+                  <TextField
+                    label="Email"
+                    type="email"
+                    size="small"
+                    margin="dense"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    sx={{
+                      '& .MuiInputBase-input': { py: 0.5, fontSize: '0.9rem' },
+                      '& .MuiInputLabel-root': { fontSize: '0.875rem' }
+                    }}
+                  />
           <Button type="submit" variant="contained" color="primary" disabled={submitting || !isFirebaseConfigured} sx={{ minHeight: 40 }}>
-            {submitting ? 'Submitting…' : 'RSVP'}
-          </Button>
+                    {submitting ? 'Submitting…' : 'RSVP'}
+                  </Button>
         </Box>
-      </Box>
+            </Box>
 
-      {(success || error) && (
-        <Box sx={{ mt: 1.5 }}>
-          {success && <Alert severity="success">{success}</Alert>}
-          {error && <Alert severity="error">{error}</Alert>}
-        </Box>
-      )}
+            {(success || error) && (
+              <Box sx={{ mt: 1.5 }}>
+                {success && <Alert severity="success">{success}</Alert>}
+                {error && <Alert severity="error">{error}</Alert>}
+              </Box>
+            )}
     </EventCard>
   );
 };

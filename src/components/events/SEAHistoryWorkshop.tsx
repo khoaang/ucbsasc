@@ -70,117 +70,117 @@ const SEAHistoryWorkshop = () => {
       image={{ src: '/historical3.webp', alt: 'SEA History Workshop' }}
       contentSx={{ pt: { xs: 3, md: 4 } }}
     >
-      <Typography variant="h5" fontWeight="bold" gutterBottom>
-        SEA History Workshop General Meeting
-      </Typography>
+            <Typography variant="h5" fontWeight="bold" gutterBottom>
+              SEA History Workshop General Meeting
+            </Typography>
 
-      <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-        {dateLine}
-      </Typography>
-      <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-        📍 {locationLine}
-      </Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+              {dateLine}
+            </Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+              📍 {locationLine}
+            </Typography>
 
-      <Typography variant="body2" paragraph>
+            <Typography variant="body2" paragraph>
         Join SASC for our general meeting featuring a fun, interactive deep-dive presentation by our Media team on Southeast Asian
         American history, refugee timelines, and resources to succeed in higher education. Connect with fellow students while learning
         about the stories that shape our community.
-      </Typography>
+            </Typography>
 
-      <Typography variant="body2" fontWeight="bold" sx={{ mt: 2, mb: 0.5 }}>
-        What to know:
-      </Typography>
-      <Box component="ul" sx={{ mt: 0, pl: 2.5, mb: 2 }}>
-        <Typography component="li" variant="body2" sx={{ mb: 0.5 }}>
-          Free and open to all students
-        </Typography>
-        <Typography component="li" variant="body2" sx={{ mb: 0.5 }}>
-          Learn about SEA American history and refugee experiences
-        </Typography>
-        <Typography component="li" variant="body2" sx={{ mb: 0.5 }}>
-          Resources for academic success and community engagement
-        </Typography>
-        <Typography component="li" variant="body2">
-          Snacks provided
-        </Typography>
-      </Box>
+            <Typography variant="body2" fontWeight="bold" sx={{ mt: 2, mb: 0.5 }}>
+              What to know:
+            </Typography>
+            <Box component="ul" sx={{ mt: 0, pl: 2.5, mb: 2 }}>
+              <Typography component="li" variant="body2" sx={{ mb: 0.5 }}>
+                Free and open to all students
+              </Typography>
+              <Typography component="li" variant="body2" sx={{ mb: 0.5 }}>
+                Learn about SEA American history and refugee experiences
+              </Typography>
+              <Typography component="li" variant="body2" sx={{ mb: 0.5 }}>
+                Resources for academic success and community engagement
+              </Typography>
+              <Typography component="li" variant="body2">
+                Snacks provided
+              </Typography>
+            </Box>
 
-      <Stack direction="row" spacing={1} sx={{ mb: 2 }}>
-        {isPast ? (
-          <Button variant="outlined" size="small" disabled>
-            Event Ended
-          </Button>
-        ) : (
-          <>
-            <Button
-              variant="outlined"
-              size="small"
-              href={gcalUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Add to Calendar
-            </Button>
-            <Button
-              variant="outlined"
-              size="small"
-              href={mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open in Maps
-            </Button>
-          </>
-        )}
-      </Stack>
+            <Stack direction="row" spacing={1} sx={{ mb: 2 }}>
+              {isPast ? (
+                <Button variant="outlined" size="small" disabled>
+                  Event Ended
+                </Button>
+              ) : (
+                <>
+                  <Button
+                    variant="outlined"
+                    size="small"
+                    href={gcalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Add to Calendar
+                  </Button>
+                  <Button
+                    variant="outlined"
+                    size="small"
+                    href={mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Open in Maps
+                  </Button>
+                </>
+              )}
+            </Stack>
 
-      {!isPast && (
-        <>
-          <Typography variant="body2" fontWeight="bold" sx={{ mb: 1 }}>
-            RSVP:
-          </Typography>
-          {!isFirebaseConfigured && (
-            <Alert severity="warning" sx={{ mt: 1.5 }}>
-              RSVP temporarily unavailable. Site configuration is incomplete.
-            </Alert>
-          )}
-          <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2 }}>
+            {!isPast && (
+              <>
+                <Typography variant="body2" fontWeight="bold" sx={{ mb: 1 }}>
+                  RSVP:
+                </Typography>
+                {!isFirebaseConfigured && (
+                  <Alert severity="warning" sx={{ mt: 1.5 }}>
+                    RSVP temporarily unavailable. Site configuration is incomplete.
+                  </Alert>
+                )}
+                <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2 }}>
             <Box sx={{ display: 'grid', gap: 1, gridTemplateColumns: { xs: '1fr', sm: 'repeat(3, minmax(0, 1fr))' } }}>
-              <TextField
-                label="Name"
-                size="small"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                sx={{
-                  '& .MuiInputBase-input': { py: 0.5, fontSize: '0.9rem' },
-                  '& .MuiInputLabel-root': { fontSize: '0.875rem' }
-                }}
-              />
-              <TextField
-                label="Email"
-                type="email"
-                size="small"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                sx={{
-                  '& .MuiInputBase-input': { py: 0.5, fontSize: '0.9rem' },
-                  '& .MuiInputLabel-root': { fontSize: '0.875rem' }
-                }}
-              />
+                      <TextField
+                        label="Name"
+                        size="small"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        sx={{
+                          '& .MuiInputBase-input': { py: 0.5, fontSize: '0.9rem' },
+                          '& .MuiInputLabel-root': { fontSize: '0.875rem' }
+                        }}
+                      />
+                      <TextField
+                        label="Email"
+                        type="email"
+                        size="small"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        sx={{
+                          '& .MuiInputBase-input': { py: 0.5, fontSize: '0.9rem' },
+                          '& .MuiInputLabel-root': { fontSize: '0.875rem' }
+                        }}
+                      />
               <Button type="submit" variant="contained" color="primary" disabled={submitting || !isFirebaseConfigured}>
-                {submitting ? 'Submitting…' : 'RSVP'}
-              </Button>
+                        {submitting ? 'Submitting…' : 'RSVP'}
+                      </Button>
             </Box>
-          </Box>
+                </Box>
 
-          {(success || error) && (
-            <Box sx={{ mt: 1.5 }}>
-              {success && <Alert severity="success">{success}</Alert>}
-              {error && <Alert severity="error">{error}</Alert>}
-            </Box>
-          )}
-        </>
-      )}
+                {(success || error) && (
+                  <Box sx={{ mt: 1.5 }}>
+                    {success && <Alert severity="success">{success}</Alert>}
+                    {error && <Alert severity="error">{error}</Alert>}
+                  </Box>
+                )}
+              </>
+            )}
     </EventCard>
   );
 };
