@@ -8,10 +8,6 @@ import {
   IconButton,
   Card,
   CardContent,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
@@ -20,6 +16,7 @@ import { Instagram } from '@mui/icons-material';
 import MailingListModal from '../components/MailingListModal';
 // import HalloweenModal from '../components/events/HalloweenModal';
 import Footer from '../components/Footer';
+import LeadInviteModal from '../components/home/LeadInviteModal';
 // import GeneralMeetingModal from '../components/events/GeneralMeetingModal';
 
 const HeroSection = styled(Box)({
@@ -395,51 +392,7 @@ const Home = () => {
         open={halloweenOpen}
         onClose={() => setHalloweenOpen(false)}
       /> */}
-      <Dialog
-        open={leadModalOpen}
-        onClose={handleLeadModalClose}
-        maxWidth="sm"
-        fullWidth
-      >
-        <DialogTitle>Lead with SASC</DialogTitle>
-        <DialogContent dividers>
-          <Typography variant="body1" sx={{ mb: 2 }}>
-            SASComm is recruiting new officers for Spring 2026. If you care about Southeast Asian community building, storytelling, and
-            advocacy, we want to hear from you. Roles are flexible, collaborative, and grounded in shared responsibility.
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Curious about the work? Check out the leadership page to see branch focus areas, expectations, and next steps. You can always
-            DM us on Instagram if you have questions before applying.
-          </Typography>
-        </DialogContent>
-        <DialogActions sx={{ flexWrap: 'wrap', gap: 1.5, justifyContent: 'flex-end', px: 3, py: 2 }}>
-          <Button onClick={handleLeadModalClose} color="inherit">
-            Not Now
-          </Button>
-          <Button
-            component="a"
-            href="https://forms.gle/mnqaVF1UhXhoFKdJ6"
-            target="_blank"
-            rel="noopener"
-            variant="contained"
-            color="primary"
-            onClick={handleLeadModalClose}
-          >
-            Apply Now
-          </Button>
-          <Button
-            component="a"
-            href="https://www.instagram.com/ucbsasc"
-            target="_blank"
-            rel="noopener"
-            variant="outlined"
-            color="primary"
-            onClick={handleLeadModalClose}
-          >
-            DM @ucbsasc
-          </Button>
-        </DialogActions>
-      </Dialog>
+      <LeadInviteModal open={leadModalOpen} onClose={handleLeadModalClose} />
     </Box>
   );
 };

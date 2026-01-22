@@ -1,6 +1,7 @@
 import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Footer from '../components/Footer';
+import { directors as leadershipDirectors, officers as leadershipOfficers } from '../data/leadership';
 
 const ProgramCard = styled(Card)(({ theme }) => ({
   height: '100%',
@@ -66,22 +67,8 @@ const About = () => {
     }
   ];
 
-  const directors = [
-    { name: 'Ilene Park', role: 'Internal Director', committee: 'Internal', email: 'ilene.park@ucbsasc.org', image: '/officers/ilene.jpeg' },
-    { name: 'April Marie Le', role: 'Internal Director', committee: 'Internal', email: 'le.april@berkeley.edu', image: '/officers/april.jpg' },
-    { name: 'Lan Vy Nguyen', role: 'External Director, SEAM Director', committee: 'External', email: 'nguyen_nvl@berkeley.edu', image: '/officers/lanvy.jpeg' },
-    { name: 'Tyler Htut', role: 'Operations Director', committee: 'Operations', email: 'tylerhtut7@berkeley.edu', image: '/officers/tyler.jpeg' },
-    { name: 'Earn Maneenop', role: 'PR Director', committee: 'PR', email: 'rinradamaneenop7@berkeley.edu', image: '/officers/rinrada.jpeg' },
-    { name: 'Khoa Nguyen', role: 'PR Director', committee: 'PR', email: 'khoan@berkeley.edu', image: '/Khoa.jpg' },
-  ];
-
-  const officers = [
-    { name: 'Alida Phuthama', role: 'External Officer', committee: 'External', email: 'alidaphuthama@berkeley.edu', image: '/Alida.jpg' },
-    { name: 'Timothy Kwan', role: 'Operations Officer', committee: 'Operations', email: 'timothy.kwan.teemo@berkeley.edu', image: '/headshots.jpg' },
-    { name: 'Jordan Vu', role: 'Operations Officer', committee: 'Operations', email: 'jordanvu@berkeley.edu', image: '/headshots.jpg' },
-    { name: 'Krishna Sam', role: 'Internal Officer', committee: 'Internal', email: 'krishnaksam@berkeley.edu', image: '/headshots.jpg' },
-    { name: 'Noah Brand', role: 'Internal Officer', committee: 'Internal', email: 'noahtbrand@berkeley.edu', image: '/headshots.jpg' },
-  ];
+  const directors = leadershipDirectors;
+  const officers = leadershipOfficers;
 
   // removed scroll-based animations for stability
 

@@ -19,144 +19,42 @@ import {
   WorkspacePremium,
 } from '@mui/icons-material';
 import Footer from '../components/Footer';
+import {
+  leadBenefits,
+  leadBranches,
+  leadApplicationSteps,
+  BenefitIconKey,
+  ApplicationStepIconKey,
+} from '../data/lead';
+import { directors as leadershipDirectors } from '../data/leadership';
 
-const benefits = [
-  {
-    title: 'Do real work, learn by doing',
-    description:
-      'Take on real organizing tasks, make decisions with the team, and help guide newer members as you build leadership experience.',
-    icon: <WorkspacePremium fontSize="large" color="inherit" />,
-  },
-  {
-    title: 'Find your people',
-    description:
-      'Work alongside Southeast Asian peers, form friendships that last, and support each other beyond SASC events.',
-    icon: <Groups fontSize="large" color="inherit" />,
-  },
-  {
-    title: 'Make things happen',
-    description:
-      'Plan events, launch campaigns, and work with community partners who care about Southeast Asian student voices.',
-    icon: <Campaign fontSize="large" color="inherit" />,
-  },
-];
+const getBenefitIcon = (icon: BenefitIconKey) => {
+  switch (icon) {
+    case 'workspace':
+      return <WorkspacePremium fontSize="large" color="inherit" />;
+    case 'groups':
+      return <Groups fontSize="large" color="inherit" />;
+    case 'campaign':
+      return <Campaign fontSize="large" color="inherit" />;
+    default:
+      return null;
+  }
+};
 
-const branches = [
-  {
-    name: 'Internal Affairs',
-    focus: 'Community Care & Mentorship',
-    overview:
-      'In Internal Affairs, we hold spaces for care, coordinate bonding events, and make sure our community stays supported and connected.',
-    image: '/internal.jpg',
-    directors: [
-      { name: 'Ilene Park', email: 'parkilene AT berkeley.edu' },
-      { name: 'April Le', email: 'le.april AT berkeley.edu' },
-    ],
-    highlights: [
-      {
-        title: 'Key Focus Areas',
-        bullets: [
-          'Lead culturally grounded care spaces and restorative practices.',
-          'Coordinate bonding events that keep our coalition tight-knit.',
-          'Connect members with mentorship, wellness, and resource partners.',
-        ],
-      },
-    ],
-  },
-  {
-    name: 'External Affairs',
-    focus: 'Community Partnerships & Advocacy',
-    overview:
-      'In External Affairs, we build and maintain relationships with campus allies and grassroots groups to advance equity together.',
-    image: '/tabling.jpg',
-    directors: [
-      { name: 'Lan Vy Nguyen', email: 'nguyen_nvl AT berkeley.edu' },
-    ],
-    highlights: [
-      {
-        title: 'Key Focus Areas',
-        bullets: [
-          'Maintain relationships with Bay Area partners and grassroots orgs.',
-          'Co-create events that uplift Southeast Asian voices on and off campus.',
-          'Mobilize students around campaigns impacting the SEAA diaspora.',
-        ],
-      },
-    ],
-  },
-  {
-    name: 'Operations',
-    focus: 'Logistics, Finance & Event Excellence',
-    overview:
-      'The Operations team handles budgeting, scheduling, vendor coordination, reimbursements, and event logistics so programs run smoothly.',
-    image: '/operations.jpg',
-    directors: [
-      { name: 'Tyler Htut', email: 'tylerhtut7 AT berkeley.edu' },
-    ],
-    highlights: [
-      {
-        title: 'Key Focus Areas',
-        bullets: [
-          'Own timelines, run-of-show, and vendor coordination for flagship events.',
-          'Build systems that make program leads feel supported and resourced.',
-          'Manage purchasing, reimbursements, and ASUC funding proposals.',
-          'Research grants and sponsorships that sustain our programs.',
-          'Partner with directors on budget strategy and transparency.',
-        ],
-      },
-    ],
-  },
-  {
-    name: 'Public Relations',
-    focus: 'Storytelling & Creative Strategy',
-    overview:
-      'Public Relations shapes how our work is seen and understood, from graphics and video to newsletters and social media campaigns that reflect our members’ voices.',
-    image: '/pr.jpg',
-    directors: [
-      { name: 'Khoa Nguyen', email: 'khoan AT berkeley.edu' },
-      { name: 'Rinrada Maneenop', email: 'rinradamaneenop7 AT berkeley.edu' },
-    ],
-    highlights: [
-      {
-        title: 'Key Focus Areas',
-        bullets: [
-          'Create branded graphics, short-form video, and print collateral.',
-          'Capture photo/video at events and manage our content archive.',
-          'Experiment with new storytelling formats that highlight members.',
-          'Craft newsletters, email campaigns, and social captions with voice.',
-          'Plan social media rollouts that build anticipation for programs.',
-          'Monitor insights to refine outreach and grow our community reach.',
-        ],
-      },
-    ],
-  },
-];
-
-const applicationSteps = [
-  {
-    title: 'Fill out the interest form',
-    detail:
-      'Tell us what excites you, what you’re good at, and what you want to learn. We’re genuinely interested in what you bring, not just checkboxes.',
-    icon: <Lightbulb color="primary" />,
-  },
-  {
-    title: 'Meet the directors',
-    detail:
-      'We’ll have a conversation to get to know you, talk about expectations, and see where you’ll fit best.',
-    icon: <Diversity3 color="primary" />,
-  },
-  {
-    title: 'Start onboarding',
-    detail:
-      'We’ll orient you with your branch, introduce the team, and share a roadmap for your first weeks.',
-    icon: <EventAvailable color="primary" />,
-  },
-  {
-    title: 'Grow with us',
-    detail:
-      'Expect mentorship, chances to develop professionally, and a team that supports you when things get busy and when they slow down.',
-    icon: <VolunteerActivism color="primary" />,
-  },
-];
+const getStepIcon = (icon: ApplicationStepIconKey) => {
+  switch (icon) {
+    case 'lightbulb':
+      return <Lightbulb color="primary" />;
+    case 'diversity':
+      return <Diversity3 color="primary" />;
+    case 'event':
+      return <EventAvailable color="primary" />;
+    case 'volunteer':
+      return <VolunteerActivism color="primary" />;
+    default:
+      return null;
+  }
+};
 
 const Lead = () => {
   return (
@@ -209,9 +107,9 @@ const Lead = () => {
               textShadow: '0 2px 12px rgba(0,0,0,0.5)',
             }}
           >
-            Since 2000, SASC has been shaped by students who stayed up late building slides, setting up sound gear at Sproul, and
-            checking in on one another when campus systems fell short. SASComm is the group still doing that work, carrying forward
-            Southeast Asian history, care, and collective effort.
+            Since 2000, SASC has been shaped by students who stayed up late building slides, setting up sound gear at Sproul, and checking
+            in on one another when campus systems fell short. SASComm is the group still doing that work, carrying forward Southeast Asian
+            history, care, and collective effort.
           </Typography>
           <Typography
             variant="body1"
@@ -222,8 +120,21 @@ const Lead = () => {
               textShadow: '0 1px 10px rgba(0,0,0,0.45)',
             }}
           >
-            We’re looking for folks ready to run programs, help tell our stories, support members, and push for resources. Some weeks
-            are relaxed; other weeks are full of meetings and last-minute tasks. We do it together, and we stick with it.
+            We’re looking for folks ready to run programs, help tell our stories, support members, and push for resources. Some weeks are
+            relaxed; other weeks are full of meetings and last-minute tasks. We do it together, and we stick with it.
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{
+              opacity: 0.85,
+              maxWidth: 720,
+              mt: 1.5,
+              textShadow: '0 1px 6px rgba(0,0,0,0.35)',
+              fontWeight: 600,
+            }}
+          >
+            Priority deadline: Sunday, February 1 at 11:59 PM. Applications are reviewed on a rolling basis, and early submissions receive
+            priority consideration.
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ mt: 4 }}>
             <Button
@@ -312,7 +223,7 @@ const Lead = () => {
           and cared for.
         </Typography>
         <Grid container spacing={3}>
-          {benefits.map((benefit) => (
+          {leadBenefits.map((benefit) => (
             <Grid item xs={12} md={4} key={benefit.title}>
               <Card
                 sx={{
@@ -334,7 +245,7 @@ const Lead = () => {
                     opacity: 0.8,
                   }}
                 >
-                  {benefit.icon}
+                  {getBenefitIcon(benefit.icon)}
                 </Box>
                 <Typography variant="h5" component="h3">
                   {benefit.title}
@@ -360,86 +271,92 @@ const Lead = () => {
           intergenerational care.
         </Typography>
         <Grid container spacing={4}>
-          {branches.map((branch) => (
-            <Grid item xs={12} md={6} key={branch.name}>
-              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Stack spacing={2}>
-                    <Box>
-                      <Typography variant="h5" component="h3" sx={{ fontWeight: 600 }}>
-                        {branch.name}
-                      </Typography>
-                      <Chip
-                        label={branch.focus}
-                        color="primary"
-                        variant="outlined"
-                        sx={{ mt: 1, fontWeight: 500 }}
-                      />
-                    </Box>
-                    <Typography variant="body1" color="text.secondary">
-                      {branch.overview}
-                    </Typography>
-                    <Box
-                      component="img"
-                      src={branch.image}
-                      alt={`${branch.name} moments`}
-                      sx={{
-                        width: '100%',
-                        borderRadius: 2,
-                        objectFit: 'cover',
-                        height: { xs: 180, sm: 210 },
-                        boxShadow: (theme) => theme.shadows[3],
-                        objectPosition: 'center 40%',
-                      }}
-                    />
-                    {branch.directors && branch.directors.length > 0 && (
+          {leadBranches.map((branch) => {
+            const branchDirectors = leadershipDirectors.filter(
+              (member) => member.committee === branch.committee
+            );
+
+            return (
+              <Grid item xs={12} md={6} key={branch.name}>
+                <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                  <CardContent sx={{ flexGrow: 1 }}>
+                    <Stack spacing={2}>
                       <Box>
-                        <Typography variant="subtitle2" color="primary.main" sx={{ fontWeight: 600, mb: 0.5 }}>
-                          Directors
+                        <Typography variant="h5" component="h3" sx={{ fontWeight: 600 }}>
+                          {branch.name}
                         </Typography>
-                        <Stack spacing={0.5}>
-                          {branch.directors.map((director) => (
-                            <Typography key={director.email} variant="body2" color="text.secondary">
-                              {director.name} • {director.email}
-                            </Typography>
-                          ))}
-                        </Stack>
+                        <Chip
+                          label={branch.focus}
+                          color="primary"
+                          variant="outlined"
+                          sx={{ mt: 1, fontWeight: 500 }}
+                        />
                       </Box>
-                    )}
-                    {branch.highlights.map((section) => (
-                      <Box key={section.title}>
-                        <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
-                          {section.title}
-                        </Typography>
-                        <Box
-                          component="ul"
-                          sx={{
-                            pl: 2,
-                            mt: 0,
-                            display: 'grid',
-                            gap: 0.75,
-                            listStyleType: 'disc',
-                          }}
-                        >
-                          {section.bullets.map((bullet) => (
-                            <Typography
-                              component="li"
-                              variant="body2"
-                              color="text.secondary"
-                              key={bullet}
-                              sx={{ listStyleType: 'inherit' }}
-                            >
-                              {bullet}
-                            </Typography>
-                          ))}
+                      <Typography variant="body1" color="text.secondary">
+                        {branch.overview}
+                      </Typography>
+                      <Box
+                        component="img"
+                        src={branch.image}
+                        alt={`${branch.name} moments`}
+                        sx={{
+                          width: '100%',
+                          borderRadius: 2,
+                          objectFit: 'cover',
+                          height: { xs: 180, sm: 210 },
+                          boxShadow: (theme) => theme.shadows[3],
+                          objectPosition: 'center 40%',
+                        }}
+                      />
+                      {branchDirectors.length > 0 && (
+                        <Box>
+                          <Typography variant="subtitle2" color="primary.main" sx={{ fontWeight: 600, mb: 0.5 }}>
+                            Directors
+                          </Typography>
+                          <Stack spacing={0.5}>
+                            {branchDirectors.map((director) => (
+                              <Typography key={director.email} variant="body2" color="text.secondary">
+                                {director.name} • {director.email.replace('@', ' AT ')}
+                              </Typography>
+                            ))}
+                          </Stack>
                         </Box>
-                      </Box>
-                    ))}
-                  </Stack>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
+                      )}
+                      {branch.keyFocus.length > 0 && (
+                        <Box>
+                          <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
+                            Key Focus Areas
+                          </Typography>
+                          <Box
+                            component="ul"
+                            sx={{
+                              pl: 2,
+                              mt: 0,
+                              display: 'grid',
+                              gap: 0.75,
+                              listStyleType: 'disc',
+                            }}
+                          >
+                            {branch.keyFocus.map((bullet) => (
+                              <Typography
+                                component="li"
+                                variant="body2"
+                                color="text.secondary"
+                                key={bullet}
+                                sx={{ listStyleType: 'inherit' }}
+                              >
+                                {bullet}
+                              </Typography>
+                            ))}
+                          </Box>
+                        </Box>
+                      )}
+                    </Stack>
+                  </CardContent>
+                </Card>
+              </Grid>
+            );
+          })}
         </Grid>
       </Container>
 
@@ -448,12 +365,12 @@ const Lead = () => {
           How Recruitment Works
         </Typography>
         <Grid container spacing={3}>
-          {applicationSteps.map((step) => (
+          {leadApplicationSteps.map((step) => (
             <Grid item xs={12} md={6} key={step.title}>
               <Card sx={{ height: '100%' }}>
                 <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                   <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 1 }}>
-                    {step.icon}
+                    {getStepIcon(step.icon)}
                     <Typography variant="h6" sx={{ fontWeight: 600 }}>
                       {step.title}
                     </Typography>

@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import Resources from './pages/Resources';
 import MemberManagement from './pages/MemberManagement';
 import Lead from './pages/Lead';
+import QRGenerator from './pages/QRGenerator';
 import AdminGuard from './components/AdminGuard';
 
 function App() {
@@ -26,7 +27,15 @@ function App() {
               <Route path="/lead" element={<Lead />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/resources" element={<Resources />} />
-              <Route path="/admin/members" element={<AdminGuard><MemberManagement /></AdminGuard>} />
+              <Route path="/qr" element={<QRGenerator />} />
+              <Route
+                path="/admin/members"
+                element={
+                  <AdminGuard>
+                    <MemberManagement />
+                  </AdminGuard>
+                }
+              />
             </Routes>
           </Box>
         </Box>
