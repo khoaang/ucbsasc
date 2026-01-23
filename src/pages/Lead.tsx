@@ -63,8 +63,8 @@ const Lead = () => {
         sx={{
           position: 'relative',
           color: 'white',
-          py: { xs: 12, md: 16 },
-          mb: 8,
+          py: { xs: 8, md: 12 },
+          mb: 6,
           overflow: 'hidden',
           '&::before': {
             content: '""',
@@ -93,7 +93,7 @@ const Lead = () => {
             sx={{
               fontWeight: 700,
               mb: 2,
-              fontSize: { xs: '2.7rem', md: '3.75rem' },
+              fontSize: { xs: '2.5rem', md: '3.5rem' },
             }}
           >
             Lead with SASC
@@ -166,7 +166,7 @@ const Lead = () => {
         </Container>
       </Box>
 
-      <Container sx={{ mb: 10 }}>
+      <Container sx={{ mb: 8 }}>
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={6}>
             <Box
@@ -212,7 +212,7 @@ const Lead = () => {
         </Grid>
       </Container>
 
-      <Container sx={{ mb: 10 }}>
+      <Container sx={{ mb: 8 }}>
         <Typography variant="h4" gutterBottom>
           Why Lead with SASC
         </Typography>
@@ -259,7 +259,7 @@ const Lead = () => {
         </Grid>
       </Container>
 
-      <Container sx={{ mb: 10 }}>
+      <Container sx={{ mb: 8 }}>
         <Typography variant="h4" gutterBottom>
           Branches Recruiting This Semester
         </Typography>
@@ -277,24 +277,24 @@ const Lead = () => {
             );
 
             return (
-              <Grid item xs={12} md={6} key={branch.name}>
-                <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Stack spacing={2}>
-                      <Box>
-                        <Typography variant="h5" component="h3" sx={{ fontWeight: 600 }}>
-                          {branch.name}
-                        </Typography>
-                        <Chip
-                          label={branch.focus}
-                          color="primary"
-                          variant="outlined"
-                          sx={{ mt: 1, fontWeight: 500 }}
-                        />
-                      </Box>
-                      <Typography variant="body1" color="text.secondary">
-                        {branch.overview}
+            <Grid item xs={12} md={6} key={branch.name}>
+              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Stack spacing={2}>
+                    <Box>
+                      <Typography variant="h5" component="h3" sx={{ fontWeight: 600 }}>
+                        {branch.name}
                       </Typography>
+                      <Chip
+                        label={branch.focus}
+                        color="primary"
+                        variant="outlined"
+                        sx={{ mt: 1, fontWeight: 500 }}
+                      />
+                    </Box>
+                    <Typography variant="body1" color="text.secondary">
+                      {branch.overview}
+                    </Typography>
                       <Box
                         component="img"
                         src={branch.image}
@@ -324,43 +324,43 @@ const Lead = () => {
                       )}
                       {branch.keyFocus.length > 0 && (
                         <Box>
-                          <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
+                        <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
                             Key Focus Areas
-                          </Typography>
-                          <Box
-                            component="ul"
-                            sx={{
-                              pl: 2,
-                              mt: 0,
-                              display: 'grid',
-                              gap: 0.75,
-                              listStyleType: 'disc',
-                            }}
-                          >
+                        </Typography>
+                        <Box
+                          component="ul"
+                          sx={{
+                            pl: 2,
+                            mt: 0,
+                            display: 'grid',
+                            gap: 0.75,
+                            listStyleType: 'disc',
+                          }}
+                        >
                             {branch.keyFocus.map((bullet) => (
-                              <Typography
-                                component="li"
-                                variant="body2"
-                                color="text.secondary"
-                                key={bullet}
-                                sx={{ listStyleType: 'inherit' }}
-                              >
-                                {bullet}
-                              </Typography>
-                            ))}
-                          </Box>
+                            <Typography
+                              component="li"
+                              variant="body2"
+                              color="text.secondary"
+                              key={bullet}
+                              sx={{ listStyleType: 'inherit' }}
+                            >
+                              {bullet}
+                            </Typography>
+                          ))}
                         </Box>
+                      </Box>
                       )}
-                    </Stack>
-                  </CardContent>
-                </Card>
-              </Grid>
+                  </Stack>
+                </CardContent>
+              </Card>
+            </Grid>
             );
           })}
         </Grid>
       </Container>
 
-      <Container sx={{ mb: 12 }}>
+      <Container sx={{ mb: 8 }}>
         <Typography variant="h4" gutterBottom>
           How Recruitment Works
         </Typography>
@@ -385,7 +385,7 @@ const Lead = () => {
         </Grid>
       </Container>
 
-      <Container sx={{ mb: 10 }}>
+      <Container sx={{ mb: 8 }}>
         <Card sx={{ p: { xs: 3, md: 5 }, backgroundColor: 'rgba(33, 150, 243, 0.08)' }}>
           <Stack spacing={2}>
             <Typography variant="h5" sx={{ fontWeight: 600 }}>

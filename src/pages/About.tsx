@@ -177,7 +177,7 @@ const About = () => {
           Our Impact
         </Typography>
         <Grid container spacing={3}>
-          {[
+          {[ 
             { stat: '25+ years', desc: 'of sustained community impact' },
             { stat: '1,000+ students', desc: 'supported across our programs' },
             { stat: '50+ events/year', desc: 'centered on culture and community' },

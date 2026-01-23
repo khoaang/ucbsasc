@@ -38,24 +38,36 @@ const HeroSection = styled(Box)({
   }
 });
 
-const MasonryGrid = styled(Box)({
+const MasonryGrid = styled(Box)(({ theme }) => ({
   position: 'absolute',
   width: '100%',
   height: '100%',
   display: 'grid',
   gridTemplateColumns: 'repeat(3, 1fr)',
-  gap: '1rem',
-  padding: '1rem',
-  opacity: 0.7,
-  zIndex: 0
-});
+  gridTemplateRows: 'repeat(3, 1fr)',
+  gap: theme.spacing(2),
+  padding: theme.spacing(2),
+  opacity: 0.6,
+  zIndex: 0,
+  [theme.breakpoints.down('md')]: {
+    gridTemplateColumns: 'repeat(2, 1fr)',
+    gridTemplateRows: 'repeat(4, 1fr)',
+  },
+  [theme.breakpoints.down('sm')]: {
+    gridTemplateColumns: '1fr',
+    gridTemplateRows: 'repeat(6, 1fr)',
+  }
+}));
 
-const ImageWrapper = styled(motion.div)({
+const ImageWrapper = styled(motion.div)(({ theme }) => ({
   position: 'relative',
   overflow: 'hidden',
   borderRadius: '1rem',
   cursor: 'pointer',
-});
+  [theme.breakpoints.down('md')]: {
+    gridColumn: 'span 1 !important',
+  },
+}));
 
 const StyledImage = styled('img')({
   width: '100%',
@@ -167,7 +179,7 @@ const Home = () => {
               key={img.src}
               style={{
                 gridColumn: `span ${img.span}`,
-                height: '250px'
+                height: '100%'
               }}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}

@@ -3,12 +3,12 @@
 This repository holds the code for the UC Berkeley SASC website. It is a React + TypeScript project using Vite and Material UI.
 
 ## Quick Start
-```bash
-git clone git@github.com:khoaang/ucbsasc.git
-cd ucbsasc
-npm install
-npm run dev
-```
+   ```bash
+   git clone git@github.com:khoaang/ucbsasc.git
+   cd ucbsasc
+   npm install
+   npm run dev
+   ```
 The dev server runs on `http://localhost:5173`.
 
 ## Project Docs
