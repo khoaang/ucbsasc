@@ -11,10 +11,12 @@ import SEAHistoryWorkshop from '../components/events/SEAHistoryWorkshop';
 import AnniversaryRecap from '../components/events/AnniversaryRecap';
 import UpcomingGeneralMeeting from '../components/events/UpcomingGeneralMeeting';
 import BondingEventPreview from '../components/events/BondingEventPreview';
+import ProfessionalHeadshotsFeb2026 from '../components/events/ProfessionalHeadshotsFeb2026';
 
 const Events = () => {
   // Define events with dates so we can auto-sort
   const upcomingEvents: { date: Date; key: string; render: () => JSX.Element }[] = [
+    { date: new Date('2026-02-06T14:00:00-08:00'), key: 'headshots-feb-2026', render: () => <ProfessionalHeadshotsFeb2026 /> },
     { date: new Date('2026-02-10T19:00:00-08:00'), key: 'gm-2026-spring', render: () => <UpcomingGeneralMeeting /> },
     { date: new Date('2026-02-21T18:30:00-08:00'), key: 'bonding-2026', render: () => <BondingEventPreview /> },
   ];
