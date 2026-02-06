@@ -10,6 +10,7 @@ import Resources from './pages/Resources';
 import MemberManagement from './pages/MemberManagement';
 import Lead from './pages/Lead';
 import QRGenerator from './pages/QRGenerator';
+import HeadshotCheckin from './pages/HeadshotCheckin';
 import AdminGuard from './components/AdminGuard';
 
 function App() {
@@ -28,6 +29,14 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/qr" element={<QRGenerator />} />
+              <Route
+                path="/checkin"
+                element={
+                  <AdminGuard>
+                    <HeadshotCheckin />
+                  </AdminGuard>
+                }
+              />
               <Route
                 path="/admin/members"
                 element={
