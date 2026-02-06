@@ -10,7 +10,6 @@ import Resources from './pages/Resources';
 import MemberManagement from './pages/MemberManagement';
 import Lead from './pages/Lead';
 import QRGenerator from './pages/QRGenerator';
-import HeadshotCheckin from './pages/HeadshotCheckin';
 import StudentSlate from './pages/StudentSlate';
 import AdminGuard from './components/AdminGuard';
 
@@ -30,15 +29,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/qr" element={<QRGenerator />} />
-              <Route
-                path="/checkin"
-                element={
-                  <AdminGuard>
-                    <HeadshotCheckin />
-                  </AdminGuard>
-                }
-              />
-              <Route path="/slate" element={<StudentSlate />} />
+              <Route path="/checkin" element={<StudentSlate />} />
               <Route
                 path="/admin/members"
                 element={

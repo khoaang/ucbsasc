@@ -52,10 +52,6 @@ const Footer = () => {
         </Grid>
         <Typography variant="body2" sx={{ mt: 4, textAlign: 'center' }}>
           © {new Date().getFullYear()} SASC. All rights reserved.
-          <Box component="span" sx={{ mx: 1 }}>•</Box>
-          <Box component="a" href="/checkin" sx={{ color: 'inherit', textDecoration: 'none', opacity: 0.5, '&:hover': { opacity: 1 } }}>
-            Check-in
-          </Box>
         </Typography>
       </Container>
     </Box>

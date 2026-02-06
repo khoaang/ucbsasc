@@ -11,16 +11,15 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 const EVENT_KEY = 'professional-headshots-2026-02-06';
 
 const StudentSlate = () => {
-  const [step, setStep] = useState<'email' | 'register' | 'slate'>('email');
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [rsvp, setRsvp] = useState<EventRsvp | null>(null);
 
-  const handleEmailSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.trim()) return;
+    if (!email.trim() || !name.trim()) return;
     setLoading(true);
     setError(null);
 
@@ -31,12 +30,15 @@ const StudentSlate = () => {
       
       if (existingRsvp) {
         // Found them! Check them in and show slate.
-        const updatedRsvp = await checkInStudentWithTransaction(existingRsvp.id!, EVENT_KEY);
+        // We pass the name they just typed to update it if needed.
+        const updatedRsvp = await checkInStudentWithTransaction(existingRsvp.id!, EVENT_KEY, name.trim());
         setRsvp(updatedRsvp as EventRsvp);
-        setStep('slate');
       } else {
-        // Not found, go to registration
-        setStep('register');
+        // Not found, create new RSVP
+        const newRsvp = await addEventRsvp(EVENT_KEY, name.trim(), email.trim());
+        // Check in immediately
+        const updatedRsvp = await checkInStudentWithTransaction(newRsvp.id!, EVENT_KEY);
+        setRsvp(updatedRsvp as EventRsvp);
       }
     } catch (err) {
       console.error(err);
@@ -46,28 +48,7 @@ const StudentSlate = () => {
     }
   };
 
-  const handleRegisterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!name.trim()) return;
-    setLoading(true);
-    setError(null);
-
-    try {
-      // Create RSVP
-      const newRsvp = await addEventRsvp(EVENT_KEY, name.trim(), email.trim());
-      // Check in immediately
-      const updatedRsvp = await checkInStudentWithTransaction(newRsvp.id!, EVENT_KEY);
-      setRsvp(updatedRsvp as EventRsvp);
-      setStep('slate');
-    } catch (err) {
-      console.error(err);
-      setError('Registration failed. Please try again.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (step === 'slate' && rsvp) {
+  if (rsvp) {
     return (
       <Box 
         sx={{ 
@@ -126,72 +107,40 @@ const StudentSlate = () => {
               Headshot Check-in
             </Typography>
             <Typography color="text.secondary">
-              {step === 'email' ? 'Enter your email to get your ticket.' : 'Almost there! Just need your name.'}
+              Enter your name and email to get your ticket.
             </Typography>
           </Box>
 
-          {step === 'email' ? (
-            <Box component="form" onSubmit={handleEmailSubmit}>
-              <TextField
-                fullWidth
-                label="Email Address"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                disabled={loading}
-                sx={{ mb: 3 }}
-                autoFocus
-              />
-              <Button 
-                type="submit" 
-                variant="contained" 
-                fullWidth 
-                size="large" 
-                disabled={loading}
-                sx={{ py: 1.5, fontSize: '1.1rem' }}
-              >
-                {loading ? <CircularProgress size={24} /> : 'Next'}
-              </Button>
-            </Box>
-          ) : (
-            <Box component="form" onSubmit={handleRegisterSubmit}>
-              <TextField
-                fullWidth
-                label="Email Address"
-                value={email}
-                disabled
-                sx={{ mb: 2 }}
-              />
-              <TextField
-                fullWidth
-                label="Full Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                disabled={loading}
-                sx={{ mb: 3 }}
-                autoFocus
-              />
-              <Stack direction="row" spacing={2}>
-                <Button 
-                  variant="outlined" 
-                  fullWidth 
-                  onClick={() => setStep('email')}
-                  disabled={loading}
-                >
-                  Back
-                </Button>
-                <Button 
-                  type="submit" 
-                  variant="contained" 
-                  fullWidth 
-                  size="large" 
-                  disabled={loading}
-                >
-                  {loading ? <CircularProgress size={24} /> : 'Get Ticket'}
-                </Button>
-              </Stack>
-            </Box>
-          )}
+          <Box component="form" onSubmit={handleSubmit}>
+            <TextField
+              fullWidth
+              label="Full Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              disabled={loading}
+              sx={{ mb: 3 }}
+              autoFocus
+            />
+            <TextField
+              fullWidth
+              label="Email Address"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={loading}
+              sx={{ mb: 3 }}
+            />
+            <Button 
+              type="submit" 
+              variant="contained" 
+              fullWidth 
+              size="large" 
+              disabled={loading}
+              sx={{ py: 1.5, fontSize: '1.1rem' }}
+            >
+              {loading ? <CircularProgress size={24} /> : 'Get Ticket'}
+            </Button>
+          </Box>
 
           {error && (
             <Alert severity="error" sx={{ mt: 3 }}>
