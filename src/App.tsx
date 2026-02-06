@@ -11,6 +11,7 @@ import MemberManagement from './pages/MemberManagement';
 import Lead from './pages/Lead';
 import QRGenerator from './pages/QRGenerator';
 import HeadshotCheckin from './pages/HeadshotCheckin';
+import StudentSlate from './pages/StudentSlate';
 import AdminGuard from './components/AdminGuard';
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
                   </AdminGuard>
                 }
               />
+              <Route path="/slate" element={<StudentSlate />} />
               <Route
                 path="/admin/members"
                 element={
