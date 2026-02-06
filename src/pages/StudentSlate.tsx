@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { 
   Box, Container, Typography, TextField, Button, Card, CardContent, 
-  CircularProgress, Alert, Stack
+  CircularProgress, Alert
 } from '@mui/material';
 import { findRsvpByEmail, addEventRsvp, checkInStudentWithTransaction, EventRsvp } from '../firebase/rsvps';
 import { auth } from '../firebase/config';
 import { signInAnonymously } from 'firebase/auth';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const EVENT_KEY = 'professional-headshots-2026-02-06';
 
