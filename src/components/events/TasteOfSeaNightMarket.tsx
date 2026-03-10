@@ -1,4 +1,4 @@
-import { Button, Stack, Typography, Box } from '@mui/material';
+import { Button, Stack, Typography } from '@mui/material';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
