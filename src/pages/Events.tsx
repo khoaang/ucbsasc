@@ -13,11 +13,13 @@ import UpcomingGeneralMeeting from '../components/events/UpcomingGeneralMeeting'
 import BondingEventPreview from '../components/events/BondingEventPreview';
 import ProfessionalHeadshotsFeb2026 from '../components/events/ProfessionalHeadshotsFeb2026';
 import GameNight from '../components/events/GameNight';
+import TasteOfSeaNightMarket from '../components/events/TasteOfSeaNightMarket';
 
 const Events = () => {
   // Define events with dates so we can auto-sort
   const upcomingEvents: { date: Date; key: string; render: () => JSX.Element }[] = [
     { date: new Date('2026-03-11T19:00:00-08:00'), key: 'game-night-2026', render: () => <GameNight /> },
+    { date: new Date('2026-04-06T19:00:00-07:00'), key: 'nightmarket-2026', render: () => <TasteOfSeaNightMarket /> },
   ];
 
   const pastEvents: { date: Date; key: string; render: () => JSX.Element }[] = [

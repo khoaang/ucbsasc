@@ -1,5 +1,6 @@
 import { ThemeProvider, Box, CssBaseline } from '@mui/material';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
 import theme from './theme/theme';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -12,6 +13,13 @@ import Lead from './pages/Lead';
 import QRGenerator from './pages/QRGenerator';
 import StudentSlate from './pages/StudentSlate';
 import AdminGuard from './components/AdminGuard';
+
+const ExternalRedirect = ({ to }: { to: string }) => {
+  useEffect(() => {
+    window.location.href = to;
+  }, [to]);
+  return null;
+};
 
 function App() {
   return (
@@ -30,6 +38,8 @@ function App() {
               <Route path="/resources" element={<Resources />} />
               <Route path="/qr" element={<QRGenerator />} />
               <Route path="/checkin" element={<StudentSlate />} />
+              <Route path="/tos-vendor" element={<ExternalRedirect to="https://forms.gle/MC9eXS3sjcNjuC956" />} />
+              <Route path="/tos-performer" element={<ExternalRedirect to="https://forms.gle/2czvbL7TZwjk2Mmp8" />} />
               <Route
                 path="/admin/members"
                 element={
