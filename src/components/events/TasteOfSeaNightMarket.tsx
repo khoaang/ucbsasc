@@ -64,9 +64,6 @@ const TasteOfSeaNightMarket = () => {
                         </Typography>
                     </Box>
 
-                    <Typography variant="subtitle2" color="error.main" sx={{ mb: 3, fontWeight: 'bold', display: 'flex', alignItems: 'center' }}>
-                        ⚠️ Sign-up Deadline: Sunday, March 15 by 11:59 PM
-                    </Typography>
                 </Box>
                 
                 <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} flexWrap="wrap" useFlexGap>
