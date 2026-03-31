@@ -14,10 +14,12 @@ import BondingEventPreview from '../components/events/BondingEventPreview';
 import ProfessionalHeadshotsFeb2026 from '../components/events/ProfessionalHeadshotsFeb2026';
 import GameNight from '../components/events/GameNight';
 import TasteOfSeaNightMarket from '../components/events/TasteOfSeaNightMarket';
+import ResumeWorkshop from '../components/events/ResumeWorkshop';
 
 const Events = () => {
   // Define events with dates so we can auto-sort
   const upcomingEvents: { date: Date; key: string; render: () => JSX.Element }[] = [
+    { date: new Date('2026-04-01T18:00:00-07:00'), key: 'resume-workshop-2026-04-01', render: () => <ResumeWorkshop /> },
     { date: new Date('2026-04-06T18:00:00-07:00'), key: 'nightmarket-2026', render: () => <TasteOfSeaNightMarket /> },
   ];
 

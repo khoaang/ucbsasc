@@ -63,7 +63,6 @@ const TasteOfSeaNightMarket = () => {
                             For vendors, $1 of every $1 ticket sold goes back to your RSO.
                         </Typography>
                     </Box>
-
                 </Box>
                 
                 <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} flexWrap="wrap" useFlexGap>
@@ -92,7 +91,7 @@ const TasteOfSeaNightMarket = () => {
                     <Button
                         variant="text"
                         color="primary"
-                        href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Taste+of+SEA+Night+Market&dates=20260407T010000Z/20260407T040000Z&details=Join+us+for+an+evening+of+Southeast+Asian+culture,+cuisine,+and+performances!&location=Lower+Sproul+Plaza,+Berkeley,+CA"
+                        href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Taste%20of%20SEA%20Night%20Market&dates=20260407T010000Z/20260407T040000Z&details=Join%20us%20for%20an%20evening%20of%20Southeast%20Asian%20culture%2C%20cuisine%2C%20and%20performances!&location=Lower%20Sproul%20Plaza%2C%20UC%20Berkeley"
                         target="_blank"
                         startIcon={<CalendarMonthIcon />}
                     >
