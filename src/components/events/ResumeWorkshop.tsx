@@ -12,7 +12,7 @@ const ResumeWorkshop = () => {
   const isPast = false;
   const title = 'Resume Workshop';
   const details =
-    "SASC is holding a free, constructive resume workshop run by our PR Director. It's the perfect opportunity to make sure your resume and portfolio are ready for summer internships or full-time roles.";
+    "Need a quick resume tune-up before internship/full-time apps? Bring your resume (and portfolio if you have one) for friendly, constructive feedback from SASC's PR Director. We'll cover structure, bullet points, and what recruiters look for—plus quick tips for applying (where to look, how to tailor, and how to follow up).";
   const location = 'Wheeler 126, UC Berkeley';
   // April 1, 2026 6:00 PM - 7:00 PM PDT
   const gcalUrl =
@@ -99,12 +99,14 @@ const ResumeWorkshop = () => {
             />
           </Stack>
 
-          <Typography variant="body1" sx={{ mb: 2, fontSize: '1.1rem', lineHeight: 1.6 }}>
-            SASC is holding a free, constructive resume workshop this Wednesday, from 6–7 PM in Wheeler 126.
+          <Typography variant="body1" sx={{ mb: 1.5, fontSize: '1.1rem', lineHeight: 1.6 }}>
+            Need a quick resume tune-up before internship or full-time applications? Come through for a free, constructive workshop led by
+            SASC&apos;s PR Director.
           </Typography>
           <Typography variant="body1" sx={{ mb: 2, lineHeight: 1.6 }}>
-            The workshop will be run by SASC&apos;s PR Director, and it&apos;s the perfect opportunity to ensure your resume and portfolio are
-            up to spec to get hired for a full time or summer role.
+            Bring a resume you&apos;re comfortable sharing (printed or on your laptop). We&apos;ll go over structure, bullet points, and what to
+            prioritize, plus a few practical tips for applying to roles (where to search, how to tailor quickly, and how to follow up). We&apos;ll
+            leave time for questions and quick 1:1 feedback as time allows.
           </Typography>
 
           {!isPast && (
