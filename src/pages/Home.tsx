@@ -16,7 +16,6 @@ import { Instagram } from '@mui/icons-material';
 import MailingListModal from '../components/MailingListModal';
 // import HalloweenModal from '../components/events/HalloweenModal';
 import Footer from '../components/Footer';
-import LeadInviteModal from '../components/home/LeadInviteModal';
 // import GeneralMeetingModal from '../components/events/GeneralMeetingModal';
 
 const HeroSection = styled(Box)({
@@ -138,36 +137,6 @@ const Home = () => {
   const containerRef = useRef(null);
   const [mailingListOpen, setMailingListOpen] = useState(false);
   // const [halloweenOpen, setHalloweenOpen] = useState(false);
-  const [leadModalOpen, setLeadModalOpen] = useState(false);
-  const handleLeadModalClose = () => {
-    try {
-      localStorage.setItem('lead_modal_dismissed_v1', 'true');
-    } catch {}
-    setLeadModalOpen(false);
-  };
-
-
-  // useEffect(() => {
-  //   try {
-  //     const dismissed = localStorage.getItem('halloween_dismissed');
-  //     if (!dismissed) {
-  //       const t = setTimeout(() => setHalloweenOpen(true), 1200);
-  //       return () => clearTimeout(t);
-  //     }
-  //   } catch {}
-  // }, []);
-
-  useEffect(() => {
-    try {
-      const params = new URLSearchParams(window.location.search);
-      const forceShow = params.get('showLead') === '1';
-      const dismissed = localStorage.getItem('lead_modal_dismissed_v1');
-      if (forceShow || !dismissed) {
-        const t = setTimeout(() => setLeadModalOpen(true), 1200);
-        return () => clearTimeout(t);
-      }
-    } catch { }
-  }, []);
 
 
   return (
@@ -404,7 +373,6 @@ const Home = () => {
         open={halloweenOpen}
         onClose={() => setHalloweenOpen(false)}
       /> */}
-      <LeadInviteModal open={leadModalOpen} onClose={handleLeadModalClose} />
     </Box>
   );
 };

@@ -21,6 +21,12 @@
   force = true
 
 [[redirects]]
+  from = "/seagrad26"
+  to = "https://docs.google.com/forms/d/e/1FAIpQLScMxGo6OMtJMKGTfqbgGF9nXf2qUy0lWN0sM-O6CP8v-okGbg/viewform"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200 

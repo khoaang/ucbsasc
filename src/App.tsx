@@ -38,6 +38,7 @@ function App() {
               <Route path="/resources" element={<Resources />} />
               <Route path="/qr" element={<QRGenerator />} />
               <Route path="/checkin" element={<StudentSlate />} />
+              <Route path="/seagrad26" element={<ExternalRedirect to="https://docs.google.com/forms/d/e/1FAIpQLScMxGo6OMtJMKGTfqbgGF9nXf2qUy0lWN0sM-O6CP8v-okGbg/viewform" />} />
               <Route path="/tos-vendor" element={<ExternalRedirect to="https://forms.gle/MC9eXS3sjcNjuC956" />} />
               <Route path="/tos-performer" element={<ExternalRedirect to="https://forms.gle/2czvbL7TZwjk2Mmp8" />} />
               <Route
