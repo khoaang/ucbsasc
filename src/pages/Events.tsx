@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import GeneralMeeting from '../components/events/GeneralMeeting';
 import NightMarket from '../components/events/NightMarket';
 import SEAGrad from '../components/events/SEAGrad';
+import SEAPicnic from '../components/events/SEAPicnic';
 import SEAGrad26 from '../components/events/SEAGrad26';
 import ProfessionalHeadshots from '../components/events/ProfessionalHeadshots';
 import HalloweenMovieNight from '../components/events/HalloweenMovieNight';
@@ -21,6 +22,7 @@ const Events = () => {
   // Define events with dates so we can auto-sort
   const upcomingEvents: { date: Date; key: string; render: () => JSX.Element }[] = [
     { date: new Date('2026-05-09T18:00:00-07:00'), key: 'seagrad-2026', render: () => <SEAGrad26 /> },
+    { date: new Date('2026-04-29T17:00:00-07:00'), key: 'seapicnic-2026', render: () => <SEAPicnic /> },
     { date: new Date('2026-04-06T18:00:00-07:00'), key: 'nightmarket-2026', render: () => <TasteOfSeaNightMarket /> },
   ];
 
