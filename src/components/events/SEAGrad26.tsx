@@ -8,7 +8,9 @@ const SEAGrad26 = () => {
             statusLabel="UPCOMING EVENT"
             statusBgColor="primary.main"
             borderColor="primary.main"
-            image={{ src: '/seagrad26.png', alt: 'Southeast Asian Graduation 2026' }}
+            minMediaHeight={500}
+            maxMediaHeight={600}
+            image={{ src: '/seagrad26.png', alt: 'Southeast Asian Graduation 2026', sx: { objectFit: 'contain', objectPosition: 'center', bgcolor: 'black' } }}
         >
             <Typography variant="h5" component="h2" sx={{ mb: 0.5 }}>
                 Class of 2026 - UC Berkeley SEAGrad
@@ -18,20 +20,17 @@ const SEAGrad26 = () => {
             </Typography>
             <Typography variant="body2" sx={{ mb: 1 }}>
                 Are you a Cal Southeast Asian identifying student looking for a ceremony that celebrates you? 
-                If yes, then you are a perfect fit for this graduation event!
-            </Typography>
-            <Typography variant="body2" sx={{ mb: 1 }}>
-                SEAGrad is an annual ceremony hosted by the Southeast Asian Student Coalition (SASC) that celebrates the graduating Southeast Asian students within the UC Berkeley community. 
+                SEAGrad is an annual ceremony hosted by SASC that celebrates the graduating Southeast Asian students within the UC Berkeley community. 
                 This form is available for Cal graduates (Bachelor's or Graduate Degree) graduating in Spring/Fall 2026.
             </Typography>
             <Typography variant="body2" sx={{ mb: 1, fontWeight: 'bold' }}>
                 ** Please fill out this form by Saturday, May 2nd 8PM PST!
             </Typography>
             <Typography variant="body2" sx={{ mb: 1 }}>
-                There will be free food, drinks, gifts, and festivities! Do not hesitate to submit any questions, comments, or suggestions to better accommodate your needs.
+                Join us for free food, drinks, gifts, and festivities!
             </Typography>
             <Typography variant="body2" sx={{ mb: 2, fontSize: '0.8rem', color: 'text.secondary' }}>
-                *Please Note : Due to the new cost of graduation regalia, cap and gown reimbursements are reserved for eligible first-generation/low-income identifying graduates for RENTALS only. As funds are limited, we will be asking for proof via FAFSA EFC, EBT, or other forms of evidence to ensure we are able to reserve reimbursements for students in need. If you qualify, you will be reimbursed $50 to cover the cost of the regalia rental. The reimbursement is also contingent upon your attendance in SEAGrad ceremony, meaning if you were to forfeit your attendance, you would no longer be eligible for a reimbursement. Thank you for your cooperation and understanding!
+                *Note: Cap and gown rental reimbursements ($50) are available for eligible first-generation/low-income graduates. As funds are limited, proof (FAFSA EFC, EBT, etc.) is required. Reimbursement is contingent upon your attendance at the SEAGrad ceremony.
             </Typography>
             <Typography variant="body2" sx={{ fontWeight: 'bold', mb: 2 }}>
                 Location: 1 Alumni House<br />
@@ -46,7 +45,7 @@ const SEAGrad26 = () => {
                 <Button
                     variant="contained"
                     color="primary"
-                    href="https://ucbsasc.org/seagrad26"
+                    href="https://ucbsasc.org/seagrad2026"
                     target="_blank"
                     size="small"
                 >

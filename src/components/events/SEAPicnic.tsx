@@ -55,7 +55,9 @@ const SEAPicnic = () => {
       statusLabel={isPast ? 'PAST EVENT' : 'UPCOMING'}
       statusBgColor={isPast ? 'grey.700' : 'primary.main'}
       borderColor="primary.main"
-      image={{ src: '/seapicnic.jpeg', alt: 'SEA Community Picnic' }}
+      minMediaHeight={500}
+      maxMediaHeight={600}
+      image={{ src: '/seapicnic.jpeg', alt: 'SEA Community Picnic', sx: { objectFit: 'contain', objectPosition: 'center', bgcolor: 'black' } }}
     >
       <Typography variant="h5" component="h2" sx={{ mb: 0.5 }}>
         SEA Community Picnic

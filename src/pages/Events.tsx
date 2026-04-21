@@ -23,10 +23,10 @@ const Events = () => {
   const upcomingEvents: { date: Date; key: string; render: () => JSX.Element }[] = [
     { date: new Date('2026-05-09T18:00:00-07:00'), key: 'seagrad-2026', render: () => <SEAGrad26 /> },
     { date: new Date('2026-04-29T17:00:00-07:00'), key: 'seapicnic-2026', render: () => <SEAPicnic /> },
-    { date: new Date('2026-04-06T18:00:00-07:00'), key: 'nightmarket-2026', render: () => <TasteOfSeaNightMarket /> },
   ];
 
   const pastEvents: { date: Date; key: string; render: () => JSX.Element }[] = [
+    { date: new Date('2026-04-06T18:00:00-07:00'), key: 'nightmarket-2026', render: () => <TasteOfSeaNightMarket /> },
     { date: new Date('2026-04-01T18:00:00-07:00'), key: 'resume-workshop-2026-04-01', render: () => <ResumeWorkshop /> },
     { date: new Date('2026-03-11T19:00:00-08:00'), key: 'game-night-2026', render: () => <GameNight /> },
     { date: new Date('2026-02-21T18:30:00-08:00'), key: 'bonding-2026', render: () => <BondingEventPreview /> },
