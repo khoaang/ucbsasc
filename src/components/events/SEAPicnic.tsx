@@ -7,7 +7,7 @@ import { signInAnonymously } from 'firebase/auth';
 import EventCard from './EventCard';
 
 const SEAPicnic = () => {
-  const isPast = false;
+  const isPast = true;
   const location = 'VLSB Lawn';
   const dateLine = 'Wednesday, April 29, 2026 • 5:00 PM – 7:00 PM';
   const details = 'Chill picnic event for us to have a SEA community hangout opportunity before finals hell! We will cater food (Secrets of Tiger Thai Sensory), have games, and activities. You do not have to be at the whole event but please do show out for the community for at least a bit!';
@@ -81,18 +81,20 @@ const SEAPicnic = () => {
         </Box>
       </Box>
 
-      <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1} sx={{ mt: 1 }}>
-        <Button 
-          variant="outlined" 
-          color="primary"
-          size="small" 
-          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=SEA+Community+Picnic&dates=20260430T000000Z/20260430T020000Z&details=Chill+picnic+event+for+us+to+have+a+SEA+community+hangout+opportunity+before+finals+hell!+Free+catered+food,+games,+and+activities.&location=VLSB+Lawn,+UC+Berkeley"
-          target="_blank"
-          startIcon={<CalendarMonthIcon />}
-        >
-          Add to Calendar
-        </Button>
-      </Stack>
+      {!isPast && (
+        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1} sx={{ mt: 1 }}>
+          <Button 
+            variant="outlined" 
+            color="primary"
+            size="small" 
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=SEA+Community+Picnic&dates=20260430T000000Z/20260430T020000Z&details=Chill+picnic+event+for+us+to+have+a+SEA+community+hangout+opportunity+before+finals+hell!+Free+catered+food,+games,+and+activities.&location=VLSB+Lawn,+UC+Berkeley"
+            target="_blank"
+            startIcon={<CalendarMonthIcon />}
+          >
+            Add to Calendar
+          </Button>
+        </Stack>
+      )}
 
       {!isPast && (
         <Box sx={{ mt: 3, p: 2, bgcolor: 'background.paper', borderRadius: 1, border: '1px solid', borderColor: 'divider' }}>
