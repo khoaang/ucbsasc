@@ -45,17 +45,17 @@ const HalloweenModal = ({ open, onClose }: HalloweenModalProps) => {
     try {
       setSubmitting(true);
       if (!auth.currentUser) {
-        try { await signInAnonymously(auth); } catch (authErr: any) {
-          console.error('Anonymous auth failed:', authErr?.code, authErr?.message, authErr);
+        try { await signInAnonymously(auth); } catch (authErr) {
+          console.error('Anonymous auth failed:', authErr);
         }
       }
       await addEventRsvp('halloween-movie-night-2025-10-24', name.trim(), email.trim());
       setSuccess('Thanks! Your RSVP has been received. See you there! 🎃');
       setName('');
       setEmail('');
-    } catch (err: any) {
-      console.error('RSVP submit failed:', err?.code, err?.message, err);
-      setError(`${err?.code || 'Error'}: ${err?.message || 'Something went wrong. Please try again.'}`);
+    } catch (err) {
+      console.error('RSVP submit failed:', err);
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
     } finally {
       setSubmitting(false);
     }
@@ -64,7 +64,9 @@ const HalloweenModal = ({ open, onClose }: HalloweenModalProps) => {
   const handleClose = () => {
     try {
       localStorage.setItem('halloween_dismissed', 'true');
-    } catch {}
+    } catch {
+      // Continue closing if localStorage is unavailable.
+    }
     onClose();
   };
 

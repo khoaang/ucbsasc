@@ -41,9 +41,9 @@ export const addMember = async (memberData: Omit<Member, 'id' | 'joinDate' | 'is
     
     const docRef = await addDoc(collection(db, MEMBERS_COLLECTION), member);
     return { id: docRef.id, ...member };
-  } catch (error: any) {
+  } catch (error) {
     // Surface more details for debugging
-    console.error('Error adding member:', error?.code, error?.message, error);
+    console.error('Error adding member:', error);
     throw error;
   }
 };

@@ -106,9 +106,9 @@ export const leadApplicationSteps: Array<{
   icon: ApplicationStepIconKey;
 }> = [
   {
-    title: 'Fill out the interest form',
+    title: 'Watch for the next cycle',
     detail:
-      'Tell us what excites you, what you’re good at, and what you want to learn. We’re genuinely interested in what you bring, not just checkboxes.',
+      'Recruitment details are shared through Instagram, the mailing list, and general meetings once branch needs and timelines are confirmed.',
     icon: 'lightbulb',
   },
   {
@@ -126,7 +126,7 @@ export const leadApplicationSteps: Array<{
   {
     title: 'Grow with us',
     detail:
-      'Expect mentorship, chances to develop professionally, and a team that supports you when things get busy and when they slow down. Priority deadline: February 1 at 11:59 PM.',
+      'Expect mentorship, chances to develop professionally, and a team that supports you when things get busy and when they slow down.',
     icon: 'volunteer',
   },
 ];

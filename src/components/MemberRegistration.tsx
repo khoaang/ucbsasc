@@ -16,7 +16,8 @@ import {
   Alert,
   CircularProgress,
   Grid,
-  OutlinedInput
+  OutlinedInput,
+  SelectChangeEvent
 } from '@mui/material';
 import { addMember } from '../firebase/members';
 
@@ -59,14 +60,16 @@ const MemberRegistration: React.FC<MemberRegistrationProps> = ({ open, onClose, 
     'Other'
   ];
 
-  const handleInputChange = (field: string) => (event: any) => {
+  const handleInputChange = (field: string) => (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | SelectChangeEvent<string>
+  ) => {
     setFormData(prev => ({
       ...prev,
       [field]: event.target.value
     }));
   };
 
-  const handleInterestChange = (event: any) => {
+  const handleInterestChange = (event: SelectChangeEvent<string[]>) => {
     const value = event.target.value;
     setFormData(prev => ({
       ...prev,

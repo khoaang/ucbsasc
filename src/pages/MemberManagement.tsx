@@ -100,7 +100,7 @@ const MemberManagement: React.FC = () => {
     }
   };
 
-  const formatDate = (timestamp: any) => {
+  const formatDate = (timestamp?: Member['joinDate']) => {
     if (!timestamp) return 'N/A';
     return new Date(timestamp.seconds * 1000).toLocaleDateString();
   };

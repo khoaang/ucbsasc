@@ -22,7 +22,7 @@ The dev server runs on `http://localhost:5173`.
 - Home – community overview.
 - About – mission, history, and leadership.
 - Events – upcoming and past events (all cards share the same layout component).
-- Lead – Spring 2026 officer recruiting hub with deadlines and data pulled from `src/data/lead*.ts`.
+- Lead – leadership and involvement hub with branch details and next-cycle guidance from `src/data/lead*.ts`.
 - Resources – helpful links and documents.
 - Contact – ways to reach SASC.
 - Secret page `/qr` – QR code generator used for tabling (intentionally hidden from the navbar).

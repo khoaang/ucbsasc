@@ -17,7 +17,9 @@ const GeneralMeetingModal = ({ open, onClose }: GeneralMeetingModalProps) => {
 
   const handleClose = () => {
     if (dontShowAgain) {
-      try { localStorage.setItem('gm_dismissed', '1'); } catch {}
+      try { localStorage.setItem('gm_dismissed', '1'); } catch {
+        // Continue closing if localStorage is unavailable.
+      }
     }
     onClose();
   };

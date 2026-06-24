@@ -21,8 +21,7 @@ const BondingEventPreview = () => {
                 members expected chill vibes, light bites, and space to dream up collaborations for the rest of the semester.
             </Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
-                The full schedule, RSVP link, and accessibility notes were released soon. Let us know if you have activity ideas or dietary
-                needs we should factor in.
+                This gathering gave members space to reconnect, trade ideas, and carry momentum into the rest of spring programming.
             </Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1}>
                 <Button

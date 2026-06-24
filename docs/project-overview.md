@@ -4,9 +4,9 @@ This project powers the public website for the Southeast Asian Student Coalition
 
 ## Tech Stack
 - **Frontend framework**: React 18 with TypeScript
-- **Build tool**: Vite 6
-- **UI framework**: Material UI (MUI) 6
-- **Routing**: React Router DOM 7
+- **Build tool**: Vite 5
+- **UI framework**: Material UI (MUI) 5
+- **Routing**: React Router DOM 6
 - **Animation**: Framer Motion 11
 - **Styling**: Emotion (CSS-in-JS)
 
@@ -14,7 +14,7 @@ This project powers the public website for the Southeast Asian Student Coalition
 - **Home Page**: Overview of the SASC community and current announcements.
 - **About Page**: History, mission, and leadership profiles.
 - **Events Page**: Upcoming and past event cards, all backed by the shared `EventCard` component.
-- **Lead Page**: Spring 2026 recruitment hub with branch details, deadlines, and application links.
+- **Lead Page**: Leadership and involvement hub with branch details and next-cycle guidance.
 - **Resources Page**: Useful links and documents for members and interns.
 - **Contact Page**: Ways to reach the organization.
 - **Secret Page `/qr`**: Quick QR code generator used for tabling and flyers (no navbar link on purpose).

@@ -133,15 +133,15 @@ const Lead = () => {
               fontWeight: 600,
             }}
           >
-            Priority deadline: Sunday, February 1 at 11:59 PM. Applications are reviewed on a rolling basis, and early submissions receive
-            priority consideration.
+            Recruitment for the last cycle has closed. Follow along for next year’s timeline, or reach out if you want to learn where your
+            energy could fit.
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ mt: 4 }}>
             <Button
               variant="contained"
               color="inherit"
               size="large"
-              href="https://forms.gle/mnqaVF1UhXhoFKdJ6"
+              href="https://www.instagram.com/ucbsasc"
               target="_blank"
               rel="noopener"
               sx={{
@@ -150,17 +150,15 @@ const Lead = () => {
                 '&:hover': { bgcolor: 'rgba(255, 255, 255, 0.9)' },
               }}
             >
-              Apply Now
+              Follow @ucbsasc
             </Button>
             <Button
               variant="outlined"
               color="inherit"
               size="large"
-              href="https://www.instagram.com/ucbsasc"
-              target="_blank"
-              rel="noopener"
+              href="/contact"
             >
-              DM @ucbsasc
+              Contact Us
             </Button>
           </Stack>
         </Container>
@@ -203,9 +201,9 @@ const Lead = () => {
                   href="/events"
                   sx={{ p: 0, minWidth: 0, textTransform: 'none', fontWeight: 600 }}
                 >
-                  Check out our events
+                  Browse our event archive
                 </Button>{' '}
-                to see what’s happening now.
+                to see what we built this year.
               </Typography>
             </Stack>
           </Grid>
@@ -261,14 +259,13 @@ const Lead = () => {
 
       <Container sx={{ mb: 8 }}>
         <Typography variant="h4" gutterBottom>
-          Branches Recruiting This Semester
+          Ways to Lead
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ mb: 4, maxWidth: 760 }}>
           Officer roles typically take about 5 hours a week between branch meetings, SASComm planning, and preparation. When big events
-          or campaigns are coming up, we share the load; when things quiet down, we reset and plan ahead. If you’re curious about what
-          the work actually looks like, reach out, we swap tasks and support each other to keep things sustainable. All majors, class
-          years, and lived experiences are welcome, especially folks grounded in Southeast Asian storytelling, mutual aid, and
-          intergenerational care.
+          or campaigns come up, we share the load; when things quiet down, we reset and plan ahead. If you’re curious about what the work
+          actually looks like, reach out. All majors, class years, and lived experiences are welcome, especially folks grounded in
+          Southeast Asian storytelling, mutual aid, and intergenerational care.
         </Typography>
         <Grid container spacing={4}>
           {leadBranches.map((branch) => {
@@ -362,7 +359,7 @@ const Lead = () => {
 
       <Container sx={{ mb: 8 }}>
         <Typography variant="h4" gutterBottom>
-          How Recruitment Works
+          How to Get Involved
         </Typography>
         <Grid container spacing={3}>
           {leadApplicationSteps.map((step) => (
@@ -389,22 +386,21 @@ const Lead = () => {
         <Card sx={{ p: { xs: 3, md: 5 }, backgroundColor: 'rgba(33, 150, 243, 0.08)' }}>
           <Stack spacing={2}>
             <Typography variant="h5" sx={{ fontWeight: 600 }}>
-              Ready to bring your energy to SASC?
+              Thinking about leading with SASC next year?
             </Typography>
             <Typography variant="body1" color="text.secondary">
-              We care more about curiosity, humility, and a real commitment to community than job titles or resumes. Our pace shifts
-              with the season, so let’s figure out where your time and energy fit best, whether that’s through an interest form, a DM,
-              or coming to a general meeting.
+              We care more about curiosity, humility, and a real commitment to community than job titles or resumes. Our pace shifts with
+              the season, so follow our next recruitment cycle, DM us, or come to a general meeting when programming resumes.
             </Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ pt: 1 }}>
               <Button
                 variant="contained"
                 color="primary"
-                href="https://forms.gle/mnqaVF1UhXhoFKdJ6"
+                href="https://www.instagram.com/ucbsasc"
                 target="_blank"
                 rel="noopener"
               >
-                Submit Interest
+                Follow @ucbsasc
               </Button>
               <Button
                 variant="outlined"

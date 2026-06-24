@@ -18,16 +18,15 @@ const LeadInviteModal = ({ open, onClose }: LeadInviteModalProps) => {
       <DialogTitle>Lead with SASC</DialogTitle>
       <DialogContent dividers>
         <Typography variant="body1" sx={{ mb: 2 }}>
-          SASComm is recruiting new officers for Spring 2026. If you care about Southeast Asian community building, storytelling, and
-          advocacy, we want to hear from you. Roles are flexible, collaborative, and grounded in shared responsibility.
+          SASComm brings together students who care about Southeast Asian community building, storytelling, and advocacy. Roles are
+          flexible, collaborative, and grounded in shared responsibility.
         </Typography>
         <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>
-          Curious about the work? Check out the leadership page to see branch focus areas, expectations, and next steps. You can always DM
-          us on Instagram if you have questions before applying.
+          Curious about the work? Check out the leadership page to see branch focus areas, expectations, and ways to connect before the
+          next recruitment cycle.
         </Typography>
         <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 600 }}>
-          Priority deadline: Sunday, February 1 at 11:59 PM. Applications are reviewed on a rolling basis, so send yours in as soon as you
-          can.
+          Recruitment for the last cycle has closed. Follow @ucbsasc or join the mailing list for the next timeline.
         </Typography>
       </DialogContent>
       <DialogActions sx={{ flexWrap: 'wrap', gap: 1.5, justifyContent: 'flex-end', px: 3, py: 2 }}>
@@ -36,14 +35,12 @@ const LeadInviteModal = ({ open, onClose }: LeadInviteModalProps) => {
         </Button>
         <Button
           component="a"
-          href="https://forms.gle/mnqaVF1UhXhoFKdJ6"
-          target="_blank"
-          rel="noopener"
+          href="/lead"
           variant="contained"
           color="primary"
           onClick={onClose}
         >
-          Apply Now
+          Learn More
         </Button>
         <Button
           component="a"

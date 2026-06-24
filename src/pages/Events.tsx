@@ -1,6 +1,7 @@
-import { Container, Typography, Accordion, AccordionSummary, AccordionDetails, Box } from '@mui/material';
+import { Container, Typography, Accordion, AccordionSummary, AccordionDetails, Box, Button, Card, CardContent, Stack } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Footer from '../components/Footer';
+import { gradients } from '../theme/theme';
 import GeneralMeeting from '../components/events/GeneralMeeting';
 import NightMarket from '../components/events/NightMarket';
 import SEAGrad from '../components/events/SEAGrad';
@@ -20,11 +21,10 @@ import ResumeWorkshop from '../components/events/ResumeWorkshop';
 
 const Events = () => {
   // Define events with dates so we can auto-sort
-  const upcomingEvents: { date: Date; key: string; render: () => JSX.Element }[] = [
-    { date: new Date('2026-05-09T18:00:00-07:00'), key: 'seagrad-2026', render: () => <SEAGrad26 /> },
-  ];
+  const upcomingEvents: { date: Date; key: string; render: () => JSX.Element }[] = [];
 
   const pastEvents: { date: Date; key: string; render: () => JSX.Element }[] = [
+    { date: new Date('2026-05-09T18:00:00-07:00'), key: 'seagrad-2026', render: () => <SEAGrad26 /> },
     { date: new Date('2026-04-29T17:00:00-07:00'), key: 'seapicnic-2026', render: () => <SEAPicnic /> },
     { date: new Date('2026-04-06T18:00:00-07:00'), key: 'nightmarket-2026', render: () => <TasteOfSeaNightMarket /> },
     { date: new Date('2026-04-01T18:00:00-07:00'), key: 'resume-workshop-2026-04-01', render: () => <ResumeWorkshop /> },
@@ -49,20 +49,49 @@ const Events = () => {
   return (
     <>
       <Container sx={{ py: 8 }}>
-        <Typography variant="h2" component="h1" gutterBottom>
+        <Typography variant="overline" sx={{ color: 'secondary.dark' }}>
+          What&apos;s happening
+        </Typography>
+        <Typography variant="h2" component="h1" sx={{ color: 'info.main', mt: 1, mb: 2 }}>
           Events
         </Typography>
-        {/* Upcoming events (auto-sorted) */}
-        <Box sx={{ display: 'contents' }}>
-          {upcomingEvents.map((ev) => (
-            <Box key={ev.key}>{ev.render()}</Box>
-          ))}
-        </Box>
+        <Box sx={{ width: 56, height: 4, borderRadius: 4, background: gradients.brand, mb: 3 }} />
+        <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 760, mb: 4 }}>
+          Our 2025-26 programming has wrapped. We are getting ready for the next school year, and new events will be posted here once
+          dates, rooms, and partner details are confirmed.
+        </Typography>
+        {upcomingEvents.length > 0 ? (
+          <Box sx={{ display: 'contents' }}>
+            {upcomingEvents.map((ev) => (
+              <Box key={ev.key}>{ev.render()}</Box>
+            ))}
+          </Box>
+        ) : (
+          <Card sx={{ mb: 4, border: '1px solid', borderColor: 'divider' }}>
+            <CardContent sx={{ p: { xs: 3, md: 4 } }}>
+              <Typography variant="h5" component="h2" sx={{ mb: 1, fontWeight: 700 }}>
+                Next school year is in the works
+              </Typography>
+              <Typography variant="body1" color="text.secondary" sx={{ mb: 3, maxWidth: 720 }}>
+                Follow SASC or join the mailing list for the first wave of general meetings, cultural programs, community care spaces, and
+                opportunities to get involved.
+              </Typography>
+              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
+                <Button variant="contained" href="https://www.instagram.com/ucbsasc" target="_blank" rel="noopener">
+                  Follow @ucbsasc
+                </Button>
+                <Button variant="outlined" href="/contact">
+                  Contact Us
+                </Button>
+              </Stack>
+            </CardContent>
+          </Card>
+        )}
 
         {/* Collapsible past events */}
         <Accordion sx={{ mt: 3 }}>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography variant="h6">Past Events</Typography>
+            <Typography variant="h6">Recent Event Archive</Typography>
           </AccordionSummary>
           <AccordionDetails>
             {pastEvents.map((ev) => (

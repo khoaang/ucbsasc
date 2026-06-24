@@ -29,7 +29,7 @@ ucbsasc/
 ## Key Files Explained
 - `src/App.tsx` – router definitions and layout wrapper.
 - `src/components/events/EventCard.tsx` – shared layout for every event card.
-- `src/components/home/LeadInviteModal.tsx` – leadership splash modal for the homepage.
+- `src/components/home/LeadInviteModal.tsx` – optional leadership splash modal, currently not mounted on the homepage.
 - `src/data/leadership.ts` – single source of truth for director and officer metadata.
 - `src/data/lead.ts` – configuration for the lead page (benefits, branch blurbs, application steps).
 - `src/pages/QRGenerator.tsx` – the hidden `/qr` page that generates QR codes.
@@ -50,7 +50,7 @@ ucbsasc/
 2. Add navigation entries in `src/components/Navbar.tsx`.
 
 ## Environment Flags and Modals
-- Leadership modal: `LeadInviteModal` is triggered from the home page state stored in `Home.tsx` and persists using `lead_modal_dismissed_v1`.
 - Firebase hooks live in `src/firebase/`; keep secrets out of the repo.
+- Event and leadership modals are only active when imported and mounted by a page component.
 
 When in doubt, search within the `src` folder using your editor or `rg` to see how an existing component is wired. For day-to-day workflows and code style preferences, check the [development guide](./development-guide.md).

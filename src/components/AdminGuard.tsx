@@ -16,14 +16,18 @@ const AdminGuard = ({ children }: AdminGuardProps) => {
     try {
       const v = localStorage.getItem(STORAGE_KEY);
       if (v === '1') setAuthed(true);
-    } catch {}
+    } catch {
+      // localStorage may be unavailable in private browsing or restricted embeds.
+    }
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const expected = import.meta.env.VITE_ADMIN_PASS?.toString() || '';
     if (expected && input === expected) {
-      try { localStorage.setItem(STORAGE_KEY, '1'); } catch {}
+      try { localStorage.setItem(STORAGE_KEY, '1'); } catch {
+        // Continue without persistence if localStorage is unavailable.
+      }
       setAuthed(true);
     } else {
       setError('Invalid passcode.');

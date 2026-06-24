@@ -1,6 +1,7 @@
 import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Footer from '../components/Footer';
+import { gradients } from '../theme/theme';
 import { directors as leadershipDirectors, officers as leadershipOfficers } from '../data/leadership';
 
 const ProgramCard = styled(Card)(({ theme }) => ({
@@ -15,11 +16,11 @@ const ProgramCard = styled(Card)(({ theme }) => ({
 
 const IntroSection = styled(Box)({
   position: 'relative',
-  height: '60vh',
+  minHeight: '52vh',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  background: '#000',
+  background: gradients.navy,
   color: 'white',
   overflow: 'hidden',
 });
@@ -74,20 +75,40 @@ const About = () => {
 
   return (
     <Box sx={{ position: 'relative' }}>
-      <IntroSection sx={{
-        backgroundImage: 'url(/historical4.webp)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}>
-        <Box sx={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(0,0,0,0.45)' }} />
-        <Container sx={{ position: 'relative', zIndex: 1 }}>
+      <IntroSection>
+        <Box
+          sx={{
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: 'url(/grid.svg)',
+            backgroundSize: '420px',
+            opacity: 0.12,
+          }}
+        />
+        <Box
+          sx={{
+            position: 'absolute',
+            top: -120,
+            right: -80,
+            width: 420,
+            height: 420,
+            borderRadius: '50%',
+            background: gradients.brand,
+            filter: 'blur(130px)',
+            opacity: 0.5,
+          }}
+        />
+        <Container sx={{ position: 'relative', zIndex: 1, py: 8 }}>
+          <Typography variant="overline" sx={{ color: 'secondary.light' }}>
+            Our Story
+          </Typography>
           <Typography
             variant="h1"
             sx={{
-              fontSize: { xs: '2.5rem', md: '4rem' },
+              fontSize: { xs: '2.75rem', md: '4.25rem' },
               fontWeight: 700,
+              mt: 1,
               mb: 2,
-              textShadow: '0 2px 16px rgba(0,0,0,0.5)'
             }}
           >
             About SASC
@@ -96,12 +117,12 @@ const About = () => {
             variant="h5"
             sx={{
               maxWidth: '700px',
-              opacity: 0.95,
+              fontWeight: 400,
+              color: 'rgba(255,255,255,0.85)',
               lineHeight: 1.6,
-              textShadow: '0 1px 8px rgba(0,0,0,0.4)'
             }}
           >
-            Empowering Southeast Asian voices at Berkeley since 2000
+            Empowering Southeast Asian voices at Berkeley since 2000.
           </Typography>
         </Container>
       </IntroSection>
@@ -152,7 +173,7 @@ const About = () => {
         </Typography>
         <Grid container spacing={2} justifyContent="center">
           <Grid item>
-            <Button variant="contained" href="/lead">Officer Recruitment</Button>
+            <Button variant="contained" href="/lead">Leadership & Involvement</Button>
           </Grid>
           <Grid item>
             <Button variant="outlined" href="mailto:UCB.SASC@gmail.com?subject=Hello%20SASC">Email Us</Button>

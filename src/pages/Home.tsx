@@ -14,9 +14,7 @@ import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Instagram } from '@mui/icons-material';
 import MailingListModal from '../components/MailingListModal';
-// import HalloweenModal from '../components/events/HalloweenModal';
 import Footer from '../components/Footer';
-// import GeneralMeetingModal from '../components/events/GeneralMeetingModal';
 
 const HeroSection = styled(Box)({
   position: 'relative',
@@ -121,7 +119,7 @@ const sections = [
   {
     title: "SEA Grad",
     description: `Celebrating the achievements and resilience of Southeast Asian graduates at UC Berkeley. Each year, we honor our graduating students with a special cultural graduation ceremony that brings together families, friends, and community members. This cherished tradition allows graduates to celebrate their academic accomplishments while embracing their cultural heritage. Through performances, speeches, and the presentation of cultural sashes, we recognize both individual achievements and the collective strength of our Southeast Asian community.`,
-    instagramPost: "https://www.instagram.com/p/C-rbAaUOTC8",
+    instagramPost: "https://www.instagram.com/p/DZBGmcWElwT",
     align: "right"
   },
   {
@@ -136,7 +134,6 @@ const Home = () => {
   const theme = useTheme();
   const containerRef = useRef(null);
   const [mailingListOpen, setMailingListOpen] = useState(false);
-  // const [halloweenOpen, setHalloweenOpen] = useState(false);
 
 
   return (
@@ -224,11 +221,6 @@ const Home = () => {
         </Container>
       </HeroSection>
 
-      {/* General Meeting modal disabled since event has passed */}
-      {/* <GeneralMeetingModal open={gmOpen} onClose={() => setGmOpen(false)} /> */}
-
-
-
       {sections.map((section, index) => (
         <Section key={section.title} sx={{ bgcolor: index % 2 ? 'background.paper' : 'background.default' }}>
           <Container>
@@ -257,7 +249,7 @@ const Home = () => {
                       width: '100%',
                       maxWidth: '600px',
                       margin: '0 auto',
-                      paddingTop: '70%',
+                      paddingTop: '80%',
                       borderRadius: '1rem',
                       overflow: 'hidden',
                       boxShadow: theme.shadows[10],
@@ -368,11 +360,6 @@ const Home = () => {
         open={mailingListOpen}
         onClose={() => setMailingListOpen(false)}
       />
-      {/* Halloween modal disabled since event has passed */}
-      {/* <HalloweenModal
-        open={halloweenOpen}
-        onClose={() => setHalloweenOpen(false)}
-      /> */}
     </Box>
   );
 };

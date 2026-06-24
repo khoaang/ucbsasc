@@ -5,7 +5,7 @@ import EventCard from './EventCard';
 const ProfessionalHeadshotsFeb2026 = () => {
   const title = 'Free Professional Headshots/Portraits';
   const location = 'Doe Library Entrance';
-  const details = 'Join us for free professional headshots and portraits hosted by SASC! Whether you need a new LinkedIn photo or just a nice portrait, we’ve got you covered. RSVP is not required but highly recommended to help us estimate numbers.';
+  const details = 'SASC hosted free professional headshots and portraits for students updating LinkedIn profiles, resumes, portfolios, or personal photos.';
   
   return (
     <EventCard
@@ -32,7 +32,7 @@ const ProfessionalHeadshotsFeb2026 = () => {
           <Box component="ul" sx={{ pl: 2, m: 0 }}>
             <li><Typography variant="body2">Free and open to all students</Typography></li>
             <li><Typography variant="body2">Meet at the Doe Library Entrance</Typography></li>
-            <li><Typography variant="body2">RSVP not required but highly recommended</Typography></li>
+            <li><Typography variant="body2">Edited photos were shared with attendees after the session</Typography></li>
           </Box>
         </Box>
       </Box>

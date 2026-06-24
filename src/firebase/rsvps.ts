@@ -85,7 +85,7 @@ export const checkInStudentWithTransaction = async (rsvpId: string, eventKey: st
 
     const nextSeq = maxSeq + 1;
 
-    const updates: any = {
+    const updates: Partial<EventRsvp> = {
       checkedIn: true,
       checkedInAt: serverTimestamp(),
       sequenceNumber: nextSeq

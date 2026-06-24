@@ -39,9 +39,9 @@ const SEAHistoryWorkshop = () => {
       setSuccess('RSVP received! See you there.');
       setName('');
       setEmail('');
-    } catch (err: any) {
-      console.error('RSVP submit failed:', err?.code, err?.message, err);
-      setError(err?.message || 'Failed to submit RSVP. Please try again.');
+    } catch (err) {
+      console.error('RSVP submit failed:', err);
+      setError(err instanceof Error ? err.message : 'Failed to submit RSVP. Please try again.');
     } finally {
       setSubmitting(false);
     }

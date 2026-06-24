@@ -21,8 +21,7 @@ const UpcomingGeneralMeeting = () => {
                 updates from every branch, space to connect with fellow members, and a sneak peek at upcoming programs.
             </Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
-                Finalized details dropped soon—make sure you’re on our newsletter and follow us on Instagram for the official date, location,
-                and RSVP info.
+                Members heard branch updates, reconnected after break, and got a preview of spring programs.
             </Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1}>
                 <Button variant="outlined" disabled startIcon={<CalendarMonthIcon />}>
