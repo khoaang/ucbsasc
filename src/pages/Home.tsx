@@ -71,12 +71,12 @@ const ImageCell = styled(Box)({
 });
 
 const images = [
-  { src: '/cultural-dance.jpg', alt: 'Cultural dance', span: 2 },
-  { src: '/can-drive.jpg', alt: 'Can drive', span: 1 },
-  { src: '/workshop.jpg', alt: 'Workshop', span: 1 },
-  { src: '/community-event.jpg', alt: 'Community event', span: 2 },
-  { src: '/student-gathering.jpg', alt: 'Student gathering', span: 2 },
-  { src: '/tabling.jpg', alt: 'Tabling', span: 1 },
+  { src: '/grid/cultural-dance.jpg', alt: 'Cultural dance', span: 2 },
+  { src: '/grid/picnic.png', alt: 'SEA Picnic', span: 1 },
+  { src: '/grid/laony-dance.png', alt: 'LaoNY cultural dance', span: 1 },
+  { src: '/grid/lny.png', alt: 'Lunar New Year', span: 2 },
+  { src: '/grid/abby_sydney.png', alt: 'SEA Grad celebration', span: 2 },
+  { src: '/grid/bursa-dance.png', alt: 'BURSA cultural dance at Night Market', span: 1 },
 ];
 
 const sections = [
@@ -212,8 +212,8 @@ const Home = () => {
                 lineHeight: 1.6,
               }}
             >
-              A student coalition on the ground at Cal. Mentorship, culture nights, and showing up for SEA communities on
-              campus and in the Bay.
+              Mentorship, culture nights, and a stage for SEA orgs — Night Market performances, festivals, and showing up
+              for our communities on campus and in the Bay.
             </Typography>
 
             {nextEvent && (

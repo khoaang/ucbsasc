@@ -57,7 +57,7 @@ export const leadBranches: LeadBranch[] = [
     focus: 'Community Partnerships & Advocacy',
     overview:
       'External Affairs builds relationships with campus and Bay Area partners, then helps turn those partnerships into shared events and campaigns.',
-    image: '/tabling.jpg',
+    image: '/grid/tabling.jpg',
     committee: 'External',
     keyFocus: [
       'Maintain relationships with campus and Bay Area partners.',

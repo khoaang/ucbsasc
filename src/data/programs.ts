@@ -20,8 +20,8 @@ export const programs: Program[] = [
   {
     title: 'Southeast Asian Cultural Festival (SEACF)',
     description:
-      'SEACF brings together Southeast Asian organizations for dance, music, food, and related arts, and is one of the main ways SASC shares those cultures with the wider campus.',
-    goals: 'Share Southeast Asian cultures with the Berkeley community.',
+      'SEACF brings together Southeast Asian organizations for dance, music, food, and related arts. Alongside Night Market, it is one of the main ways SASC gives SEA orgs a platform and shares those cultures with the wider campus.',
+    goals: 'Give SEA organizations a stage and share our cultures with the Berkeley community.',
   },
   {
     title: 'SEAgraduation',
