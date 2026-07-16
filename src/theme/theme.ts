@@ -1,23 +1,5 @@
 import { createTheme, responsiveFontSizes } from '@mui/material';
-
-// Regal color palette with Bay Area warmth
-const colors = {
-  pink: '#FF8BA7',
-  lightPink: '#FFE4E8',
-  darkPink: '#FF6B8B',
-  gold: '#D4AF37',
-  lightGold: '#F4E0A7',
-  cream: '#FFF8F0',
-  charcoal: '#2C3539',
-  bayNavy: '#1E2B36',
-  bayFog: '#F6F1EA',
-};
-
-export const gradients = {
-  navy: `linear-gradient(135deg, ${colors.bayNavy} 0%, ${colors.charcoal} 100%)`,
-  brand: `linear-gradient(135deg, ${colors.pink} 0%, ${colors.gold} 100%)`,
-  brandSoft: `linear-gradient(135deg, ${colors.lightPink} 0%, ${colors.lightGold} 100%)`,
-};
+import { colors } from './colors';
 
 let theme = createTheme({
   palette: {

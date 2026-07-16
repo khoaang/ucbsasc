@@ -1,7 +1,7 @@
 import { Container, Typography, Accordion, AccordionSummary, AccordionDetails, Box, Button, Card, CardContent, Stack } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Footer from '../components/Footer';
-import { gradients } from '../theme/theme';
+import { gradients } from '../theme/gradients';
 import GeneralMeeting from '../components/events/GeneralMeeting';
 import NightMarket from '../components/events/NightMarket';
 import SEAGrad from '../components/events/SEAGrad';

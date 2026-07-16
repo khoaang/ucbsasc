@@ -1,7 +1,7 @@
 import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Footer from '../components/Footer';
-import { gradients } from '../theme/theme';
+import { gradients } from '../theme/gradients';
 import { directors as leadershipDirectors, officers as leadershipOfficers } from '../data/leadership';
 
 const ProgramCard = styled(Card)(({ theme }) => ({

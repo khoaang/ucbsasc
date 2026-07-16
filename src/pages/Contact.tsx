@@ -1,7 +1,7 @@
 import { Box, Container, Typography, Grid, Card, CardContent, Stack, Button, IconButton } from '@mui/material';
 import { EmailOutlined, LocationOnOutlined, Instagram, Facebook } from '@mui/icons-material';
 import Footer from '../components/Footer';
-import { gradients } from '../theme/theme';
+import { gradients } from '../theme/gradients';
 
 const Contact = () => {
   return (
