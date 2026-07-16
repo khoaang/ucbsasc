@@ -13,15 +13,28 @@ export default defineConfig({
       },
       output: {
         manualChunks(id) {
+          // Keep colors out of the main entry so lazy pages don't import App/theme.
           if (id.includes('/src/theme/colors')) {
             return 'theme-shared';
           }
           if (!id.includes('node_modules')) return;
-          if (id.includes('@mui') || id.includes('@emotion')) return 'mui';
-          if (id.includes('framer-motion')) return 'motion';
-          if (id.includes('react-router') || id.includes('react-dom') || id.includes('/react/')) {
-            return 'react-vendor';
+
+          // React + MUI must share a chunk. Splitting them creates a circular
+          // import (mui ↔ react-vendor) that crashes at runtime with
+          // "Cannot access 'Ii' before initialization".
+          if (
+            id.includes('@mui') ||
+            id.includes('@emotion') ||
+            id.includes('node_modules/react/') ||
+            id.includes('node_modules/react-dom/') ||
+            id.includes('node_modules/react-router') ||
+            id.includes('node_modules/scheduler/')
+          ) {
+            return 'vendor';
           }
+
+          if (id.includes('framer-motion')) return 'motion';
+
           if (id.includes('@firebase/')) {
             const pkg = id.match(/@firebase\/([^/]+)/)?.[1];
             if (pkg) return `firebase-${pkg}`;
