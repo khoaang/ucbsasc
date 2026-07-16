@@ -33,18 +33,6 @@ const IntroSection = styled(Box)({
 
 const About = () => {
 
-  const historicalImages = [
-    { src: '/historical1.jpg', alt: 'Community gathering, archival photo' },
-    { src: '/historical2.jpg', alt: 'Students in discussion, archival photo' },
-    { src: '/historical3.jpg', alt: 'SASC early days, archival photo' },
-    { src: '/historical4.webp', alt: 'Cultural performance, archival photo' },
-    { src: '/historical5.webp', alt: 'Event crowd, archival photo' },
-    { src: '/historical6.jpg', alt: 'Speakers at event, archival photo' },
-    { src: '/historical7.jpg', alt: 'Workshop session, archival photo' },
-    { src: '/historical8.webp', alt: 'Community celebration, archival photo' },
-    { src: '/historical9.jpg', alt: 'Group photo, archival photo' }
-  ];
-
   const programs = [
     {
       title: "Southeast Asian Mentorship Program (SEAM)",
@@ -146,21 +134,6 @@ const About = () => {
           Two decades later, our guiding belief remains the same: when students are supported and culture is
           honored, we all thrive.
         </Typography>
-      </Container>
-
-      <Container sx={{ py: 8 }}>
-        <Typography variant="h4" gutterBottom>
-          Our History in Photos
-        </Typography>
-        <Grid container spacing={2}>
-          {historicalImages.map((img) => (
-            <Grid item xs={12} sm={6} md={4} key={img.src}>
-              <Card sx={{ height: '100%' }}>
-                <CardMedia component="img" image={img.src} alt={img.alt} sx={{ height: 180, objectFit: 'cover' }} />
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
       </Container>
 
       <Container sx={{ pb: 10, textAlign: 'center' }}>
