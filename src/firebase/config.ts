@@ -1,5 +1,4 @@
 import { initializeApp } from 'firebase/app';
-import { getAnalytics, isSupported as isAnalyticsSupported } from 'firebase/analytics';
 import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
@@ -23,12 +22,3 @@ export const db = getFirestore(app);
 export const auth = getAuth(app);
 
 export default app;
-
-// Initialize Analytics only in browser and if supported
-if (typeof window !== 'undefined') {
-  isAnalyticsSupported().then((supported) => {
-    if (supported && import.meta.env.VITE_FIREBASE_MEASUREMENT_ID) {
-      getAnalytics(app);
-    }
-  }).catch(() => {/* ignore */});
-}

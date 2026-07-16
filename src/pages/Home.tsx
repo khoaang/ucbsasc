@@ -9,8 +9,8 @@ import {
   Stack,
   Link as MuiLink,
 } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import { useState } from 'react';
+import { styled, keyframes } from '@mui/material/styles';
+import { useEffect, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { Instagram } from '@mui/icons-material';
 import MailingListModal from '../components/MailingListModal';
@@ -20,7 +20,12 @@ import { siteSeason } from '../data/season';
 import { usePageTitle } from '../hooks/usePageTitle';
 import { colors, RADIUS } from '../theme/colors';
 
-const HeroSection = styled(Box)({
+const kenBurns = keyframes`
+  from { transform: scale(1.04); }
+  to { transform: scale(1.12); }
+`;
+
+const HeroSection = styled(Box)(({ theme }) => ({
   position: 'relative',
   display: 'flex',
   alignItems: 'center',
@@ -33,24 +38,26 @@ const HeroSection = styled(Box)({
     background:
       'linear-gradient(105deg, rgba(20,18,16,0.82) 0%, rgba(20,18,16,0.55) 45%, rgba(20,18,16,0.35) 100%)',
     zIndex: 1,
+    pointerEvents: 'none',
+    [theme.breakpoints.down('md')]: {
+      background:
+        'linear-gradient(180deg, rgba(20,18,16,0.5) 0%, rgba(20,18,16,0.38) 40%, rgba(20,18,16,0.86) 74%, rgba(20,18,16,0.95) 100%)',
+    },
   },
-});
+}));
 
 const MasonryGrid = styled(Box)(({ theme }) => ({
   position: 'absolute',
   inset: 0,
-  display: 'grid',
+  display: 'none',
   gridTemplateColumns: 'repeat(3, 1fr)',
   gridTemplateRows: 'repeat(3, 1fr)',
   gap: 6,
   padding: 6,
   opacity: 0.9,
   zIndex: 0,
-  [theme.breakpoints.down('md')]: {
-    gridTemplateColumns: 'repeat(2, 1fr)',
-    gridTemplateRows: 'repeat(4, 1fr)',
-    gap: 4,
-    padding: 4,
+  [theme.breakpoints.up('md')]: {
+    display: 'grid',
   },
 }));
 
@@ -70,14 +77,32 @@ const ImageCell = styled(Box)({
   },
 });
 
+/** Mobile: rotating top/bottom pair. */
+const MobileStage = styled(Box)(({ theme }) => ({
+  position: 'absolute',
+  inset: 0,
+  zIndex: 0,
+  display: 'block',
+  padding: 3,
+  [theme.breakpoints.up('md')]: {
+    display: 'none',
+  },
+}));
+
 const images = [
-  { src: '/grid/cultural-dance.jpg', alt: 'Cultural dance', span: 2 },
-  { src: '/grid/picnic.png', alt: 'SEA Picnic', span: 1 },
-  { src: '/grid/laony-dance.png', alt: 'LaoNY cultural dance', span: 1 },
-  { src: '/grid/lny.png', alt: 'Lunar New Year', span: 2 },
-  { src: '/grid/abby_sydney.png', alt: 'SEA Grad celebration', span: 2 },
-  { src: '/grid/bursa-dance.png', alt: 'BURSA cultural dance at Night Market', span: 1 },
+  { src: '/grid/cultural-dance.jpg', alt: 'Cultural dance', span: 2, position: 'center 22%' },
+  { src: '/grid/picnic.png', alt: 'SEA Picnic', span: 1, position: 'center 40%' },
+  { src: '/grid/laony-dance.png', alt: 'LaoNY cultural dance', span: 1, position: 'center 45%' },
+  { src: '/grid/lny.png', alt: 'Lunar New Year', span: 2, position: 'center 30%' },
+  { src: '/grid/abby_sydney.png', alt: 'SEA Grad celebration', span: 2, position: 'center 28%' },
+  { src: '/grid/bursa-dance.png', alt: 'BURSA cultural dance at Night Market', span: 1, position: 'center 42%' },
 ];
+
+const mobilePairs = [
+  [images[0], images[1]],
+  [images[2], images[3]],
+  [images[4], images[5]],
+] as const;
 
 const sections = [
   {
@@ -112,7 +137,17 @@ const sections = [
 const Home = () => {
   usePageTitle();
   const [mailingListOpen, setMailingListOpen] = useState(false);
+  const [pairIndex, setPairIndex] = useState(0);
   const { mode, nextEvent } = siteSeason;
+
+  useEffect(() => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return undefined;
+    const id = window.setInterval(() => {
+      setPairIndex((prev) => (prev + 1) % mobilePairs.length);
+    }, 4800);
+    return () => window.clearInterval(id);
+  }, []);
 
   const primaryCta =
     mode === 'recruitment'
@@ -129,20 +164,85 @@ const Home = () => {
 
   return (
     <Box>
-      <HeroSection sx={{ minHeight: { xs: '88vh', md: '100vh' } }}>
+      <HeroSection sx={{ minHeight: { xs: '100dvh', md: '100vh' } }}>
         <MasonryGrid>
           {images.map((img) => (
             <ImageCell
               key={img.src}
               sx={{
-                gridColumn: { xs: 'span 1', md: `span ${img.span}` },
-                minHeight: { xs: 120, md: 0 },
+                gridColumn: `span ${img.span}`,
               }}
             >
-              <Box component="img" src={img.src} alt={img.alt} loading="eager" />
+              <Box
+                component="img"
+                src={img.src}
+                alt={img.alt}
+                loading="eager"
+                sx={{ objectPosition: img.position }}
+              />
             </ImageCell>
           ))}
         </MasonryGrid>
+
+        <MobileStage aria-hidden>
+          {mobilePairs.map((pair, i) => {
+            const tallTop = i % 2 === 0;
+            return (
+              <Box
+                key={pair[0].src}
+                sx={{
+                  position: 'absolute',
+                  inset: 3,
+                  display: 'grid',
+                  gridTemplateRows: tallTop ? '1.15fr 0.85fr' : '0.85fr 1.15fr',
+                  gap: 2,
+                  opacity: i === pairIndex ? 1 : 0,
+                  transition: 'opacity 1s ease',
+                  pointerEvents: 'none',
+                  '@media (prefers-reduced-motion: reduce)': {
+                    transition: 'opacity 0.3s ease',
+                  },
+                }}
+              >
+                {pair.map((img, row) => (
+                  <Box
+                    key={img.src}
+                    sx={{
+                      position: 'relative',
+                      overflow: 'hidden',
+                      borderRadius: `${RADIUS}px`,
+                      border: '1.5px solid rgba(255,255,255,0.22)',
+                      minHeight: 0,
+                    }}
+                  >
+                    <Box
+                      component="img"
+                      src={img.src}
+                      alt=""
+                      loading={i === 0 ? 'eager' : 'lazy'}
+                      sx={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: img.position,
+                        filter: 'saturate(0.95) contrast(1.06)',
+                        display: 'block',
+                        animation:
+                          i === pairIndex
+                            ? `${kenBurns} 4.8s ease-out forwards`
+                            : 'none',
+                        animationDelay: row === 0 ? '0s' : '0.15s',
+                        '@media (prefers-reduced-motion: reduce)': {
+                          animation: 'none',
+                        },
+                      }}
+                    />
+                  </Box>
+                ))}
+              </Box>
+            );
+          })}
+        </MobileStage>
 
         <Container
           sx={{
@@ -150,11 +250,11 @@ const Home = () => {
             zIndex: 2,
             py: { xs: 8, md: 10 },
             display: 'flex',
-            alignItems: 'center',
-            minHeight: { xs: '88vh', md: '100vh' },
+            alignItems: { xs: 'flex-end', md: 'center' },
+            minHeight: { xs: '100dvh', md: '100vh' },
           }}
         >
-          <Box sx={{ maxWidth: 640 }}>
+          <Box sx={{ maxWidth: 640, width: '100%', mb: { xs: 2, md: 0 } }}>
             <Typography
               variant="overline"
               sx={{
