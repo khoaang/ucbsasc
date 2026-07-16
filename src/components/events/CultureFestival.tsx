@@ -102,13 +102,11 @@ const CultureFestival = () => {
                                 April 5, 2024 • Time TBD
                             </Typography>
                             <Typography variant="body2" sx={{ mb: 1 }}>
-                Celebrate the rich cultural heritage of Southeast Asia at our annual Culture Festival! Experience a day filled with
-                traditional performances, cultural exhibitions, and interactive workshops showcasing the diverse traditions of Southeast
-                Asian communities.
+                SEACF is our annual culture festival at the Campanile Esplanade, with dance, exhibitions, and workshops from
+                Southeast Asian organizations across campus.
                             </Typography>
                             <Typography variant="body2" sx={{ mb: 1 }}>
-                From traditional dance performances to art demonstrations, immerse yourself in the vibrant cultures of Southeast Asia
-                while connecting with fellow community members.
+                Stop by for a performance or spend the afternoon exploring the full program.
                             </Typography>
                             <Typography variant="body2" sx={{ fontWeight: 'bold', mb: 2 }}>
                                 Location: Campanile Esplanade

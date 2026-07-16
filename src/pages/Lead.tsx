@@ -19,6 +19,7 @@ import {
   WorkspacePremium,
 } from '@mui/icons-material';
 import Footer from '../components/Footer';
+import PageHeader from '../components/PageHeader';
 import {
   leadBenefits,
   leadBranches,
@@ -27,6 +28,7 @@ import {
   ApplicationStepIconKey,
 } from '../data/lead';
 import { directors as leadershipDirectors } from '../data/leadership';
+import { usePageTitle } from '../hooks/usePageTitle';
 
 const getBenefitIcon = (icon: BenefitIconKey) => {
   switch (icon) {
@@ -57,112 +59,60 @@ const getStepIcon = (icon: ApplicationStepIconKey) => {
 };
 
 const Lead = () => {
+  usePageTitle('Lead');
   return (
     <Box>
-      <Box
-        sx={{
-          position: 'relative',
-          color: 'white',
-          py: { xs: 8, md: 12 },
-          mb: 6,
-          overflow: 'hidden',
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            inset: 0,
-            backgroundImage: 'url(/sasc-old.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'blur(4px)',
-            transform: 'scale(1.05)',
-            zIndex: 0,
-          },
-          '&::after': {
-            content: '""',
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(120deg, rgba(219, 136, 64, 0.65), rgba(11, 34, 59, 0.85))',
-            zIndex: 1,
-          },
-        }}
+      <PageHeader
+        title="Lead with SASC"
+        subtitle="SASComm is the student leadership group that keeps SASC’s programs running: planning events, telling our stories, supporting members, and pushing for resources."
+        image="/sasc-old.jpg"
       >
-        <Container sx={{ position: 'relative', zIndex: 2 }}>
-          <Typography
-            variant="h2"
-            component="h1"
+        <Typography
+          variant="body1"
+          sx={{
+            opacity: 0.9,
+            maxWidth: 720,
+            mt: 2,
+            textShadow: '0 1px 10px rgba(0,0,0,0.45)',
+          }}
+        >
+          We&apos;re looking for folks ready to run programs, help tell our stories, support members, and push for
+          resources. Some weeks are relaxed; other weeks are full of meetings and last-minute tasks. We do it together.
+        </Typography>
+        <Typography
+          variant="body2"
+          sx={{
+            opacity: 0.85,
+            maxWidth: 720,
+            mt: 1.5,
+            textShadow: '0 1px 6px rgba(0,0,0,0.35)',
+            fontWeight: 600,
+          }}
+        >
+          Recruitment for the last cycle has closed. Follow along for next year&apos;s timeline, or reach out if you want
+          to learn where your energy could fit.
+        </Typography>
+        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ mt: 4 }}>
+          <Button
+            variant="contained"
+            color="inherit"
+            size="large"
+            href="https://www.instagram.com/ucbsasc"
+            target="_blank"
+            rel="noopener"
             sx={{
-              fontWeight: 700,
-              mb: 2,
-              fontSize: { xs: '2.5rem', md: '3.5rem' },
+              color: 'primary.main',
+              bgcolor: 'white',
+              '&:hover': { bgcolor: 'rgba(255, 255, 255, 0.9)' },
             }}
           >
-            Lead with SASC
-          </Typography>
-          <Typography
-            variant="h5"
-            sx={{
-              opacity: 0.95,
-              maxWidth: 780,
-              lineHeight: 1.6,
-              textShadow: '0 2px 12px rgba(0,0,0,0.5)',
-            }}
-          >
-            Since 2000, SASC has been shaped by students who stayed up late building slides, setting up sound gear at Sproul, and checking
-            in on one another when campus systems fell short. SASComm is the group still doing that work, carrying forward Southeast Asian
-            history, care, and collective effort.
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              opacity: 0.9,
-              maxWidth: 720,
-              mt: 2,
-              textShadow: '0 1px 10px rgba(0,0,0,0.45)',
-            }}
-          >
-            We’re looking for folks ready to run programs, help tell our stories, support members, and push for resources. Some weeks are
-            relaxed; other weeks are full of meetings and last-minute tasks. We do it together, and we stick with it.
-          </Typography>
-          <Typography
-            variant="body2"
-            sx={{
-              opacity: 0.85,
-              maxWidth: 720,
-              mt: 1.5,
-              textShadow: '0 1px 6px rgba(0,0,0,0.35)',
-              fontWeight: 600,
-            }}
-          >
-            Recruitment for the last cycle has closed. Follow along for next year’s timeline, or reach out if you want to learn where your
-            energy could fit.
-          </Typography>
-          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ mt: 4 }}>
-            <Button
-              variant="contained"
-              color="inherit"
-              size="large"
-              href="https://www.instagram.com/ucbsasc"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                color: 'primary.main',
-                bgcolor: 'white',
-                '&:hover': { bgcolor: 'rgba(255, 255, 255, 0.9)' },
-              }}
-            >
-              Follow @ucbsasc
-            </Button>
-            <Button
-              variant="outlined"
-              color="inherit"
-              size="large"
-              href="/contact"
-            >
-              Contact Us
-            </Button>
-          </Stack>
-        </Container>
-      </Box>
+            Follow @ucbsasc
+          </Button>
+          <Button variant="outlined" color="inherit" size="large" href="/contact">
+            Contact Us
+          </Button>
+        </Stack>
+      </PageHeader>
 
       <Container sx={{ mb: 8 }}>
         <Grid container spacing={4} alignItems="center">
@@ -182,28 +132,28 @@ const Lead = () => {
           <Grid item xs={12} md={6}>
             <Stack spacing={2}>
               <Typography variant="h4">
-                SASCommunity in Action
+                SASComm in Action
               </Typography>
               <Typography variant="body1" color="text.secondary">
                 SASC feels like home because people show up, especially when it’s messy. We have wellness nights when people are burnt
                 out, pull together teach-ins when something happens, and check in off the agenda to make sure folks are doing okay.
               </Typography>
               <Typography variant="body1" color="text.secondary">
-                Bring your skills, your ideas, and your curiosity. Our alumni include educators, organizers, policy advocates, and
-                creatives who still stay involved and mentor us, and we try to give that same care to new members.
+                Bring your skills and curiosity. Our alumni include educators, organizers, policy advocates, and creatives who still
+                stay involved and mentor us, and we try to offer that same care to new members.
               </Typography>
               <Typography variant="body1" color="text.secondary">
-                As a coalition, we host SEAsgiving celebrations with alumni, run history workshops, meet with other orgs for shared
-                planning, and throw cultural events like Night Market and SEACF. Want a clear picture of what we’re building?{' '}
+                As a coalition, we host SEAsgiving with alumni, run history workshops, meet with other orgs for shared planning, and
+                put on cultural events like Night Market and SEACF. For a clearer picture of what a year looks like,{' '}
                 <Button
                   variant="text"
                   color="primary"
                   href="/events"
                   sx={{ p: 0, minWidth: 0, textTransform: 'none', fontWeight: 600 }}
                 >
-                  Browse our event archive
-                </Button>{' '}
-                to see what we built this year.
+                  browse our event archive
+                </Button>
+                .
               </Typography>
             </Stack>
           </Grid>
@@ -215,10 +165,9 @@ const Lead = () => {
           Why Lead with SASC
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 760, mb: 3 }}>
-          SASComm isn’t about checking boxes. Some weeks you might be printing flyers and lining up volunteers. Other weeks you’re
-          processing what happened at a demonstration or cooking for SEAsgiving. We stay connected to the history of Southeast Asian
-          organizing at Berkeley and respond to the issues people are facing today, and we do it in a way that keeps each other accountable
-          and cared for.
+          Some weeks you might be printing flyers and lining up volunteers. Other weeks you’re processing what happened at a
+          demonstration or cooking for SEAsgiving. We stay connected to the history of Southeast Asian organizing at Berkeley and
+          respond to the issues people are facing today, while keeping each other accountable and cared for.
         </Typography>
         <Grid container spacing={3}>
           {leadBenefits.map((benefit) => (
@@ -389,8 +338,9 @@ const Lead = () => {
               Thinking about leading with SASC next year?
             </Typography>
             <Typography variant="body1" color="text.secondary">
-              We care more about curiosity, humility, and a real commitment to community than job titles or resumes. Our pace shifts with
-              the season, so follow our next recruitment cycle, DM us, or come to a general meeting when programming resumes.
+              We care more about curiosity, humility, and a real commitment to community than job titles or resumes. Our pace
+              shifts with the season, so follow our next recruitment cycle, DM us, or come to a general meeting when programming
+              resumes.
             </Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ pt: 1 }}>
               <Button

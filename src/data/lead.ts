@@ -10,19 +10,19 @@ export const leadBenefits: Array<{
   {
     title: 'Do real work, learn by doing',
     description:
-      'Take on real organizing tasks, make decisions with the team, and help guide newer members as you build leadership experience.',
+      'Officers help plan events, make decisions with their branch, and support newer members as they learn how SASC works.',
     icon: 'workspace',
   },
   {
     title: 'Find your people',
     description:
-      'Work alongside Southeast Asian peers, form friendships that last, and support each other beyond SASC events.',
+      'You’ll work closely with other Southeast Asian students and often build friendships that last beyond the semester.',
     icon: 'groups',
   },
   {
     title: 'Make things happen',
     description:
-      'Plan events, launch campaigns, and work with community partners who care about Southeast Asian student voices.',
+      'From booking rooms to running campaigns, officer work turns ideas into programs people can actually attend.',
     icon: 'campaign',
   },
 ];
@@ -43,57 +43,54 @@ export const leadBranches: LeadBranch[] = [
     name: 'Internal Affairs',
     focus: 'Community Care & Mentorship',
     overview:
-      'In Internal Affairs, we hold spaces for care, coordinate bonding events, and make sure our community stays supported and connected.',
+      'Internal Affairs coordinates bonding events, wellness programming, and member support so people stay connected throughout the year.',
     image: '/internal.jpg',
     committee: 'Internal',
     keyFocus: [
-      'Lead culturally grounded care spaces and restorative practices.',
-      'Coordinate bonding events that keep our coalition tight-knit.',
-      'Connect members with mentorship, wellness, and resource partners.',
+      'Plan bonding and wellness events.',
+      'Connect members with mentorship and support resources.',
+      'Help newer members feel welcome and looked after.',
     ],
   },
   {
     name: 'External Affairs',
     focus: 'Community Partnerships & Advocacy',
     overview:
-      'In External Affairs, we build and maintain relationships with campus allies and grassroots groups to advance equity together.',
+      'External Affairs builds relationships with campus and Bay Area partners, then helps turn those partnerships into shared events and campaigns.',
     image: '/tabling.jpg',
     committee: 'External',
     keyFocus: [
-      'Maintain relationships with Bay Area partners and grassroots orgs.',
-      'Co-create events that uplift Southeast Asian voices on and off campus.',
-      'Mobilize students around campaigns impacting the SEAA diaspora.',
+      'Maintain relationships with campus and Bay Area partners.',
+      'Help plan collaborative events on and off campus.',
+      'Support campaigns that affect Southeast Asian students and communities.',
     ],
   },
   {
     name: 'Operations',
     focus: 'Logistics, Budgeting & Event Support',
     overview:
-      'The Operations team handles budgeting, scheduling, vendor coordination, reimbursements, and event logistics so programs run smoothly.',
+      'Operations handles budgeting, vendors, reimbursements, scheduling, and event logistics so programs can run smoothly.',
     image: '/operations.jpg',
     committee: 'Operations',
     keyFocus: [
-      'Own timelines, run-of-show, and vendor coordination for flagship events.',
-      'Build systems that make program leads feel supported and resourced.',
-      'Manage purchasing, reimbursements, and ASUC funding proposals.',
-      'Research grants and sponsorships that sustain our programs.',
-      'Partner with directors on budget strategy and transparency.',
+      'Coordinate timelines and vendors for major events.',
+      'Manage purchasing, reimbursements, and ASUC funding requests.',
+      'Research grants and sponsorships that support our programs.',
+      'Work with directors on budget planning and tracking.',
     ],
   },
   {
     name: 'Public Relations',
     focus: 'Storytelling & Outreach',
     overview:
-      'Public Relations shapes how our work is seen and understood, from graphics and video to newsletters and social media campaigns that reflect our members’ voices.',
+      'Public Relations creates graphics, photos, video, captions, and newsletters so members and the wider campus know what SASC is doing.',
     image: '/pr.jpg',
     committee: 'PR',
     keyFocus: [
-      'Create branded graphics, short-form video, and print collateral.',
-      'Capture photo/video at events and manage our content archive.',
-      'Experiment with new storytelling formats that highlight members.',
-      'Craft newsletters, email campaigns, and social captions with voice.',
-      'Plan social media rollouts that build anticipation for programs.',
-      'Monitor insights to refine outreach and grow our community reach.',
+      'Design graphics and short-form video for Instagram and print.',
+      'Photograph and archive events.',
+      'Write captions, newsletters, and other outreach copy.',
+      'Plan social media rollouts for programs and campaigns.',
     ],
   },
 ];
@@ -108,25 +105,25 @@ export const leadApplicationSteps: Array<{
   {
     title: 'Watch for the next cycle',
     detail:
-      'Recruitment details are shared through Instagram, the mailing list, and general meetings once branch needs and timelines are confirmed.',
+      'We share recruitment details on Instagram, the mailing list, and at general meetings once branch needs are clear.',
     icon: 'lightbulb',
   },
   {
     title: 'Meet the directors',
     detail:
-      'We’ll have a conversation to get to know you, talk about expectations, and see where you’ll fit best.',
+      'You’ll talk through expectations, your interests, and which branch might be the best fit.',
     icon: 'diversity',
   },
   {
     title: 'Start onboarding',
     detail:
-      'We’ll orient you with your branch, introduce the team, and share a roadmap for your first weeks.',
+      'You’ll meet your branch, get oriented, and learn what the first few weeks usually look like.',
     icon: 'event',
   },
   {
     title: 'Grow with us',
     detail:
-      'Expect mentorship, chances to develop professionally, and a team that supports you when things get busy and when they slow down.',
+      'You’ll get support from your team during busy weeks and quieter stretches alike.',
     icon: 'volunteer',
   },
 ];

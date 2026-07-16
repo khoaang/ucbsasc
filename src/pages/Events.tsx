@@ -1,7 +1,20 @@
-import { Container, Typography, Accordion, AccordionSummary, AccordionDetails, Box, Button, Card, CardContent, Stack } from '@mui/material';
+import {
+  Container,
+  Typography,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Box,
+  Button,
+  Stack,
+} from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { useState } from 'react';
 import Footer from '../components/Footer';
-import { gradients } from '../theme/gradients';
+import PageHeader from '../components/PageHeader';
+import MailingListModal from '../components/MailingListModal';
+import { siteSeason } from '../data/season';
+import { usePageTitle } from '../hooks/usePageTitle';
 import GeneralMeeting from '../components/events/GeneralMeeting';
 import NightMarket from '../components/events/NightMarket';
 import SEAGrad from '../components/events/SEAGrad';
@@ -20,7 +33,10 @@ import TasteOfSeaNightMarket from '../components/events/TasteOfSeaNightMarket';
 import ResumeWorkshop from '../components/events/ResumeWorkshop';
 
 const Events = () => {
-  // Define events with dates so we can auto-sort
+  usePageTitle('Events');
+  const [mailingListOpen, setMailingListOpen] = useState(false);
+  const { nextEvent } = siteSeason;
+
   const upcomingEvents: { date: Date; key: string; render: () => JSX.Element }[] = [];
 
   const pastEvents: { date: Date; key: string; render: () => JSX.Element }[] = [
@@ -36,30 +52,54 @@ const Events = () => {
     { date: new Date('2025-10-28T19:00:00-07:00'), key: 'sea-history-2025', render: () => <SEAHistoryWorkshop /> },
     { date: new Date('2025-10-24T19:00:00-07:00'), key: 'halloween-2025', render: () => <HalloweenMovieNight /> },
     { date: new Date('2025-10-01T15:00:00-07:00'), key: 'headshots-2025-10-01', render: () => <ProfessionalHeadshotsOct1Past /> },
-    // Legacy cards (no explicit date in component): keep near bottom
     { date: new Date('2024-09-17T20:00:00-07:00'), key: 'gm-2024', render: () => <GeneralMeeting /> },
     { date: new Date('2025-05-07T00:00:00-07:00'), key: 'headshots-may-2025', render: () => <ProfessionalHeadshots /> },
     { date: new Date('2025-05-15T00:00:00-07:00'), key: 'seagrad-2025', render: () => <SEAGrad /> },
     { date: new Date('2025-04-20T00:00:00-07:00'), key: 'nightmarket-2025', render: () => <NightMarket /> },
   ];
 
-  // Sort upcoming ascending (soonest first), past descending (most recent first)
   upcomingEvents.sort((a, b) => a.date.getTime() - b.date.getTime());
   pastEvents.sort((a, b) => b.date.getTime() - a.date.getTime());
+
   return (
     <>
-      <Container sx={{ py: 8 }}>
-        <Typography variant="overline" sx={{ color: 'secondary.dark' }}>
-          What&apos;s happening
-        </Typography>
-        <Typography variant="h2" component="h1" sx={{ color: 'info.main', mt: 1, mb: 2 }}>
-          Events
-        </Typography>
-        <Box sx={{ width: 56, height: 4, borderRadius: 4, background: gradients.brand, mb: 3 }} />
-        <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 760, mb: 4 }}>
-          Our 2025-26 programming has wrapped. We are getting ready for the next school year, and new events will be posted here once
-          dates, rooms, and partner details are confirmed.
-        </Typography>
+      <PageHeader
+        title="Events"
+        subtitle="Public programs, general meetings, and cultural nights. Archive below for what we ran this past year."
+        image="/nightmarket-14.jpg"
+        compact
+      />
+
+      <Container sx={{ pb: 8 }}>
+        {nextEvent && (
+          <Box
+            sx={{
+              mb: 4,
+              p: { xs: 2.5, md: 3 },
+              borderRadius: 2,
+              border: '1px solid',
+              borderColor: 'divider',
+              bgcolor: 'background.paper',
+            }}
+          >
+            <Typography variant="overline" color="secondary.dark" sx={{ letterSpacing: 1 }}>
+              Upcoming
+            </Typography>
+            <Typography variant="h5" sx={{ fontWeight: 700, mb: 0.5 }}>
+              {nextEvent.title}
+            </Typography>
+            <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+              {nextEvent.dateLabel}
+              {nextEvent.location ? ` · ${nextEvent.location}` : ''}
+            </Typography>
+            {nextEvent.href && (
+              <Button variant="contained" href={nextEvent.href} target={nextEvent.href.startsWith('http') ? '_blank' : undefined}>
+                Details
+              </Button>
+            )}
+          </Box>
+        )}
+
         {upcomingEvents.length > 0 ? (
           <Box sx={{ display: 'contents' }}>
             {upcomingEvents.map((ev) => (
@@ -67,33 +107,50 @@ const Events = () => {
             ))}
           </Box>
         ) : (
-          <Card sx={{ mb: 4, border: '1px solid', borderColor: 'divider' }}>
-            <CardContent sx={{ p: { xs: 3, md: 4 } }}>
-              <Typography variant="h5" component="h2" sx={{ mb: 1, fontWeight: 700 }}>
-                Next school year is in the works
+          !nextEvent && (
+            <Box
+              sx={{
+                mb: 4,
+                p: { xs: 2.5, md: 3.5 },
+                borderRadius: 2,
+                border: '1px solid',
+                borderColor: 'divider',
+                bgcolor: 'background.paper',
+              }}
+            >
+              <Typography variant="h5" component="h2" sx={{ mb: 1, fontWeight: 700, fontSize: '1.35rem' }}>
+                Between school years
               </Typography>
-              <Typography variant="body1" color="text.secondary" sx={{ mb: 3, maxWidth: 720 }}>
-                Follow SASC or join the mailing list for the first wave of general meetings, cultural programs, community care spaces, and
-                opportunities to get involved.
+              <Typography variant="body1" color="text.secondary" sx={{ mb: 2, maxWidth: 680 }}>
+                Our 2025–26 public programming has wrapped. Fall dates for general meetings, cultural programs, and
+                involvement opportunities will be posted here once rooms and partners are confirmed. Until then, Instagram
+                and the mailing list are the best places to watch.
+              </Typography>
+              <Typography variant="body2" color="text.secondary" sx={{ mb: 3, maxWidth: 680 }}>
+                Looking for what we ran last year? Open the archive below for SEAGrad, Night Market, workshops, and more.
               </Typography>
               <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
                 <Button variant="contained" href="https://www.instagram.com/ucbsasc" target="_blank" rel="noopener">
                   Follow @ucbsasc
                 </Button>
-                <Button variant="outlined" href="/contact">
-                  Contact Us
+                <Button variant="outlined" onClick={() => setMailingListOpen(true)}>
+                  Join the mailing list
+                </Button>
+                <Button variant="text" href="/lead">
+                  Lead with SASC
                 </Button>
               </Stack>
-            </CardContent>
-          </Card>
+            </Box>
+          )
         )}
 
-        {/* Collapsible past events */}
-        <Accordion sx={{ mt: 3 }}>
+        <Accordion defaultExpanded={false} disableGutters elevation={0} sx={{ border: '1px solid', borderColor: 'divider' }}>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography variant="h6">Recent Event Archive</Typography>
+            <Typography variant="h6" sx={{ fontWeight: 600 }}>
+              Recent event archive
+            </Typography>
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails sx={{ pt: 0 }}>
             {pastEvents.map((ev) => (
               <Box key={ev.key}>{ev.render()}</Box>
             ))}
@@ -101,6 +158,7 @@ const Events = () => {
         </Accordion>
       </Container>
       <Footer />
+      <MailingListModal open={mailingListOpen} onClose={() => setMailingListOpen(false)} />
     </>
   );
 };

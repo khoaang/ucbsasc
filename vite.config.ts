@@ -13,7 +13,7 @@ export default defineConfig({
       },
       output: {
         manualChunks(id) {
-          if (id.includes('/src/theme/colors') || id.includes('/src/theme/gradients')) {
+          if (id.includes('/src/theme/colors')) {
             return 'theme-shared';
           }
           if (!id.includes('node_modules')) return;

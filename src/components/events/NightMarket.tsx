@@ -18,13 +18,11 @@ const NightMarket = () => {
                                 March 14, 2025 • 7:00 PM - 10:00 PM
                             </Typography>
                             <Typography variant="body2" sx={{ mb: 1 }}>
-                Join us for an evening of Southeast Asian culture, cuisine, and performances! The annual Taste of SEA Night Market
-                brings together Southeast Asian organizations from across Berkeley to share their culinary traditions and cultural
-                performances.
+                Taste of SEA is our annual night market with other Southeast Asian organizations, featuring food stalls and
+                performances on Upper Sproul Plaza.
                             </Typography>
                             <Typography variant="body2" sx={{ mb: 1 }}>
-                Experience authentic street food, watch traditional and modern performances, and connect with Berkeley&apos;s vibrant
-                Southeast Asian community.
+                Come for dinner, stay for the performances, and bring friends.
                             </Typography>
                             <Typography variant="body2" sx={{ fontWeight: 'bold', mb: 2 }}>
                                 Location: Upper Sproul Plaza

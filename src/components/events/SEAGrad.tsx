@@ -17,12 +17,12 @@ const SEAGrad = () => {
                                 May 3, 2025 • 5:00 PM - 8:00 PM PDT
                             </Typography>
                             <Typography variant="body2" sx={{ mb: 1 }}>
-                SEAGrad celebrated the achievements of graduating Southeast Asian students and honored the hard work and dedication of
-                community members completing their journey at UC Berkeley.
+                SEAGrad is our ceremony for graduating Southeast Asian seniors, with families, friends, performances, and
+                cultural sashes.
                             </Typography>
                             <Typography variant="body2" sx={{ mb: 1 }}>
-                This intimate celebration brings together families, friends, and community members to recognize both individual
-                achievements and the collective strength of our Southeast Asian community.
+                Held at the YWCA Berkeley/Oakland, it is a smaller celebration focused on seniors and the people who supported
+                them through Berkeley.
                             </Typography>
                             <Typography variant="body2" sx={{ fontWeight: 'bold', mb: 2 }}>
                                 Location: YWCA Berkeley/Oakland<br />

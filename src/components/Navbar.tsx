@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   AppBar,
   Toolbar,
@@ -12,21 +12,10 @@ import {
   Container,
   useTheme,
   useMediaQuery,
-  useScrollTrigger,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link, useLocation } from 'react-router-dom';
-
-function ElevationScroll(props: { children: React.ReactElement }) {
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0,
-  });
-
-  return React.cloneElement(props.children, {
-    elevation: trigger ? 4 : 0,
-  });
-}
+import { colors } from '../theme/colors';
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -35,137 +24,195 @@ const Navbar = () => {
   const location = useLocation();
 
   const menuItems = [
-    { text: 'Home', path: '/' },
     { text: 'About', path: '/about' },
     { text: 'Events', path: '/events' },
-    { text: 'Store', path: 'https://sasc.bigcartel.com', external: true },
     { text: 'Lead', path: '/lead' },
-    { text: 'Contact', path: '/contact' },
     { text: 'Resources', path: '/resources' },
+    { text: 'Contact', path: '/contact' },
+    { text: 'Store', path: 'https://sasc.bigcartel.com', external: true },
   ];
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
+  const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <>
-      <ElevationScroll>
-        <AppBar
-          position="sticky"
-          color="default"
-          sx={{
-            backgroundColor: 'rgba(255, 255, 255, 0.8)',
-            backdropFilter: 'blur(20px)',
-          }}
-        >
-          <Container maxWidth="xl">
-            <Toolbar disableGutters>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                <img
-                  src="/logo.png"
-                  alt="SASC Logo"
-                  style={{
-                    height: '35px',
-                    width: 'auto'
-                  }}
-                />
-                <Typography
-                  variant="h6"
-                  component={Link}
-                  to="/"
+      <AppBar
+        position="sticky"
+        color="default"
+        elevation={0}
+        sx={{
+          backgroundColor: 'rgba(247, 240, 230, 0.96)',
+          borderBottom: `2px solid ${colors.charcoal}`,
+        }}
+      >
+        <Container maxWidth="lg">
+          <Toolbar
+            disableGutters
+            variant="dense"
+            sx={{
+              minHeight: '52px !important',
+              height: 52,
+              py: 0,
+            }}
+          >
+            <Box
+              component={Link}
+              to="/"
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 1,
+                textDecoration: 'none',
+                color: 'inherit',
+              }}
+            >
+              <Box
+                component="img"
+                src="/logo.png"
+                alt="SASC"
+                sx={{ height: 36, width: 'auto', display: 'block' }}
+              />
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  gap: '1px',
+                  lineHeight: 1,
+                }}
+              >
+                <Box
+                  component="span"
                   sx={{
+                    fontFamily: '"Fraunces", Georgia, serif',
                     fontWeight: 700,
-                    color: 'primary.main',
-                    '&:hover': {
-                      color: 'primary.dark',
-                    }
+                    fontSize: '26px',
+                    letterSpacing: '-0.03em',
+                    color: colors.charcoal,
+                    lineHeight: 1,
+                    display: 'block',
                   }}
                 >
-                  Southeast Asian Student Coalition
-                </Typography>
-              </Box>
-
-              {isMobile ? (
-                <IconButton
-                  sx={{ ml: 'auto' }}
-                  onClick={handleDrawerToggle}
-                >
-                  <MenuIcon />
-                </IconButton>
-              ) : (
-                <Box sx={{ ml: 'auto', display: 'flex', gap: 1 }}>
-                  {menuItems.map((item) => (
-                    item.external ? (
-                      <Button
-                        key={item.text}
-                        href={item.path}
-                        sx={{
-                          color: 'text.primary',
-                          fontWeight: 400,
-                          '&:hover': {
-                            backgroundColor: 'rgba(0, 0, 0, 0.04)',
-                          },
-                        }}
-                      >
-                        {item.text}
-                      </Button>
-                    ) : (
-                      <Button
-                        key={item.text}
-                        component={Link}
-                        to={item.path}
-                        sx={{
-                          color: location.pathname === item.path ? 'primary.main' : 'text.primary',
-                          fontWeight: location.pathname === item.path ? 600 : 400,
-                          '&:hover': {
-                            backgroundColor: 'rgba(0, 0, 0, 0.04)',
-                          },
-                        }}
-                      >
-                        {item.text}
-                      </Button>
-                    )
-                  ))}
+                  SASC
                 </Box>
-              )}
-            </Toolbar>
-          </Container>
-        </AppBar>
-      </ElevationScroll>
+                <Box
+                  component="span"
+                  sx={{
+                    display: { xs: 'none', sm: 'block' },
+                    fontFamily: '"DM Sans", sans-serif',
+                    fontSize: '10px',
+                    color: colors.calBlue,
+                    fontWeight: 700,
+                    letterSpacing: '0.06em',
+                    textTransform: 'uppercase',
+                    lineHeight: 1,
+                  }}
+                >
+                  UC Berkeley
+                </Box>
+              </Box>
+            </Box>
+
+            {isMobile ? (
+              <IconButton sx={{ ml: 'auto' }} onClick={handleDrawerToggle} aria-label="Open menu">
+                <MenuIcon />
+              </IconButton>
+            ) : (
+              <Box sx={{ ml: 'auto', display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                {menuItems.map((item) =>
+                  item.external ? (
+                    <Button
+                      key={item.text}
+                      href={item.path}
+                      target="_blank"
+                      rel="noopener"
+                      sx={{
+                        color: 'text.secondary',
+                        fontWeight: 600,
+                        px: 1.35,
+                        minWidth: 0,
+                        '&:hover': { color: 'text.primary', bgcolor: 'transparent' },
+                      }}
+                    >
+                      {item.text}
+                    </Button>
+                  ) : (
+                    <Button
+                      key={item.text}
+                      component={Link}
+                      to={item.path}
+                      sx={{
+                        color: isActive(item.path) ? 'text.primary' : 'text.secondary',
+                        fontWeight: 600,
+                        px: 1.35,
+                        minWidth: 0,
+                        bgcolor: isActive(item.path) ? colors.lightPink : 'transparent',
+                        borderRadius: 1,
+                        '&:hover': {
+                          color: 'text.primary',
+                          bgcolor: colors.lightPink,
+                        },
+                      }}
+                    >
+                      {item.text}
+                    </Button>
+                  )
+                )}
+              </Box>
+            )}
+          </Toolbar>
+        </Container>
+      </AppBar>
 
       <Drawer
         anchor="right"
         open={mobileOpen}
         onClose={handleDrawerToggle}
-        ModalProps={{
-          keepMounted: true,
-        }}
+        ModalProps={{ keepMounted: true }}
         PaperProps={{
-          sx: { width: 240 }
+          sx: {
+            width: 280,
+            bgcolor: colors.cream,
+            borderLeft: `2px solid ${colors.charcoal}`,
+          },
         }}
       >
-        <List sx={{ pt: 2 }}>
-          {menuItems.map((item) => (
-            <ListItem
-              key={item.text}
-              disablePadding
+        <Box sx={{ px: 2.5, py: 2.5, borderBottom: `2px solid ${colors.charcoal}` }}>
+          <Typography sx={{ fontFamily: '"Fraunces", serif', fontWeight: 700, fontSize: '1.5rem' }}>
+            SASC
+          </Typography>
+          <Typography variant="body2" sx={{ color: colors.calBlue, fontWeight: 700, letterSpacing: '0.06em' }}>
+            UC BERKELEY
+          </Typography>
+        </Box>
+        <List sx={{ pt: 1 }}>
+          <ListItem disablePadding>
+            <Button
+              component={Link}
+              to="/"
+              onClick={handleDrawerToggle}
               sx={{
-                color: location.pathname === item.path ? 'primary.main' : 'text.primary',
-                bgcolor: location.pathname === item.path ? 'action.selected' : 'transparent',
+                width: '100%',
+                justifyContent: 'flex-start',
+                px: 3,
+                py: 1.25,
+                fontWeight: 600,
+                bgcolor: location.pathname === '/' ? colors.lightPink : 'transparent',
               }}
             >
+              Home
+            </Button>
+          </ListItem>
+          {menuItems.map((item) => (
+            <ListItem key={item.text} disablePadding>
               {item.external ? (
                 <Button
                   href={item.path}
+                  target="_blank"
+                  rel="noopener"
                   onClick={handleDrawerToggle}
-                  sx={{
-                    width: '100%',
-                    justifyContent: 'flex-start',
-                    px: 3,
-                    py: 1,
-                    fontWeight: 400,
-                  }}
+                  sx={{ width: '100%', justifyContent: 'flex-start', px: 3, py: 1.25, fontWeight: 600 }}
                 >
                   {item.text}
                 </Button>
@@ -178,8 +225,9 @@ const Navbar = () => {
                     width: '100%',
                     justifyContent: 'flex-start',
                     px: 3,
-                    py: 1,
-                    fontWeight: location.pathname === item.path ? 600 : 400,
+                    py: 1.25,
+                    fontWeight: 600,
+                    bgcolor: isActive(item.path) ? colors.lightPink : 'transparent',
                   }}
                 >
                   {item.text}
@@ -193,4 +241,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;

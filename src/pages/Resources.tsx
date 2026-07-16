@@ -1,16 +1,41 @@
 import { Container, Typography, Link, Divider, Paper, Box, Grid, Card, CardContent, CardMedia, Button, Stack } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import Footer from '../components/Footer';
+import PageHeader from '../components/PageHeader';
+import { usePageTitle } from '../hooks/usePageTitle';
 
 const Resources = () => {
+  usePageTitle('Resources');
   const theme = useTheme();
   return (
     <>
-      <Container sx={{ py: 8 }}>
-        <Typography variant="h2" component="h1" gutterBottom>
-          Resources
-        </Typography>
-        
+      <PageHeader
+        title="Resources"
+        subtitle="Start with immigration and legal links if you need them now. Media kit for flyers is further down."
+        image="/workshop.jpg"
+        compact
+      />
+
+      <Container sx={{ pb: 8 }}>
+        <Box
+          sx={{
+            mb: 3,
+            p: 2,
+            borderRadius: 2,
+            bgcolor: 'rgba(30, 43, 54, 0.04)',
+            border: '1px solid',
+            borderColor: 'divider',
+          }}
+        >
+          <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 0.5 }}>
+            If you need this now
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            The immigration, know-your-rights, and legal aid links below are for immediate use. SASC is a student
+            coalition, not a legal service — these partner organizations can help directly.
+          </Typography>
+        </Box>
+
         <Paper elevation={2} sx={{ p: 3, mb: 4 }}>
           <Typography variant="h5" component="h2" gutterBottom>
             Immigration Resources

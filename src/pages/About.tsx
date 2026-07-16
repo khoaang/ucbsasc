@@ -1,228 +1,102 @@
 import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Footer from '../components/Footer';
-import { gradients } from '../theme/gradients';
+import PageHeader from '../components/PageHeader';
+import { programs } from '../data/programs';
 import { directors as leadershipDirectors, officers as leadershipOfficers } from '../data/leadership';
+import { usePageTitle } from '../hooks/usePageTitle';
 
 const ProgramCard = styled(Card)(({ theme }) => ({
   height: '100%',
   padding: theme.spacing(2),
   [theme.breakpoints.down('sm')]: {
-    padding: theme.spacing(1.5)
-  }
+    padding: theme.spacing(1.5),
+  },
 }));
 
-// timeline removed for simpler layout
-
-const IntroSection = styled(Box)({
-  position: 'relative',
-  minHeight: '52vh',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  background: gradients.navy,
-  color: 'white',
-  overflow: 'hidden',
-});
-
-// image container removed; using CardMedia directly in grid
-
-// removed animated ContentContainer and stat boxes
-
-// removed mosaic grid for a cleaner hero
-
 const About = () => {
-
-  const programs = [
-    {
-      title: "Southeast Asian Mentorship Program (SEAM)",
-      description: "Supporting and guiding SEA high school students through cultural education and university preparation, SEAM helps students navigate their journey to higher education while staying connected to their heritage.",
-      goals: "To ensure students are well-prepared, informed, and equipped to thrive in their university journey as Southeast Asian students."
-    },
-    {
-      title: "Southeast Asian Orientation (SEASO)",
-      description: "A welcoming space for incoming and current students to connect with SASC and the broader Southeast Asian community. Through community-bonding activities and alumni insights, we address the underrepresentation of Southeast Asian students at UC Berkeley.",
-      goals: "To build a stronger, more empowered future for Southeast Asian students through community connection and support."
-    },
-    {
-      title: "Southeast Asian Cultural Festival (SEACF)",
-      description: "Our flagship celebration bringing together various Southeast Asian organizations to showcase the rich diversity of their cultures through traditional dances, music, and regional arts.",
-      goals: "To celebrate and promote the vibrant traditions of Southeast Asian countries while fostering cultural understanding and pride."
-    },
-    {
-      title: "SEAgraduation",
-      description: "An intimate celebration honoring our graduating Southeast Asian seniors, providing a space where each student's unique journey and achievements are recognized and celebrated.",
-      goals: "To acknowledge and celebrate the resilience and success of our Southeast Asian graduates."
-    }
-  ];
-
+  usePageTitle('About');
   const directors = leadershipDirectors;
   const officers = leadershipOfficers;
 
-  // removed scroll-based animations for stability
-
   return (
     <Box sx={{ position: 'relative' }}>
-      <IntroSection>
-        <Box
-          sx={{
-            position: 'absolute',
-            inset: 0,
-            backgroundImage: 'url(/grid.svg)',
-            backgroundSize: '420px',
-            opacity: 0.12,
-          }}
-        />
-        <Box
-          sx={{
-            position: 'absolute',
-            top: -120,
-            right: -80,
-            width: 420,
-            height: 420,
-            borderRadius: '50%',
-            background: gradients.brand,
-            filter: 'blur(130px)',
-            opacity: 0.5,
-          }}
-        />
-        <Container sx={{ position: 'relative', zIndex: 1, py: 8 }}>
-          <Typography variant="overline" sx={{ color: 'secondary.light' }}>
-            Our Story
-          </Typography>
-          <Typography
-            variant="h1"
-            sx={{
-              fontSize: { xs: '2.75rem', md: '4.25rem' },
-              fontWeight: 700,
-              mt: 1,
-              mb: 2,
-            }}
-          >
-            About SASC
-          </Typography>
-          <Typography
-            variant="h5"
-            sx={{
-              maxWidth: '700px',
-              fontWeight: 400,
-              color: 'rgba(255,255,255,0.85)',
-              lineHeight: 1.6,
-            }}
-          >
-            Empowering Southeast Asian voices at Berkeley since 2000.
-          </Typography>
-        </Container>
-      </IntroSection>
+      <PageHeader
+        title="About SASC"
+        subtitle="Student-run at UC Berkeley since 2000. We support Southeast Asian students through mentorship, cultural programming, and community."
+        image="/sascomm.jpg"
+      />
 
-      <Container sx={{ py: 6 }}>
+      <Container sx={{ py: 2, mb: 6 }}>
         <Typography variant="h4" gutterBottom>
           Our Story
         </Typography>
         <Typography variant="body1" sx={{ mb: 2 }}>
-          Founded in 2000 by student organizers, the Southeast Asian Student Coalition (SASC) was created to
-          uplift Southeast Asian voices at UC Berkeley. From day one, our mission has centered on supporting
-          students, celebrating culture, and building power with our communities.
+          SASC was founded in 2000 by student organizers who wanted a clearer home for Southeast Asian students at
+          Berkeley. From the beginning, that has meant mentorship, cultural space, and room to organize when campus
+          resources fell short.
         </Typography>
         <Typography variant="body1" sx={{ mb: 2 }}>
-          We provide mentorship and leadership opportunities, host cultural and educational programs, and
-          advocate for resources and representation on campus. Beyond Berkeley, we collaborate with local
-          organizations and community members to share knowledge, amplify stories, and strengthen the SEAA
-          ecosystem in the Bay Area.
+          We still run SEAM, SEASO, SEACF, and SEAgrad. We table on Sproul, cook for SEAsgiving, and stay in touch with
+          members and alumni beyond meeting agendas. We also partner with Bay Area organizations when our communities
+          need support that goes beyond campus.
         </Typography>
         <Typography variant="body1">
-          Two decades later, our guiding belief remains the same: when students are supported and culture is
-          honored, we all thrive.
+          Programs change with each cohort, but the purpose stays steady: Southeast Asian students should have a place
+          here to belong, lead, and be taken seriously.
         </Typography>
       </Container>
 
-      <Container sx={{ pb: 10, textAlign: 'center' }}>
+      <Container sx={{ pb: 8, textAlign: 'center' }}>
         <Typography variant="h4" gutterBottom>
           Get Involved
         </Typography>
-        <Typography variant="body1" sx={{ mb: 3 }}>
-          Join our community, volunteer, or partner with us. Questions or ideas? Email us at
-          <strong> UCB.SASC@gmail.com</strong>.
+        <Typography variant="body1" sx={{ mb: 3, maxWidth: 640, mx: 'auto' }}>
+          Join a general meeting when programming resumes, apply for a leadership role next cycle, or email{' '}
+          <strong>UCB.SASC@gmail.com</strong> with questions or ideas.
         </Typography>
         <Grid container spacing={2} justifyContent="center">
           <Grid item>
-            <Button variant="contained" href="/lead">Leadership & Involvement</Button>
+            <Button variant="contained" href="/lead">
+              Leadership & Involvement
+            </Button>
           </Grid>
           <Grid item>
-            <Button variant="outlined" href="mailto:UCB.SASC@gmail.com?subject=Hello%20SASC">Email Us</Button>
+            <Button variant="outlined" href="mailto:UCB.SASC@gmail.com?subject=Hello%20SASC">
+              Email Us
+            </Button>
           </Grid>
         </Grid>
       </Container>
 
-      <Container>
-        <Typography variant="h4" gutterBottom>
-          Our Mission Today
-        </Typography>
-        <Typography variant="body1" sx={{ mb: 4 }}>
-          SASC advances the wellbeing and leadership of Southeast Asian American (SEAA) students and
-          communities at UC Berkeley and beyond. We provide culturally-grounded mentorship, advocate for
-          equity in higher education, and build spaces for connection, healing, and celebration—so every
-          student can thrive and lead with pride in their identity.
-        </Typography>
-      </Container>
-
       <Container sx={{ mb: 8 }}>
         <Typography variant="h4" gutterBottom>
-          Our Impact
-        </Typography>
-        <Grid container spacing={3}>
-          {[ 
-            { stat: '25+ years', desc: 'of sustained community impact' },
-            { stat: '1,000+ students', desc: 'supported across our programs' },
-            { stat: '50+ events/year', desc: 'centered on culture and community' },
-            { stat: '200+ mentors & alumni', desc: 'in our growing network' },
-          ].map((item) => (
-            <Grid item xs={12} sm={6} md={3} key={item.stat}>
-              <Card sx={{ height: '100%', p: 2, textAlign: 'center' }}>
-                <CardContent>
-                  <Typography variant="h4" sx={{ fontWeight: 700 }}>
-                    {item.stat}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {item.desc}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-
-      <Container sx={{ mb: 8 }}>
-        <Typography variant="h4" gutterBottom>
-          Our Values
+          What We Care About
         </Typography>
         <Grid container spacing={3}>
           {[
             {
               title: 'Community',
-              body: 'We cultivate belonging and mutual care across generations of SEAA students and families.'
+              body: 'We look out for each other through bonding events, wellness check-ins, and alumni relationships that often last well beyond graduation.',
             },
             {
               title: 'Culture',
-              body: 'We uplift our histories, languages, and traditions as sources of strength and knowledge.'
+              body: 'We treat our languages, food, dance, and histories as sources of knowledge and pride worth sharing on campus.',
             },
             {
               title: 'Advocacy',
-              body: 'We organize for resources, representation, and educational equity for our communities.'
+              body: 'We work for representation, funding, and campus resources so Southeast Asian students are not overlooked.',
             },
           ].map((value) => (
             <Grid item xs={12} md={4} key={value.title}>
-              <Card sx={{ height: '100%' }}>
-                <CardContent>
-                  <Typography variant="h5" gutterBottom>
-                    {value.title}
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary">
-                    {value.body}
-                  </Typography>
-                </CardContent>
-              </Card>
+              <Box sx={{ pr: { md: 2 } }}>
+                <Typography variant="h5" gutterBottom>
+                  {value.title}
+                </Typography>
+                <Typography variant="body1" color="text.secondary">
+                  {value.body}
+                </Typography>
+              </Box>
             </Grid>
           ))}
         </Grid>
@@ -239,7 +113,12 @@ const About = () => {
           {directors.map((member) => (
             <Grid item xs={6} sm={4} md={3} key={member.name}>
               <Card sx={{ height: '100%' }}>
-                <CardMedia component="img" image={member.image} alt={member.name} sx={{ height: 200, objectFit: 'cover' }} />
+                <CardMedia
+                  component="img"
+                  image={member.image}
+                  alt={member.name}
+                  sx={{ height: 200, objectFit: 'cover' }}
+                />
                 <CardContent>
                   <Typography variant="h6">{member.name}</Typography>
                   <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
@@ -261,7 +140,12 @@ const About = () => {
           {officers.map((member) => (
             <Grid item xs={6} sm={4} md={3} key={member.name}>
               <Card sx={{ height: '100%' }}>
-                <CardMedia component="img" image={member.image} alt={member.name} sx={{ height: 180, objectFit: 'cover' }} />
+                <CardMedia
+                  component="img"
+                  image={member.image}
+                  alt={member.name}
+                  sx={{ height: 180, objectFit: 'cover' }}
+                />
                 <CardContent>
                   <Typography variant="h6">{member.name}</Typography>
                   <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
@@ -277,7 +161,7 @@ const About = () => {
         </Grid>
       </Container>
 
-      <Container>
+      <Container sx={{ mb: 8 }}>
         <Typography variant="h4" gutterBottom sx={{ mb: 4 }}>
           Our Programs
         </Typography>
@@ -292,7 +176,7 @@ const About = () => {
                   <Typography variant="body1" sx={{ mb: 2 }}>
                     {program.description}
                   </Typography>
-                  <Typography variant="body2" color="primary.main" sx={{ fontWeight: 500 }}>
+                  <Typography variant="body2" color="primary.dark" sx={{ fontWeight: 500 }}>
                     {program.goals}
                   </Typography>
                 </CardContent>
@@ -302,20 +186,9 @@ const About = () => {
         </Grid>
       </Container>
 
-      <Container sx={{ mb: 8 }}>
-        <Typography variant="h4" gutterBottom>
-          Looking Forward
-        </Typography>
-        <Typography variant="body1">
-          We envision a campus—and a world—where SEAA students are fully resourced, represented, and
-          celebrated. In the years ahead, SASC will deepen partnerships across campus, expand mentorship and
-          professional pipelines, and continue telling our stories with care and power.
-        </Typography>
-      </Container>
-
       <Footer />
     </Box>
   );
 };
 
-export default About; 
+export default About;

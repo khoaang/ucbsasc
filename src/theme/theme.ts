@@ -1,5 +1,8 @@
 import { createTheme, responsiveFontSizes } from '@mui/material';
-import { colors } from './colors';
+import { colors, RADIUS } from './colors';
+
+const serif = '"Fraunces", "Times New Roman", Times, serif';
+const sans = '"DM Sans", "Helvetica Neue", Helvetica, Arial, sans-serif';
 
 let theme = createTheme({
   palette: {
@@ -15,40 +18,89 @@ let theme = createTheme({
     },
     background: {
       default: colors.cream,
-      paper: '#FFFFFF',
+      paper: colors.paper,
     },
     text: {
       primary: colors.charcoal,
-      secondary: '#595959',
+      secondary: '#5C6368',
+    },
+    divider: 'rgba(44, 53, 57, 0.14)',
+    info: {
+      main: colors.bayNavy,
+      light: '#3A4A56',
+      dark: '#141C24',
+      contrastText: '#FFFFFF',
     },
   },
+  shape: {
+    borderRadius: RADIUS,
+  },
   typography: {
-    fontFamily: '"DM Sans", "Helvetica", "Arial", sans-serif',
+    fontFamily: sans,
     h1: {
+      fontFamily: serif,
       fontSize: '3.5rem',
       fontWeight: 700,
-      letterSpacing: '-0.02em',
+      letterSpacing: '-0.03em',
+      lineHeight: 1.1,
+      color: colors.charcoal,
     },
     h2: {
-      fontSize: '2.75rem',
+      fontFamily: serif,
+      fontSize: '2.5rem',
       fontWeight: 600,
-      letterSpacing: '-0.01em',
+      letterSpacing: '-0.02em',
+      lineHeight: 1.15,
+      color: colors.charcoal,
     },
     h3: {
-      fontSize: '2.25rem',
+      fontFamily: serif,
+      fontSize: '2rem',
       fontWeight: 600,
+      letterSpacing: '-0.015em',
+      lineHeight: 1.2,
+      color: colors.charcoal,
     },
     h4: {
-      fontSize: '1.75rem',
+      fontFamily: serif,
+      fontSize: '1.55rem',
       fontWeight: 600,
+      letterSpacing: '-0.01em',
+      color: colors.charcoal,
+    },
+    h5: {
+      fontFamily: serif,
+      fontSize: '1.3rem',
+      fontWeight: 600,
+      color: colors.charcoal,
+    },
+    h6: {
+      fontFamily: sans,
+      fontSize: '1.05rem',
+      fontWeight: 600,
+      color: colors.charcoal,
     },
     body1: {
-      fontSize: '1.125rem',
+      fontFamily: sans,
+      fontSize: '1.0625rem',
       lineHeight: 1.7,
     },
+    body2: {
+      fontFamily: sans,
+      fontSize: '0.95rem',
+      lineHeight: 1.65,
+    },
     button: {
+      fontFamily: sans,
       textTransform: 'none',
-      fontWeight: 500,
+      fontWeight: 600,
+      letterSpacing: '0.01em',
+    },
+    overline: {
+      fontFamily: sans,
+      letterSpacing: '0.12em',
+      fontWeight: 700,
+      fontSize: '0.7rem',
     },
   },
   components: {
@@ -57,57 +109,145 @@ let theme = createTheme({
         body: {
           backgroundColor: colors.cream,
           color: colors.charcoal,
+          backgroundImage: `
+            radial-gradient(rgba(44, 53, 57, 0.035) 0.7px, transparent 0.7px)
+          `,
+          backgroundSize: '7px 7px',
         },
         a: {
           color: 'inherit',
+        },
+        '::selection': {
+          backgroundColor: colors.lightPink,
+          color: colors.charcoal,
+        },
+        'img, video, iframe, canvas': {
+          borderRadius: RADIUS,
         },
       },
     },
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: 'rgba(255, 255, 255, 0.92)',
-          boxShadow: '0 8px 24px rgba(30, 43, 54, 0.08)',
+          backgroundColor: 'rgba(247, 240, 230, 0.94)',
+          boxShadow: 'none',
         },
       },
     },
     MuiButton: {
+      defaultProps: {
+        disableElevation: true,
+      },
       styleOverrides: {
         root: {
-          borderRadius: 8,
-          padding: '8px 24px',
-          fontSize: '1rem',
+          borderRadius: RADIUS,
+          padding: '10px 20px',
+          fontSize: '0.95rem',
         },
         contained: {
           boxShadow: 'none',
           '&:hover': {
-            boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+            boxShadow: 'none',
+          },
+        },
+        containedPrimary: {
+          backgroundColor: colors.darkPink,
+          color: '#fff',
+          '&:hover': {
+            backgroundColor: '#D44E6C',
           },
         },
         outlined: {
-          borderWidth: 1,
+          borderWidth: 1.5,
+          borderColor: colors.charcoal,
+          color: colors.charcoal,
+          '&:hover': {
+            borderWidth: 1.5,
+            borderColor: colors.charcoal,
+            backgroundColor: 'rgba(44, 53, 57, 0.05)',
+          },
+        },
+        sizeLarge: {
+          padding: '12px 26px',
+          fontSize: '1rem',
         },
       },
     },
     MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: 16,
-          boxShadow: '0 10px 24px rgba(30, 43, 54, 0.08)',
-          transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
-          '&:hover': {
-            transform: 'translateY(-4px)',
-            boxShadow: '0 16px 30px rgba(30, 43, 54, 0.12)',
-          },
+          borderRadius: RADIUS,
+          boxShadow: '3px 3px 0 rgba(44, 53, 57, 0.12)',
+          border: `1.5px solid ${colors.charcoal}`,
+          backgroundImage: 'none',
+          backgroundColor: colors.paper,
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundImage: 'none',
+          borderRadius: RADIUS,
+        },
+        elevation1: {
+          boxShadow: 'none',
+          border: `1.5px solid rgba(44, 53, 57, 0.18)`,
+        },
+        elevation2: {
+          boxShadow: '2px 2px 0 rgba(44, 53, 57, 0.1)',
+          border: `1.5px solid rgba(44, 53, 57, 0.2)`,
         },
       },
     },
     MuiChip: {
       styleOverrides: {
         root: {
-          borderRadius: 999,
+          borderRadius: RADIUS,
           fontWeight: 600,
+          border: `1px solid ${colors.charcoal}`,
         },
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          borderRadius: RADIUS,
+        },
+      },
+    },
+    MuiDialog: {
+      styleOverrides: {
+        paper: {
+          borderRadius: RADIUS,
+        },
+      },
+    },
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          borderRadius: 0,
+        },
+      },
+    },
+    MuiAccordion: {
+      styleOverrides: {
+        root: {
+          borderRadius: `${RADIUS}px !important`,
+          '&:before': { display: 'none' },
+        },
+      },
+    },
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: RADIUS,
+        },
+      },
+    },
+    MuiContainer: {
+      defaultProps: {
+        maxWidth: 'lg',
       },
     },
   },
@@ -115,4 +255,4 @@ let theme = createTheme({
 
 theme = responsiveFontSizes(theme);
 
-export default theme; 
+export default theme;
