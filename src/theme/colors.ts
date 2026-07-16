@@ -9,7 +9,7 @@ export const colors = {
   charcoal: '#2C3539',
   bayNavy: '#1E2B36',
   bayFog: '#F6F1EA',
-  /** Quiet Cal nod — used sparingly, never as the main theme */
+  /** Quiet Cal nod. Used sparingly, never as the main theme. */
   calBlue: '#003262',
 };
 

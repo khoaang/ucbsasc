@@ -146,10 +146,10 @@ const HalloweenModal = ({ open, onClose }: HalloweenModalProps) => {
           <Box sx={{ mb: 2 }}>
             <Typography variant="body2" sx={{ fontWeight: 600, mb: 1 }}>What to know:</Typography>
             <Box component="ul" sx={{ pl: 2, m: 0 }}>
-              <li><Typography variant="body2">Watching "Pee Mak" — a horror comedy that's not too scary!</Typography></li>
+              <li><Typography variant="body2">Watching "Pee Mak," a horror comedy that's not too scary!</Typography></li>
               <li><Typography variant="body2">Costume contest is optional; prizes for those who dress up!</Typography></li>
               <li><Typography variant="body2">Free snacks provided; bring friends!</Typography></li>
-              <li><Typography variant="body2">Super casual vibe — just come and have fun</Typography></li>
+              <li><Typography variant="body2">Super casual vibe. Just come and have fun</Typography></li>
             </Box>
           </Box>
 

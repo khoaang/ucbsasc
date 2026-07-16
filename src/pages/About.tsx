@@ -5,6 +5,7 @@ import PageHeader from '../components/PageHeader';
 import { programs } from '../data/programs';
 import { directors as leadershipDirectors, officers as leadershipOfficers } from '../data/leadership';
 import { usePageTitle } from '../hooks/usePageTitle';
+import { colors, RADIUS } from '../theme/colors';
 
 const ProgramCard = styled(Card)(({ theme }) => ({
   height: '100%',
@@ -32,19 +33,79 @@ const About = () => {
           Our Story
         </Typography>
         <Typography variant="body1" sx={{ mb: 2 }}>
-          SASC was founded in 2000 by student organizers who wanted a clearer home for Southeast Asian students at
-          Berkeley. From the beginning, that has meant mentorship, cultural space, and room to organize when campus
-          resources fell short.
+          In 2000, Professor Khatharya Um organized a Southeast Asian conference at UC Berkeley to mark 25 years of the
+          Southeast Asian diaspora after the American wars in the region. She asked Southeast Asian students from her
+          classes and networks to help run the youth portion. Many of them came out of Lao, Hmong, Cambodian, and
+          Vietnamese campus communities. After the event, they did not want the work to end with a weekend program. They
+          stayed together and formed the Southeast Asian Student Coalition.
         </Typography>
         <Typography variant="body1" sx={{ mb: 2 }}>
-          We still run SEAM, SEASO, SEACF, and SEAgrad. We table on Sproul, cook for SEAsgiving, and stay in touch with
-          members and alumni beyond meeting agendas. We also partner with Bay Area organizations when our communities
-          need support that goes beyond campus.
+          That first chapter was rooted in refugee and diasporic hxstory: the shared aftermath of war, resettlement, and
+          the feeling that Southeast Asian students were getting lost inside a broader “Asian American success” story that
+          did not match what a lot of families were living through. Later that year, on December 9, 2000, Berkeley hosted
+          a Southeast Asian Youth Summit with high school students, college students, educators, and community workers.
+          Out of the summit data and follow-up work, Professor Um and SASC members produced{' '}
+          <em>A Dream Denied: Educational Experiences of Southeast Asian American Youth</em> (published with SEARAC in
+          2003). The report made a plain point that still shows up in our work: when Southeast Asian students are folded
+          into aggregate Asian American numbers, underrepresentation in higher education and the barriers behind it get
+          easy to ignore.
         </Typography>
-        <Typography variant="body1">
-          Programs change with each cohort, but the purpose stays steady: Southeast Asian students should have a place
-          here to belong, lead, and be taken seriously.
+        <Typography variant="body1" sx={{ mb: 2 }}>
+          Those findings pushed SASC beyond being only a campus social club. In the early 2000s, members built the Summer
+          Institute, a multi-day program that brought Southeast Asian high school students to Berkeley for workshops on
+          college access, community hxstory, and what it actually feels like to be on a campus like this. In 2005, after
+          years of figuring out how to keep the coalition alive past any one officer board, members organized SASComm, a
+          round-table leadership structure meant to share the work of programs, outreach, and advocacy instead of parking
+          everything on a few people.
         </Typography>
+        <Typography variant="body1" sx={{ mb: 2 }}>
+          The lineup has shifted with each cohort. Today that usually means SEAM (mentorship with SEA high schoolers),
+          SEASO (orientation for new and returning students), SEACF and Night Market (culture, food, and a stage for SEA
+          orgs and performers), and SEAgrad (a smaller graduation ceremony where seniors and families get recognized on
+          their own terms). We still table on Sproul, cook for SEAsgiving, run history workshops, and keep alumni in the
+          loop. When something needs more than a campus club can carry, we work with Bay Area partners rather than pretend
+          we can do it alone.
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 4 }}>
+          Every year looks a little different because students turn over and the political weather changes. What has not
+          changed much is the reason people keep rebuilding SASC: Southeast Asian students at Berkeley should have a
+          place to find each other, learn our hxstories, put on culture in public, and push for resources when the
+          university’s defaults leave us out.
+        </Typography>
+
+        <Box
+          sx={{
+            border: `2px solid ${colors.charcoal}`,
+            borderRadius: `${RADIUS}px`,
+            boxShadow: `5px 5px 0 ${colors.pink}`,
+            overflow: 'hidden',
+            bgcolor: 'background.paper',
+          }}
+        >
+          <Box
+            component="img"
+            src="/alumni-tailgate.jpg"
+            alt="SASC students and alumni at a 2026 tailgate, holding the coalition banner"
+            sx={{
+              display: 'block',
+              width: '100%',
+              height: 'auto',
+              borderRadius: 0,
+            }}
+          />
+          <Box sx={{ px: { xs: 2, md: 2.5 }, py: 2 }}>
+            <Typography
+              variant="overline"
+              sx={{ color: 'primary.dark', display: 'block', letterSpacing: '0.1em' }}
+            >
+              Alumni Tailgate · 2026
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              A 2026 tailgate where current members reconvened with alumni spanning more than 20 years of SASC,
+              including people who built this coalition long before the current board was on campus.
+            </Typography>
+          </Box>
+        </Box>
       </Container>
 
       <Container sx={{ pb: 8, textAlign: 'center' }}>

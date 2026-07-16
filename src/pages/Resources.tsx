@@ -32,7 +32,7 @@ const Resources = () => {
           </Typography>
           <Typography variant="body2" color="text.secondary">
             The immigration, know-your-rights, and legal aid links below are for immediate use. SASC is a student
-            coalition, not a legal service — these partner organizations can help directly.
+            coalition, not a legal service. These partner organizations can help directly.
           </Typography>
         </Box>
 

@@ -312,7 +312,7 @@ const Home = () => {
                 lineHeight: 1.6,
               }}
             >
-              Mentorship, culture nights, and a stage for SEA orgs — Night Market performances, festivals, and showing up
+              Mentorship, culture nights, and a stage for SEA orgs: Night Market performances, festivals, and showing up
               for our communities on campus and in the Bay.
             </Typography>
 
