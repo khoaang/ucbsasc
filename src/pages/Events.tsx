@@ -31,13 +31,16 @@ import ProfessionalHeadshotsFeb2026 from '../components/events/ProfessionalHeads
 import GameNight from '../components/events/GameNight';
 import TasteOfSeaNightMarket from '../components/events/TasteOfSeaNightMarket';
 import ResumeWorkshop from '../components/events/ResumeWorkshop';
+import SEASO from '../components/events/SEASO';
 
 const Events = () => {
   usePageTitle('Events');
   const [mailingListOpen, setMailingListOpen] = useState(false);
   const { nextEvent } = siteSeason;
 
-  const upcomingEvents: { date: Date; key: string; render: () => JSX.Element }[] = [];
+  const upcomingEvents: { date: Date; key: string; render: () => JSX.Element }[] = [
+    { date: new Date('2026-09-03T16:00:00-07:00'), key: 'seaso-2026', render: () => <SEASO /> },
+  ];
 
   const pastEvents: { date: Date; key: string; render: () => JSX.Element }[] = [
     { date: new Date('2026-05-09T18:00:00-07:00'), key: 'seagrad-2026', render: () => <SEAGrad26 /> },

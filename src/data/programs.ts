@@ -14,8 +14,8 @@ export const programs: Program[] = [
   {
     title: 'Southeast Asian Orientation (SEASO)',
     description:
-      'SEASO helps new and returning Southeast Asian students find SASC and each other early in the semester through hangouts, alumni stories, and introductions to campus life.',
-    goals: 'Help students start the year with people they can rely on.',
+      'SEASO is orientation for first-year and transfer Southeast Asian students: dinner, workshops on campus resources, intros to SEA RSOs, and small family groups with current students.',
+    goals: 'Help new SEA students get settled, find people, and plug into orgs early.',
   },
   {
     title: 'Southeast Asian Cultural Festival (SEACF)',

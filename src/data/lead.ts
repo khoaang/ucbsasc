@@ -8,21 +8,21 @@ export const leadBenefits: Array<{
   icon: BenefitIconKey;
 }> = [
   {
-    title: 'Do real work, learn by doing',
+    title: 'Plan programs',
     description:
-      'Officers help plan events, make decisions with their branch, and support newer members as they learn how SASC works.',
+      'Officers help put on events, make calls with their branch, and bring newer members into how SASC works.',
     icon: 'workspace',
   },
   {
-    title: 'Find your people',
+    title: 'Work with other SEA students',
     description:
-      'You’ll work closely with other Southeast Asian students and often build friendships that last beyond the semester.',
+      'You spend a lot of time with other Southeast Asian students. A lot of people stay close after they leave Berkeley.',
     icon: 'groups',
   },
   {
-    title: 'Make things happen',
+    title: 'Ship real events',
     description:
-      'From booking rooms to running campaigns, officer work turns ideas into programs people can actually attend.',
+      'Room bookings, reimbursements, Instagram posts, Night Market setup. The work shows up as things people can go to.',
     icon: 'campaign',
   },
 ];
@@ -41,56 +41,56 @@ export type LeadBranch = {
 export const leadBranches: LeadBranch[] = [
   {
     name: 'Internal Affairs',
-    focus: 'Community Care & Mentorship',
+    focus: 'GMs & member life',
     overview:
-      'Internal Affairs coordinates bonding events, wellness programming, and member support so people stay connected throughout the year.',
+      'Internal runs general meetings and semester goals. Bonding, wellness, and keeping members looped in also sit here.',
     image: '/internal.jpg',
     committee: 'Internal',
     keyFocus: [
-      'Plan bonding and wellness events.',
-      'Connect members with mentorship and support resources.',
-      'Help newer members feel welcome and looked after.',
+      'General meetings',
+      'Semester goals',
+      'Bonding and wellness',
+      'New member check-ins',
     ],
   },
   {
     name: 'External Affairs',
-    focus: 'Community Partnerships & Advocacy',
+    focus: 'Outreach & events',
     overview:
-      'External Affairs builds relationships with campus and Bay Area partners, then helps turn those partnerships into shared events and campaigns.',
+      'External does outreach and helps plan major events and collaborations with other orgs and campus partners.',
     image: '/grid/tabling.jpg',
     committee: 'External',
     keyFocus: [
-      'Maintain relationships with campus and Bay Area partners.',
-      'Help plan collaborative events on and off campus.',
-      'Support campaigns that affect Southeast Asian students and communities.',
+      'Campus and Bay Area outreach',
+      'Major event planning',
+      'Collabs with other orgs',
     ],
   },
   {
     name: 'Operations',
-    focus: 'Logistics, Budgeting & Event Support',
+    focus: 'Money & venues',
     overview:
-      'Operations handles budgeting, vendors, reimbursements, scheduling, and event logistics so programs can run smoothly.',
+      'Ops handles money and logistics: budgets, fundraising, reimbursements, booking venues.',
     image: '/operations.jpg',
     committee: 'Operations',
     keyFocus: [
-      'Coordinate timelines and vendors for major events.',
-      'Manage purchasing, reimbursements, and ASUC funding requests.',
-      'Research grants and sponsorships that support our programs.',
-      'Work with directors on budget planning and tracking.',
+      'Budgets and reimbursements',
+      'Venue booking',
+      'Fundraisers and ASUC funding',
     ],
   },
   {
     name: 'Public Relations',
-    focus: 'Storytelling & Outreach',
+    focus: 'Web, merch, photo',
     overview:
-      'Public Relations creates graphics, photos, video, captions, and newsletters so members and the wider campus know what SASC is doing.',
+      'PR does website design and development, merch, photography, graphics, and Instagram.',
     image: '/pr.jpg',
     committee: 'PR',
     keyFocus: [
-      'Design graphics and short-form video for Instagram and print.',
-      'Photograph and archive events.',
-      'Write captions, newsletters, and other outreach copy.',
-      'Plan social media rollouts for programs and campaigns.',
+      'Website design and development',
+      'Photography',
+      'Merch and graphics',
+      'Instagram',
     ],
   },
 ];
@@ -103,27 +103,19 @@ export const leadApplicationSteps: Array<{
   icon: ApplicationStepIconKey;
 }> = [
   {
-    title: 'Watch for the next cycle',
-    detail:
-      'We share recruitment details on Instagram, the mailing list, and at general meetings once branch needs are clear.',
+    title: 'Pick a branch',
+    detail: 'We’re recruiting for Internal, External, Ops, and PR for Fall 2026. Details are below.',
     icon: 'lightbulb',
   },
   {
-    title: 'Meet the directors',
+    title: 'Watch for dates',
     detail:
-      'You’ll talk through expectations, your interests, and which branch might be the best fit.',
+      'Application dates aren’t set. We’ll post on Instagram (@ucbsasc), the mailing list, and at GMs.',
     icon: 'diversity',
   },
   {
-    title: 'Start onboarding',
-    detail:
-      'You’ll meet your branch, get oriented, and learn what the first few weeks usually look like.',
+    title: 'Ask someone',
+    detail: 'Email a director under a branch, or DM @ucbsasc, if you want hours or workload info.',
     icon: 'event',
-  },
-  {
-    title: 'Grow with us',
-    detail:
-      'You’ll get support from your team during busy weeks and quieter stretches alike.',
-    icon: 'volunteer',
   },
 ];

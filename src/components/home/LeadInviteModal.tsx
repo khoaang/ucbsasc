@@ -15,18 +15,13 @@ type LeadInviteModalProps = {
 const LeadInviteModal = ({ open, onClose }: LeadInviteModalProps) => {
   return (
     <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
-      <DialogTitle>Lead with SASC</DialogTitle>
+      <DialogTitle>Lead with SASC · Fall 2026</DialogTitle>
       <DialogContent dividers>
         <Typography variant="body1" sx={{ mb: 2 }}>
-          SASComm brings together students who care about Southeast Asian community building, storytelling, and advocacy. Roles are
-          flexible, collaborative, and grounded in shared responsibility.
+          Recruiting for Internal, External, Ops, and PR. Branch details are on the Lead page.
         </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>
-          Curious about the work? Check out the leadership page to see branch focus areas, expectations, and ways to connect before the
-          next recruitment cycle.
-        </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 600 }}>
-          Recruitment for the last cycle has closed. Follow @ucbsasc or join the mailing list for the next timeline.
+        <Typography variant="body2" color="text.secondary">
+          Dates aren&apos;t set. Follow @ucbsasc for updates.
         </Typography>
       </DialogContent>
       <DialogActions sx={{ flexWrap: 'wrap', gap: 1.5, justifyContent: 'flex-end', px: 3, py: 2 }}>
@@ -40,7 +35,7 @@ const LeadInviteModal = ({ open, onClose }: LeadInviteModalProps) => {
           color="primary"
           onClick={onClose}
         >
-          Learn More
+          See the branches
         </Button>
         <Button
           component="a"
@@ -51,7 +46,7 @@ const LeadInviteModal = ({ open, onClose }: LeadInviteModalProps) => {
           color="primary"
           onClick={onClose}
         >
-          DM @ucbsasc
+          Follow @ucbsasc
         </Button>
       </DialogActions>
     </Dialog>

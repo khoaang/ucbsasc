@@ -64,7 +64,7 @@ const Lead = () => {
     <Box>
       <PageHeader
         title="Lead with SASC"
-        subtitle="SASComm is the student leadership group that keeps SASC’s programs running: planning events, telling our stories, supporting members, and pushing for resources."
+        subtitle="SASComm is the student leadership group that runs SASC programs, events, and day-to-day work."
         image="/sasc-old.jpg"
       >
         <Typography
@@ -76,40 +76,32 @@ const Lead = () => {
             textShadow: '0 1px 10px rgba(0,0,0,0.45)',
           }}
         >
-          We&apos;re looking for folks ready to run programs, help tell our stories, support members, and push for
-          resources. Some weeks are relaxed; other weeks are full of meetings and last-minute tasks. We do it together.
-        </Typography>
-        <Typography
-          variant="body2"
-          sx={{
-            opacity: 0.85,
-            maxWidth: 720,
-            mt: 1.5,
-            textShadow: '0 1px 6px rgba(0,0,0,0.35)',
-            fontWeight: 600,
-          }}
-        >
-          Recruitment for the last cycle has closed. Follow along for next year&apos;s timeline, or reach out if you want
-          to learn where your energy could fit.
+          Fall 2026 recruiting is open for Internal, External, Ops, and PR. Dates aren&apos;t set yet.
+          We&apos;ll post on Instagram and the mailing list.
         </Typography>
         <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ mt: 4 }}>
           <Button
             variant="contained"
             color="inherit"
             size="large"
-            href="https://www.instagram.com/ucbsasc"
-            target="_blank"
-            rel="noopener"
+            href="#branches"
             sx={{
               color: 'primary.main',
               bgcolor: 'white',
               '&:hover': { bgcolor: 'rgba(255, 255, 255, 0.9)' },
             }}
           >
-            Follow @ucbsasc
+            See the branches
           </Button>
-          <Button variant="outlined" color="inherit" size="large" href="/contact">
-            Contact Us
+          <Button
+            variant="outlined"
+            color="inherit"
+            size="large"
+            href="https://www.instagram.com/ucbsasc"
+            target="_blank"
+            rel="noopener"
+          >
+            Follow @ucbsasc
           </Button>
         </Stack>
       </PageHeader>
@@ -165,9 +157,8 @@ const Lead = () => {
           Why Lead with SASC
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 760, mb: 3 }}>
-          Some weeks you might be printing flyers and lining up volunteers. Other weeks you’re processing what happened at a
-          demonstration or cooking for SEAsgiving. We stay connected to the history of Southeast Asian organizing at Berkeley and
-          respond to the issues people are facing today, while keeping each other accountable and cared for.
+          Some weeks you&apos;re printing flyers or lining up volunteers. Other weeks you&apos;re cooking for
+          SEAsgiving or dealing with whatever just hit campus.
         </Typography>
         <Grid container spacing={3}>
           {leadBenefits.map((benefit) => (
@@ -206,15 +197,13 @@ const Lead = () => {
         </Grid>
       </Container>
 
-      <Container sx={{ mb: 8 }}>
+      <Container id="branches" sx={{ mb: 8, scrollMarginTop: 96 }}>
         <Typography variant="h4" gutterBottom>
           Ways to Lead
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ mb: 4, maxWidth: 760 }}>
-          Officer roles typically take about 5 hours a week between branch meetings, SASComm planning, and preparation. When big events
-          or campaigns come up, we share the load; when things quiet down, we reset and plan ahead. If you’re curious about what the work
-          actually looks like, reach out. All majors, class years, and lived experiences are welcome, especially folks grounded in
-          Southeast Asian storytelling, mutual aid, and intergenerational care.
+          All four branches are recruiting for Fall 2026. Most weeks are about 5 hours: branch meeting, SASComm,
+          and prep. Big events take more. Email a director if you want details on a specific branch.
         </Typography>
         <Grid container spacing={4}>
           {leadBranches.map((branch) => {
@@ -271,7 +260,7 @@ const Lead = () => {
                       {branch.keyFocus.length > 0 && (
                         <Box>
                         <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
-                            Key Focus Areas
+                            Includes
                         </Typography>
                         <Box
                           component="ul"
@@ -308,7 +297,10 @@ const Lead = () => {
 
       <Container sx={{ mb: 8 }}>
         <Typography variant="h4" gutterBottom>
-          How to Get Involved
+          How to apply
+        </Typography>
+        <Typography variant="body1" color="text.secondary" sx={{ mb: 3, maxWidth: 760 }}>
+          No form yet. Dates still TBD.
         </Typography>
         <Grid container spacing={3}>
           {leadApplicationSteps.map((step) => (
@@ -335,12 +327,10 @@ const Lead = () => {
         <Card sx={{ p: { xs: 3, md: 5 }, backgroundColor: 'rgba(33, 150, 243, 0.08)' }}>
           <Stack spacing={2}>
             <Typography variant="h5" sx={{ fontWeight: 600 }}>
-              Thinking about leading with SASC next year?
+              Questions
             </Typography>
             <Typography variant="body1" color="text.secondary">
-              We care more about curiosity, humility, and a real commitment to community than job titles or resumes. Our pace
-              shifts with the season, so follow our next recruitment cycle, DM us, or come to a general meeting when programming
-              resumes.
+              Dates usually hit Instagram first. DM @ucbsasc or email a director above.
             </Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ pt: 1 }}>
               <Button
@@ -360,6 +350,9 @@ const Lead = () => {
                 rel="noopener"
               >
                 DM @ucbsasc
+              </Button>
+              <Button variant="outlined" color="primary" href="/contact">
+                Contact a director
               </Button>
             </Stack>
           </Stack>

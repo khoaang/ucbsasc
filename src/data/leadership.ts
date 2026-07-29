@@ -11,19 +11,19 @@ export type LeadershipMember = {
 
 export const leadership: LeadershipMember[] = [
     {
-        name: 'Ilene Park',
-        role: 'Internal Director',
-        committee: 'Internal',
-        email: 'ilene.park@ucbsasc.org',
-        image: '/officers/ilene.jpeg',
-        type: 'director',
-    },
-    {
         name: 'April Marie Le',
         role: 'Internal Director',
         committee: 'Internal',
         email: 'le.april@berkeley.edu',
         image: '/officers/april.jpg',
+        type: 'director',
+    },
+    {
+        name: 'Lia Le-Nguyen',
+        role: 'Internal Director',
+        committee: 'Internal',
+        email: 'lialenguyen@berkeley.edu',
+        image: '/officers/lialenguyen.png',
         type: 'director',
     },
     {
@@ -35,11 +35,27 @@ export const leadership: LeadershipMember[] = [
         type: 'director',
     },
     {
+        name: 'Alida Phuthama',
+        role: 'External Director',
+        committee: 'External',
+        email: 'alidaphuthama@berkeley.edu',
+        image: '/officers/alidaphuthama.png',
+        type: 'director',
+    },
+    {
         name: 'Tyler Htut',
         role: 'Operations Director',
         committee: 'Operations',
         email: 'tylerhtut7@berkeley.edu',
         image: '/officers/tyler.jpeg',
+        type: 'director',
+    },
+    {
+        name: 'Jordan Vu',
+        role: 'Operations Director',
+        committee: 'Operations',
+        email: 'jordanvu@berkeley.edu',
+        image: '/officers/jordanvu.jpeg',
         type: 'director',
     },
     {

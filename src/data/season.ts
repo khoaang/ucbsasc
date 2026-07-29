@@ -17,6 +17,11 @@ export const siteSeason: {
   /** Set when the next GM / public event is confirmed */
   nextEvent: NextEvent | null;
 } = {
-  mode: 'quiet',
-  nextEvent: null,
+  mode: 'recruitment',
+  nextEvent: {
+    title: 'SEASO 2026',
+    dateLabel: 'Wed, Sept 3 · 4–9 PM',
+    location: 'Tilden Room',
+    href: '/events',
+  },
 };

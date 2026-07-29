@@ -60,7 +60,7 @@ const About = () => {
         </Typography>
         <Typography variant="body1" sx={{ mb: 2 }}>
           The lineup has shifted with each cohort. Today that usually means SEAM (mentorship with SEA high schoolers),
-          SEASO (orientation for new and returning students), SEACF and Night Market (culture, food, and a stage for SEA
+          SEASO (orientation for first-years and transfers), SEACF and Night Market (culture, food, and a stage for SEA
           orgs and performers), and SEAgrad (a smaller graduation ceremony where seniors and families get recognized on
           their own terms). We still table on Sproul, cook for SEAsgiving, run history workshops, and keep alumni in the
           loop. When something needs more than a campus club can carry, we work with Bay Area partners rather than pretend
@@ -113,8 +113,8 @@ const About = () => {
           Get Involved
         </Typography>
         <Typography variant="body1" sx={{ mb: 3, maxWidth: 640, mx: 'auto' }}>
-          Join a general meeting when programming resumes, apply for a leadership role next cycle, or email{' '}
-          <strong>UCB.SASC@gmail.com</strong> with questions or ideas.
+          Fall 2026 recruiting is open; dates aren&apos;t set yet. Come to a GM, check the Lead page, or email{' '}
+          <strong>UCB.SASC@gmail.com</strong>.
         </Typography>
         <Grid container spacing={2} justifyContent="center">
           <Grid item>
