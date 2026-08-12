@@ -14,7 +14,7 @@ export const programs: Program[] = [
   {
     title: 'Southeast Asian Orientation (SEASO)',
     description:
-      'SEASO is orientation for first-year and transfer Southeast Asian students: dinner, workshops on campus resources, intros to SEA RSOs, and small family groups with current students.',
+      'SEASO is orientation for first-year and transfer Southeast Asian students, co-hosted with AAPA: dinner, workshops on campus resources, intros to SEA orgs, and time to meet other new and current students.',
     goals: 'Help new SEA students get settled, find people, and plug into orgs early.',
   },
   {

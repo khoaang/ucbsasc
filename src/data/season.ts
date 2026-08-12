@@ -10,6 +10,8 @@ export type NextEvent = {
   location?: string;
   /** Optional deep link (events page, form, calendar, etc.) */
   href?: string;
+  /** Button label when href is set (defaults to Details) */
+  ctaLabel?: string;
 };
 
 export const siteSeason: {
@@ -20,8 +22,9 @@ export const siteSeason: {
   mode: 'recruitment',
   nextEvent: {
     title: 'SEASO 2026',
-    dateLabel: 'Wed, Sept 3 · 4–9 PM',
+    dateLabel: 'Thu, Sept 3 · 4–9 PM',
     location: 'Tilden Room',
-    href: '/events',
+    href: 'https://forms.gle/hJtHBtT5BRexuVgj8',
+    ctaLabel: 'RSVP',
   },
 };

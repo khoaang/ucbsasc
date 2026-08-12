@@ -96,8 +96,13 @@ const Events = () => {
               {nextEvent.location ? ` · ${nextEvent.location}` : ''}
             </Typography>
             {nextEvent.href && (
-              <Button variant="contained" href={nextEvent.href} target={nextEvent.href.startsWith('http') ? '_blank' : undefined}>
-                Details
+              <Button
+                variant="contained"
+                href={nextEvent.href}
+                target={nextEvent.href.startsWith('http') ? '_blank' : undefined}
+                rel={nextEvent.href.startsWith('http') ? 'noopener' : undefined}
+              >
+                {nextEvent.ctaLabel ?? 'Details'}
               </Button>
             )}
           </Box>
