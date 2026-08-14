@@ -1,4 +1,4 @@
-import { Accordion, AccordionDetails, AccordionSummary, Button, Stack, Typography } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Button, Link, Stack, Typography } from '@mui/material';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import EventCard from './EventCard';
@@ -17,20 +17,41 @@ const calendarHref =
 const SEASO = () => {
   return (
     <EventCard
-      statusLabel="UPCOMING"
-      statusBgColor="primary.main"
       borderColor="primary.main"
-      minMediaHeight={420}
-      maxMediaHeight={520}
+      minMediaHeight={500}
+      maxMediaHeight={640}
       image={{
-        src: '/grid/workshop.jpg',
-        alt: 'Students tabling and talking on campus lawn',
-        sx: { objectPosition: 'center 72%' },
+        src: '/seaso26.jpg',
+        alt: 'SEASO 2026 flyer: Southeast Asian Student Orientation on September 3 at the Tilden Room',
+        sx: { objectFit: 'contain', objectPosition: 'center', bgcolor: '#F4B6C8' },
       }}
     >
-      <Typography variant="h4" component="h2" sx={{ mb: 1 }}>
-        SEASO 2026
-      </Typography>
+      <Stack
+        direction="row"
+        alignItems="baseline"
+        spacing={1.5}
+        flexWrap="wrap"
+        useFlexGap
+        sx={{ mb: 1 }}
+      >
+        <Typography variant="h4" component="h2">
+          SEASO 2026
+        </Typography>
+        <Link
+          href="https://www.instagram.com/calaapa/"
+          target="_blank"
+          rel="noopener"
+          sx={{
+            typography: 'h4',
+            fontWeight: 600,
+            color: 'primary.main',
+            textDecoration: 'none',
+            '&:hover': { textDecoration: 'underline' },
+          }}
+        >
+          @calaapa
+        </Link>
+      </Stack>
       <Typography variant="subtitle1" color="text.secondary" sx={{ mb: 0.5 }}>
         5th Annual New Southeast Asian Student Orientation
       </Typography>
@@ -70,15 +91,6 @@ const SEASO = () => {
           startIcon={<CalendarMonthIcon />}
         >
           Add to Calendar
-        </Button>
-        <Button
-          variant="text"
-          color="primary"
-          href="https://www.instagram.com/calaapa/"
-          target="_blank"
-          rel="noopener"
-        >
-          @calaapa
         </Button>
       </Stack>
 

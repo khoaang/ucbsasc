@@ -13,7 +13,6 @@ import { useState } from 'react';
 import Footer from '../components/Footer';
 import PageHeader from '../components/PageHeader';
 import MailingListModal from '../components/MailingListModal';
-import { siteSeason } from '../data/season';
 import { usePageTitle } from '../hooks/usePageTitle';
 import GeneralMeeting from '../components/events/GeneralMeeting';
 import NightMarket from '../components/events/NightMarket';
@@ -36,7 +35,6 @@ import SEASO from '../components/events/SEASO';
 const Events = () => {
   usePageTitle('Events');
   const [mailingListOpen, setMailingListOpen] = useState(false);
-  const { nextEvent } = siteSeason;
 
   const upcomingEvents: { date: Date; key: string; render: () => JSX.Element }[] = [
     { date: new Date('2026-09-03T16:00:00-07:00'), key: 'seaso-2026', render: () => <SEASO /> },
@@ -74,40 +72,6 @@ const Events = () => {
       />
 
       <Container sx={{ pb: 8 }}>
-        {nextEvent && (
-          <Box
-            sx={{
-              mb: 4,
-              p: { xs: 2.5, md: 3 },
-              borderRadius: 2,
-              border: '1px solid',
-              borderColor: 'divider',
-              bgcolor: 'background.paper',
-            }}
-          >
-            <Typography variant="overline" color="secondary.dark" sx={{ letterSpacing: 1 }}>
-              Upcoming
-            </Typography>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 0.5 }}>
-              {nextEvent.title}
-            </Typography>
-            <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
-              {nextEvent.dateLabel}
-              {nextEvent.location ? ` · ${nextEvent.location}` : ''}
-            </Typography>
-            {nextEvent.href && (
-              <Button
-                variant="contained"
-                href={nextEvent.href}
-                target={nextEvent.href.startsWith('http') ? '_blank' : undefined}
-                rel={nextEvent.href.startsWith('http') ? 'noopener' : undefined}
-              >
-                {nextEvent.ctaLabel ?? 'Details'}
-              </Button>
-            )}
-          </Box>
-        )}
-
         {upcomingEvents.length > 0 ? (
           <Box sx={{ display: 'contents' }}>
             {upcomingEvents.map((ev) => (
@@ -115,41 +79,39 @@ const Events = () => {
             ))}
           </Box>
         ) : (
-          !nextEvent && (
-            <Box
-              sx={{
-                mb: 4,
-                p: { xs: 2.5, md: 3.5 },
-                borderRadius: 2,
-                border: '1px solid',
-                borderColor: 'divider',
-                bgcolor: 'background.paper',
-              }}
-            >
-              <Typography variant="h5" component="h2" sx={{ mb: 1, fontWeight: 700, fontSize: '1.35rem' }}>
-                Between school years
-              </Typography>
-              <Typography variant="body1" color="text.secondary" sx={{ mb: 2, maxWidth: 680 }}>
-                Our 2025–26 public programming has wrapped. Fall dates for general meetings, cultural programs, and
-                involvement opportunities will be posted here once rooms and partners are confirmed. Until then, Instagram
-                and the mailing list are the best places to watch.
-              </Typography>
-              <Typography variant="body2" color="text.secondary" sx={{ mb: 3, maxWidth: 680 }}>
-                Looking for what we ran last year? Open the archive below for SEAGrad, Night Market, workshops, and more.
-              </Typography>
-              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
-                <Button variant="contained" href="https://www.instagram.com/ucbsasc" target="_blank" rel="noopener">
-                  Follow @ucbsasc
-                </Button>
-                <Button variant="outlined" onClick={() => setMailingListOpen(true)}>
-                  Join the mailing list
-                </Button>
-                <Button variant="text" href="/lead">
-                  Lead with SASC
-                </Button>
-              </Stack>
-            </Box>
-          )
+          <Box
+            sx={{
+              mb: 4,
+              p: { xs: 2.5, md: 3.5 },
+              borderRadius: 2,
+              border: '1px solid',
+              borderColor: 'divider',
+              bgcolor: 'background.paper',
+            }}
+          >
+            <Typography variant="h5" component="h2" sx={{ mb: 1, fontWeight: 700, fontSize: '1.35rem' }}>
+              Between school years
+            </Typography>
+            <Typography variant="body1" color="text.secondary" sx={{ mb: 2, maxWidth: 680 }}>
+              Our 2025–26 public programming has wrapped. Fall dates for general meetings, cultural programs, and
+              involvement opportunities will be posted here once rooms and partners are confirmed. Until then, Instagram
+              and the mailing list are the best places to watch.
+            </Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 3, maxWidth: 680 }}>
+              Looking for what we ran last year? Open the archive below for SEAGrad, Night Market, workshops, and more.
+            </Typography>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
+              <Button variant="contained" href="https://www.instagram.com/ucbsasc" target="_blank" rel="noopener">
+                Follow @ucbsasc
+              </Button>
+              <Button variant="outlined" onClick={() => setMailingListOpen(true)}>
+                Join the mailing list
+              </Button>
+              <Button variant="text" href="/lead">
+                Lead with SASC
+              </Button>
+            </Stack>
+          </Box>
         )}
 
         <Accordion defaultExpanded={false} disableGutters elevation={0} sx={{ border: '1px solid', borderColor: 'divider' }}>
