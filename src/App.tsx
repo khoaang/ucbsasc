@@ -1,6 +1,6 @@
 import { ThemeProvider, Box, CssBaseline, Typography } from '@mui/material';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import theme from './theme/theme';
 import Navbar from './components/Navbar';
 import AdminGuard from './components/AdminGuard';
@@ -14,6 +14,13 @@ const Lead = lazy(() => import('./pages/Lead'));
 const QRGenerator = lazy(() => import('./pages/QRGenerator'));
 const StudentSlate = lazy(() => import('./pages/StudentSlate'));
 const MemberManagement = lazy(() => import('./pages/MemberManagement'));
+
+function ExternalRedirect({ href }: { href: string }) {
+  useEffect(() => {
+    window.location.replace(href);
+  }, [href]);
+  return null;
+}
 
 function PageFallback() {
   return (
@@ -50,6 +57,10 @@ function App() {
                 <Route path="/resources" element={<Resources />} />
                 <Route path="/qr" element={<QRGenerator />} />
                 <Route path="/checkin" element={<StudentSlate />} />
+                <Route
+                  path="/seaso26"
+                  element={<ExternalRedirect href="https://forms.gle/hJtHBtT5BRexuVgj8" />}
+                />
                 <Route path="/seagrad26" element={<Navigate to="/events" replace />} />
                 <Route path="/seagrad2026" element={<Navigate to="/events" replace />} />
                 <Route path="/tos-vendor" element={<Navigate to="/events" replace />} />

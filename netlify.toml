@@ -18,6 +18,18 @@
   force = true
 
 [[redirects]]
+  from = "/seaso26"
+  to = "https://forms.gle/hJtHBtT5BRexuVgj8"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/seaso26/"
+  to = "https://forms.gle/hJtHBtT5BRexuVgj8"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/store"
   to = "https://sasc.bigcartel.com"
   status = 301
